@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UartSettingView">
+            <rect key="frame" x="0.0" y="0.0" width="260" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="波特率：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFz-DS-pLx">
+                    <rect key="frame" x="16" y="16" width="58" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Had-Fm-l1m"/>
+                        <constraint firstAttribute="width" constant="58" id="zoW-zc-def"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="数据位数：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEI-hz-pg9">
+                    <rect key="frame" x="16" y="127" width="72" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="72" id="1PM-rN-DhZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="停止位数:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBs-r1-ssc">
+                    <rect key="frame" x="16" y="53" width="68" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="68" id="rAS-Pk-v0y"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="流控:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dog-qe-4TL">
+                    <rect key="frame" x="16" y="90" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="B81-uC-md0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="校验:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbR-aZ-mnz">
+                    <rect key="frame" x="16" y="164" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="8da-ix-I78"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="EBs-r1-ssc" firstAttribute="leading" secondItem="gFz-DS-pLx" secondAttribute="leading" id="3xk-ck-Nk1"/>
+                <constraint firstItem="gFz-DS-pLx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Apm-rv-vLC"/>
+                <constraint firstItem="dog-qe-4TL" firstAttribute="height" secondItem="EBs-r1-ssc" secondAttribute="height" id="GGJ-oR-HbH"/>
+                <constraint firstItem="ZbR-aZ-mnz" firstAttribute="height" secondItem="dEI-hz-pg9" secondAttribute="height" id="Ixa-dd-dPL"/>
+                <constraint firstItem="dog-qe-4TL" firstAttribute="leading" secondItem="EBs-r1-ssc" secondAttribute="leading" id="NB4-SA-AkS"/>
+                <constraint firstItem="EBs-r1-ssc" firstAttribute="height" secondItem="gFz-DS-pLx" secondAttribute="height" id="aJR-Fi-Jfy"/>
+                <constraint firstItem="dEI-hz-pg9" firstAttribute="height" secondItem="dog-qe-4TL" secondAttribute="height" id="aKa-W9-yUZ"/>
+                <constraint firstItem="ZbR-aZ-mnz" firstAttribute="leading" secondItem="dEI-hz-pg9" secondAttribute="leading" id="ft9-PY-y5X"/>
+                <constraint firstItem="dEI-hz-pg9" firstAttribute="top" secondItem="dog-qe-4TL" secondAttribute="bottom" constant="16" id="hyX-DW-Oi8"/>
+                <constraint firstItem="ZbR-aZ-mnz" firstAttribute="top" secondItem="dEI-hz-pg9" secondAttribute="bottom" constant="16" id="mFu-u7-Ozw"/>
+                <constraint firstItem="gFz-DS-pLx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="qMV-HA-IZS"/>
+                <constraint firstItem="EBs-r1-ssc" firstAttribute="top" secondItem="gFz-DS-pLx" secondAttribute="bottom" constant="16" id="rMf-gB-eQi"/>
+                <constraint firstItem="dog-qe-4TL" firstAttribute="top" secondItem="EBs-r1-ssc" secondAttribute="bottom" constant="16" id="rSU-pm-wAZ"/>
+                <constraint firstItem="dEI-hz-pg9" firstAttribute="leading" secondItem="dog-qe-4TL" secondAttribute="leading" id="tw1-H2-2ve"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bpsLabel" destination="gFz-DS-pLx" id="ic1-6D-Wtb"/>
+                <outlet property="dataBitsLabel" destination="dEI-hz-pg9" id="fB5-uF-7Jz"/>
+                <outlet property="flowCtrlLabel" destination="dog-qe-4TL" id="cJN-9m-FVU"/>
+                <outlet property="parityLabel" destination="ZbR-aZ-mnz" id="BUR-wF-Vev"/>
+                <outlet property="stopBitsLabel" destination="EBs-r1-ssc" id="7pd-E0-kQn"/>
+            </connections>
+            <point key="canvasLocation" x="-120.5" y="-19.5"/>
+        </view>
+    </objects>
+</document>

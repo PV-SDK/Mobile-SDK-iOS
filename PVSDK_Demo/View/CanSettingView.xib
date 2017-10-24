@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CanSettingView">
+            <rect key="frame" x="0.0" y="0.0" width="260" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="波特率:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvx-OL-icE">
+                    <rect key="frame" x="16" y="11" width="63" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="63" id="eKf-qU-hu3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="模式:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ap-6q-idL">
+                    <rect key="frame" x="16" y="43" width="63" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="63" id="xPD-2h-N53"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="2Ap-6q-idL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="126-ZB-jxo"/>
+                <constraint firstItem="Cvx-OL-icE" firstAttribute="leading" secondItem="2Ap-6q-idL" secondAttribute="leading" id="ESC-1t-EzG"/>
+                <constraint firstItem="2Ap-6q-idL" firstAttribute="top" secondItem="Cvx-OL-icE" secondAttribute="bottom" constant="15" id="b6W-aE-EZ1"/>
+                <constraint firstItem="Cvx-OL-icE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="n6H-Sv-bSG"/>
+                <constraint firstItem="Cvx-OL-icE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="oem-RA-8LS"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bpsLabel" destination="Cvx-OL-icE" id="big-1b-ZQt"/>
+                <outlet property="modeLabel" destination="2Ap-6q-idL" id="XX7-Df-j4g"/>
+            </connections>
+            <point key="canvasLocation" x="54" y="-386"/>
+        </view>
+    </objects>
+</document>

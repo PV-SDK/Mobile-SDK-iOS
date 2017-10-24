@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8DC72A3E39B8110A7B24B250 /* libPods-PVSDK_Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D61FD7D405CF23A5560576BE /* libPods-PVSDK_Demo.a */; };
+		ADC05BBB1F9DB9E100C86981 /* CanSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05BBA1F9DB9E100C86981 /* CanSettingView.m */; };
+		ADC05BBD1F9DB9F400C86981 /* CanSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05BBC1F9DB9F400C86981 /* CanSettingView.xib */; };
+		ADC05BBF1F9DC0B500C86981 /* I2CSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05BBE1F9DC0B500C86981 /* I2CSettingView.xib */; };
+		ADC05BC21F9DC0CF00C86981 /* I2CSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05BC11F9DC0CF00C86981 /* I2CSettingView.m */; };
+		ADC05BC51F9DD7A800C86981 /* SpiSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05BC41F9DD7A800C86981 /* SpiSettingView.m */; };
+		ADC05BC71F9DD7BC00C86981 /* SpiSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05BC61F9DD7BC00C86981 /* SpiSettingView.xib */; };
+		ADC05C121F9EEE5700C86981 /* PVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC05C111F9EEE5700C86981 /* PVSDK.framework */; };
 		ADC2578A1F8F3EBE00418881 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC257891F8F3EBE00418881 /* main.m */; };
 		ADC2578D1F8F3EBE00418881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC2578C1F8F3EBE00418881 /* AppDelegate.m */; };
 		ADC257901F8F3EBE00418881 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC2578F1F8F3EBE00418881 /* ViewController.m */; };
@@ -15,6 +23,13 @@
 		ADC257981F8F3EBF00418881 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC257961F8F3EBF00418881 /* LaunchScreen.storyboard */; };
 		ADC257A31F8F3EBF00418881 /* PVSDK_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC257A21F8F3EBF00418881 /* PVSDK_DemoTests.m */; };
 		ADC257AE1F8F3EBF00418881 /* PVSDK_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC257AD1F8F3EBF00418881 /* PVSDK_DemoUITests.m */; };
+		ADC257C01F8F610500418881 /* dropdownMenu_cornerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC257BD1F8F610500418881 /* dropdownMenu_cornerIcon.png */; };
+		ADC257C11F8F610500418881 /* LMJDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC257BF1F8F610500418881 /* LMJDropdownMenu.m */; };
+		ADC257C31F8F62D000418881 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = ADC257C21F8F62D000418881 /* Podfile */; };
+		ADC257D21F8F82A700418881 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC257D11F8F82A700418881 /* libc++.tbd */; };
+		ADC2589E1F9455EC00418881 /* UartSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC2589D1F9455EC00418881 /* UartSettingView.m */; };
+		ADC258A01F9455FF00418881 /* UartSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC2589F1F9455FF00418881 /* UartSettingView.xib */; };
+		ADC258A61F94669C00418881 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC258A51F94669C00418881 /* UIView+Size.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +50,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		62FBD8C81F5949C340CB6738 /* Pods-PVSDK_Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PVSDK_Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PVSDK_Demo/Pods-PVSDK_Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		ADC05BB91F9DB9E100C86981 /* CanSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanSettingView.h; sourceTree = "<group>"; };
+		ADC05BBA1F9DB9E100C86981 /* CanSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanSettingView.m; sourceTree = "<group>"; };
+		ADC05BBC1F9DB9F400C86981 /* CanSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanSettingView.xib; sourceTree = "<group>"; };
+		ADC05BBE1F9DC0B500C86981 /* I2CSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = I2CSettingView.xib; sourceTree = "<group>"; };
+		ADC05BC01F9DC0CF00C86981 /* I2CSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = I2CSettingView.h; sourceTree = "<group>"; };
+		ADC05BC11F9DC0CF00C86981 /* I2CSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = I2CSettingView.m; sourceTree = "<group>"; };
+		ADC05BC31F9DD7A800C86981 /* SpiSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiSettingView.h; sourceTree = "<group>"; };
+		ADC05BC41F9DD7A800C86981 /* SpiSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpiSettingView.m; sourceTree = "<group>"; };
+		ADC05BC61F9DD7BC00C86981 /* SpiSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpiSettingView.xib; sourceTree = "<group>"; };
+		ADC05C111F9EEE5700C86981 /* PVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PVSDK.framework; sourceTree = "<group>"; };
 		ADC257851F8F3EBE00418881 /* PVSDK_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PVSDK_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC257891F8F3EBE00418881 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ADC2578B1F8F3EBE00418881 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +77,18 @@
 		ADC257A91F8F3EBF00418881 /* PVSDK_DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PVSDK_DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC257AD1F8F3EBF00418881 /* PVSDK_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PVSDK_DemoUITests.m; sourceTree = "<group>"; };
 		ADC257AF1F8F3EBF00418881 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADC257BD1F8F610500418881 /* dropdownMenu_cornerIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropdownMenu_cornerIcon.png; sourceTree = "<group>"; };
+		ADC257BE1F8F610500418881 /* LMJDropdownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJDropdownMenu.h; sourceTree = "<group>"; };
+		ADC257BF1F8F610500418881 /* LMJDropdownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDropdownMenu.m; sourceTree = "<group>"; };
+		ADC257C21F8F62D000418881 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		ADC257D11F8F82A700418881 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		ADC2589C1F9455EC00418881 /* UartSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UartSettingView.h; sourceTree = "<group>"; };
+		ADC2589D1F9455EC00418881 /* UartSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UartSettingView.m; sourceTree = "<group>"; };
+		ADC2589F1F9455FF00418881 /* UartSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UartSettingView.xib; sourceTree = "<group>"; };
+		ADC258A41F94669C00418881 /* UIView+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Size.h"; sourceTree = "<group>"; };
+		ADC258A51F94669C00418881 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
+		AFC0D37D64375F3BAB129B63 /* Pods-PVSDK_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PVSDK_Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PVSDK_Demo/Pods-PVSDK_Demo.release.xcconfig"; sourceTree = "<group>"; };
+		D61FD7D405CF23A5560576BE /* libPods-PVSDK_Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PVSDK_Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +96,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADC257D21F8F82A700418881 /* libc++.tbd in Frameworks */,
+				ADC05C121F9EEE5700C86981 /* PVSDK.framework in Frameworks */,
+				8DC72A3E39B8110A7B24B250 /* libPods-PVSDK_Demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,13 +119,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35A861AE54315CF4312783FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				62FBD8C81F5949C340CB6738 /* Pods-PVSDK_Demo.debug.xcconfig */,
+				AFC0D37D64375F3BAB129B63 /* Pods-PVSDK_Demo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		75D83CAA1EE3D167C4B0A7E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ADC05C111F9EEE5700C86981 /* PVSDK.framework */,
+				ADC257D11F8F82A700418881 /* libc++.tbd */,
+				D61FD7D405CF23A5560576BE /* libPods-PVSDK_Demo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ADC2577C1F8F3EBE00418881 = {
 			isa = PBXGroup;
 			children = (
+				ADC257C21F8F62D000418881 /* Podfile */,
 				ADC257871F8F3EBE00418881 /* PVSDK_Demo */,
 				ADC257A11F8F3EBF00418881 /* PVSDK_DemoTests */,
 				ADC257AC1F8F3EBF00418881 /* PVSDK_DemoUITests */,
 				ADC257861F8F3EBE00418881 /* Products */,
+				35A861AE54315CF4312783FB /* Pods */,
+				75D83CAA1EE3D167C4B0A7E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +164,8 @@
 		ADC257871F8F3EBE00418881 /* PVSDK_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				ADC2589B1F9455D200418881 /* View */,
+				ADC257BB1F8F60E600418881 /* ThirdLibary */,
 				ADC2578B1F8F3EBE00418881 /* AppDelegate.h */,
 				ADC2578C1F8F3EBE00418881 /* AppDelegate.m */,
 				ADC2578E1F8F3EBE00418881 /* ViewController.h */,
@@ -140,6 +205,53 @@
 			path = PVSDK_DemoUITests;
 			sourceTree = "<group>";
 		};
+		ADC257BB1F8F60E600418881 /* ThirdLibary */ = {
+			isa = PBXGroup;
+			children = (
+				ADC258A31F94669C00418881 /* Category */,
+				ADC257BC1F8F610500418881 /* LMJDropdownMenu */,
+			);
+			path = ThirdLibary;
+			sourceTree = "<group>";
+		};
+		ADC257BC1F8F610500418881 /* LMJDropdownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				ADC257BD1F8F610500418881 /* dropdownMenu_cornerIcon.png */,
+				ADC257BE1F8F610500418881 /* LMJDropdownMenu.h */,
+				ADC257BF1F8F610500418881 /* LMJDropdownMenu.m */,
+			);
+			path = LMJDropdownMenu;
+			sourceTree = "<group>";
+		};
+		ADC2589B1F9455D200418881 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ADC2589C1F9455EC00418881 /* UartSettingView.h */,
+				ADC2589D1F9455EC00418881 /* UartSettingView.m */,
+				ADC2589F1F9455FF00418881 /* UartSettingView.xib */,
+				ADC05BB91F9DB9E100C86981 /* CanSettingView.h */,
+				ADC05BBA1F9DB9E100C86981 /* CanSettingView.m */,
+				ADC05BBC1F9DB9F400C86981 /* CanSettingView.xib */,
+				ADC05BC01F9DC0CF00C86981 /* I2CSettingView.h */,
+				ADC05BC11F9DC0CF00C86981 /* I2CSettingView.m */,
+				ADC05BBE1F9DC0B500C86981 /* I2CSettingView.xib */,
+				ADC05BC31F9DD7A800C86981 /* SpiSettingView.h */,
+				ADC05BC41F9DD7A800C86981 /* SpiSettingView.m */,
+				ADC05BC61F9DD7BC00C86981 /* SpiSettingView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ADC258A31F94669C00418881 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				ADC258A41F94669C00418881 /* UIView+Size.h */,
+				ADC258A51F94669C00418881 /* UIView+Size.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +259,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADC257B21F8F3EBF00418881 /* Build configuration list for PBXNativeTarget "PVSDK_Demo" */;
 			buildPhases = (
+				8B12872DD87ADE2F20763AB2 /* [CP] Check Pods Manifest.lock */,
 				ADC257811F8F3EBE00418881 /* Sources */,
 				ADC257821F8F3EBE00418881 /* Frameworks */,
 				ADC257831F8F3EBE00418881 /* Resources */,
+				4B95FF717C6BE1C989A1AF37 /* [CP] Embed Pods Frameworks */,
+				A3D44E615DE38566692210EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,7 +364,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADC05BBD1F9DB9F400C86981 /* CanSettingView.xib in Resources */,
+				ADC257C31F8F62D000418881 /* Podfile in Resources */,
+				ADC05BBF1F9DC0B500C86981 /* I2CSettingView.xib in Resources */,
+				ADC258A01F9455FF00418881 /* UartSettingView.xib in Resources */,
+				ADC05BC71F9DD7BC00C86981 /* SpiSettingView.xib in Resources */,
 				ADC257981F8F3EBF00418881 /* LaunchScreen.storyboard in Resources */,
+				ADC257C01F8F610500418881 /* dropdownMenu_cornerIcon.png in Resources */,
 				ADC257951F8F3EBF00418881 /* Assets.xcassets in Resources */,
 				ADC257931F8F3EBF00418881 /* Main.storyboard in Resources */,
 			);
@@ -271,13 +392,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4B95FF717C6BE1C989A1AF37 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PVSDK_Demo/Pods-PVSDK_Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B12872DD87ADE2F20763AB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A3D44E615DE38566692210EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PVSDK_Demo/Pods-PVSDK_Demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ADC257811F8F3EBE00418881 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ADC257901F8F3EBE00418881 /* ViewController.m in Sources */,
+				ADC05BBB1F9DB9E100C86981 /* CanSettingView.m in Sources */,
+				ADC05BC21F9DC0CF00C86981 /* I2CSettingView.m in Sources */,
+				ADC257C11F8F610500418881 /* LMJDropdownMenu.m in Sources */,
 				ADC2578D1F8F3EBE00418881 /* AppDelegate.m in Sources */,
+				ADC05BC51F9DD7A800C86981 /* SpiSettingView.m in Sources */,
+				ADC258A61F94669C00418881 /* UIView+Size.m in Sources */,
+				ADC2589E1F9455EC00418881 /* UartSettingView.m in Sources */,
 				ADC2578A1F8F3EBE00418881 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,9 +600,16 @@
 		};
 		ADC257B31F8F3EBF00418881 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62FBD8C81F5949C340CB6738 /* Pods-PVSDK_Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 23CNQ6K9TW;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PVSDK_Demo",
+				);
 				INFOPLIST_FILE = PVSDK_Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.layne.PVSDK-Demo.PVSDK-Demo";
@@ -437,9 +619,16 @@
 		};
 		ADC257B41F8F3EBF00418881 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFC0D37D64375F3BAB129B63 /* Pods-PVSDK_Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 23CNQ6K9TW;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PVSDK_Demo",
+				);
 				INFOPLIST_FILE = PVSDK_Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.layne.PVSDK-Demo.PVSDK-Demo";
@@ -516,6 +705,7 @@
 				ADC257B41F8F3EBF00418881 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADC257B51F8F3EBF00418881 /* Build configuration list for PBXNativeTarget "PVSDK_DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +714,7 @@
 				ADC257B71F8F3EBF00418881 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADC257B81F8F3EBF00418881 /* Build configuration list for PBXNativeTarget "PVSDK_DemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +723,7 @@
 				ADC257BA1F8F3EBF00418881 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
