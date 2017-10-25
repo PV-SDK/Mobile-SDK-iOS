@@ -10,7 +10,7 @@
 
 //挂载端口类型
 typedef NS_ENUM(NSInteger,PVMountPortType){
-    PVMountPortTypeUART = 1,
+    PVMountPortTypeUART,
     PVMountPortTypeCAN,
     PVMountPortTypeI2C,
     PVMountPortTypeSPI,
@@ -274,7 +274,6 @@ NS_ASSUME_NONNULL_END
  @param block 查询结果
  */
 - (void)queryUartParamWithBlock:(PVQueryUartParamBlock)block;
-
 
 /**
  查询Can参数

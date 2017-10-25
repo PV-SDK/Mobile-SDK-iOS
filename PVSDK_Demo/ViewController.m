@@ -160,21 +160,30 @@
 
 //读取数据
 - (IBAction)readButtonTouch:(UIButton *)sender {
+    NSMutableString *dataStr = [NSMutableString string];
     if (_portType == PVMountPortTypeSPI) {
         PVSDK_MOUNTAPI_READSPI_DATA spiConfig;
         spiConfig.dataNumber = 16;
         spiConfig.ramAddr = 2;
         [_mountController readSpiData:spiConfig WithReadDataBlock:^(PVSDK_MOUNTAPI_SPI_RETURN_DATA data) {
-            _reciveDataTextView.text = [NSString stringWithFormat:@"%s",data.data];
+            for (int i = 0; i < data.len; i++) {
+                int x = data.data[i];
+                [dataStr appendString:[NSString stringWithFormat:@" %02X",x]];
+            }
+            _reciveDataTextView.text = [NSString stringWithFormat:@"%@",dataStr];
         }];
     }
     if (_portType == PVMountPortTypeI2C) {
         PVSDK_MOUNTAPI_READI2C_DATA i2cConfig;
-        i2cConfig.addrType = 2;
+        i2cConfig.addrType = 0;
         i2cConfig.dataNumber = 16;
         i2cConfig.ramAddr = 2;
        [_mountController readI2cData:i2cConfig WithReadDataBlock:^(PVSDK_MOUNTAPI_I2C_RETURN_DATA data) {
-           _reciveDataTextView.text = [NSString stringWithFormat:@"%s",data.data];
+           for (int i = 0; i < data.len; i++) {
+               int x = data.data[i];
+               [dataStr appendString:[NSString stringWithFormat:@" %02X",x]];
+           }
+           _reciveDataTextView.text = [NSString stringWithFormat:@"%@",dataStr];
        }];
     }
 }
@@ -183,7 +192,7 @@
 - (IBAction)sendButtonTouch:(UIButton *)sender {
     
     if (self.flightController.flightConnectState!=PVFlightConnectStateConnected) {
-        [self showTipsAlert];
+        [self showTipsAlertWithContent:@"设备未连接"];
         return;
     }
     
@@ -194,7 +203,8 @@
         uartData.encryption = 0;
         uartData.len = (int)dataStr.length;
         [_mountController sendUartData:uartData withSendResultBlock:^(PVSDK_MOUNTAPI_SEND_DATA_RETURN returnInfo) {
-            NSLog(@"Uart数据发送完成");
+//            NSLog(@"Uart数据发送完成");
+            [self showTipsAlertWithContent:@"Uart数据发送完成"];
         }];
     }
     if (_portType == PVMountPortTypeCAN) {
@@ -206,7 +216,8 @@
         canData.len = (int)dataStr.length;
         canData.type = 0;
         [_mountController sendCanData:canData withSendResultBlock:^(PVSDK_MOUNTAPI_SEND_DATA_RETURN returnInfo) {
-            NSLog(@"Can数据发送完成");
+//            NSLog(@"Can数据发送完成");
+            [self showTipsAlertWithContent:@"Can数据发送完成"];
         }];
     }
     if (_portType == PVMountPortTypeI2C) {
@@ -215,25 +226,29 @@
         memcpy(i2cData.data, [dataStr UTF8String], dataStr.length);
         i2cData.encryption = 0;
         i2cData.len = (int)dataStr.length;
-        i2cData.ramAddr = 10;
+        i2cData.ramAddr = 7;
         [_mountController sendI2cData:i2cData withSendResultBlock:^(PVSDK_MOUNTAPI_SEND_DATA_RETURN returnInfo) {
-            NSLog(@"Can数据发送完成");
+//            NSLog(@"I2c数据发送完成");
+            [self showTipsAlertWithContent:@"I2c数据发送完成"];
         }];
     }
     if (_portType == PVMountPortTypeSPI) {
         PVSDK_MOUNTAPI_SPI_DATA spiData;
+        spiData.encryption = 0;
+        spiData.len = (int)dataStr.length;
         memcpy(spiData.data, [dataStr UTF8String], dataStr.length);
         [_mountController sendSpiData:spiData withSendResultBlock:^(PVSDK_MOUNTAPI_SEND_DATA_RETURN returnInfo) {
-            NSLog(@"SPI---------state:%d    error:%d",returnInfo.state,returnInfo.error);
+//            NSLog(@"SPI---------state:%d    error:%d",returnInfo.state,returnInfo.error);
+            [self showTipsAlertWithContent:@"Spi数据发送完成"];
         }];
     }
     
 }
 
-- (void)showTipsAlert
+- (void)showTipsAlertWithContent:(NSString *)content
 {
     [[[UIAlertView alloc] initWithTitle:@"提示"
-                                message:@"请先连接设备"
+                                message:content
                                delegate:self
                             cancelButtonTitle:nil
                             otherButtonTitles:@"OK", nil] show];
@@ -241,24 +256,25 @@
 
 //参数查询按钮点击事件
 - (IBAction)readParamButtonClick:(UIButton *)sender {
+
     if (_portType == PVMountPortTypeUART) {
         [_mountController queryUartParamWithBlock:^(PVSDK_MOUNTAPI_UART_PARAM param) {
-            
+            [self showTipsAlertWithContent:[NSString stringWithFormat:@"波特率:%d 数据位数:%d 停止位数:%d 校验:%d  流控:%d",param.bps,param.dataBits,param.stopBits,param.parity,param.flowCtrl]];
         }];
     }
     if (_portType == PVMountPortTypeCAN) {
         [_mountController queryCanParamWithBlock:^(PVSDK_MOUNTAPI_CAN_PARAM param) {
-            
+            [self showTipsAlertWithContent:[NSString stringWithFormat:@"模式:%d  波特率:%d",param.mode,param.bps]];
         }];
     }
     if (_portType == PVMountPortTypeSPI) {
         [_mountController querySpiParamWithBlock:^(PVSDK_MOUNTAPI_SPI_PARAM param) {
-            
+            [self showTipsAlertWithContent:[NSString stringWithFormat:@"模式:%d  波特率:%d  有效位先发:%d  数据大小:%d  CRC使能:%d",param.mode,param.bps,param.firstBit,param.dataSize,param.crcEnable]];
         }];
     }
     if (_portType == PVMountPortTypeI2C) {
         [_mountController queryI2cParamWithBlock:^(PVSDK_MOUNTAPI_I2C_PARAM param) {
-            
+            [self showTipsAlertWithContent:[NSString stringWithFormat:@"模式:%d  波特率:%d  设备地址:%d",param.mode,param.bps,param.deviceAddr]];
         }];
     }
     if (_portType == PVMountPortTypeGPIO) {
@@ -272,15 +288,34 @@
 - (IBAction)setParamButtonClick:(UIButton *)sender {
     
     if (self.flightController.flightConnectState!=PVFlightConnectStateConnected) {
-        [self showTipsAlert];
+        [self showTipsAlertWithContent:@"设备未连接"];
         return;
     }
+    __weak typeof(self) weakSelf = self;
     if (_portType == PVMountPortTypeUART) {
         [self.mountController setUartParam:_uartParam withSetResultBlock:^(PVSDK_MOUNTAPI_SET_PARAM param) {
             NSLog(@"设置状态：%d",param.state);
+            [weakSelf showTipsAlertWithContent:@"Uart参数设置成功"];
         }];
     }
-    
+    if (_portType == PVMountPortTypeCAN) {
+        [self.mountController setCanParam:_canParam withSetResultBlock:^(PVSDK_MOUNTAPI_SET_PARAM param) {
+            NSLog(@"设置状态：%d",param.state);
+            [weakSelf showTipsAlertWithContent:@"Can参数设置成功"];
+        }];
+    }
+    if (_portType == PVMountPortTypeI2C) {
+        [self.mountController setI2cParam:_i2cParam withSetResultBlock:^(PVSDK_MOUNTAPI_SET_PARAM param) {
+            NSLog(@"设置状态：%d",param.state);
+            [weakSelf showTipsAlertWithContent:@"I2c参数设置成功"];
+        }];
+    }
+    if (_portType == PVMountPortTypeSPI) {
+        [self.mountController setSpiParam:_spiParam withSetResultBlock:^(PVSDK_MOUNTAPI_SET_PARAM param) {
+            NSLog(@"设置状态：%d",param.state);
+            [weakSelf showTipsAlertWithContent:@"Spi参数设置成功"];
+        }];
+    }
     
 }
 
@@ -323,7 +358,7 @@
 #pragma mark - LMJDropdownMenu Delegate
 
 - (void)dropdownMenu:(LMJDropdownMenu *)menu selectedCellNumber:(NSInteger)number{
-    _portType = (PVMountPortType)(number+1);
+    _portType = (PVMountPortType)(number);
     
     if (_portType == PVMountPortTypeUART) {
         [self.settingView bringSubviewToFront:self.uartSettingView];
@@ -340,7 +375,7 @@
     if (_portType == PVMountPortTypeGPIO) {
     }
     if (self.flightController.flightConnectState!=PVFlightConnectStateConnected) {
-        [self showTipsAlert];
+        [self showTipsAlertWithContent:@"设备未连接"];
         return;
     }
     [self.mountController loadDevice:_portType WithComplection:^(PVSDK_MOUNTAPI_MOUNTSTATE_DEVICE result) {
@@ -349,17 +384,17 @@
 }
 
 - (void)dropdownMenuWillShow:(LMJDropdownMenu *)menu{
-    NSLog(@"--将要显示--");
+//    NSLog(@"--将要显示--");
 }
 - (void)dropdownMenuDidShow:(LMJDropdownMenu *)menu{
-    NSLog(@"--已经显示--");
+//    NSLog(@"--已经显示--");
 }
 
 - (void)dropdownMenuWillHidden:(LMJDropdownMenu *)menu{
-    NSLog(@"--将要隐藏--");
+//    NSLog(@"--将要隐藏--");
 }
 - (void)dropdownMenuDidHidden:(LMJDropdownMenu *)menu{
-    NSLog(@"--已经隐藏--");
+//    NSLog(@"--已经隐藏--");
 }
 
 #pragma mark -- UartSettingViewDelegate

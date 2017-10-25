@@ -14,7 +14,7 @@
 		ADC05BC21F9DC0CF00C86981 /* I2CSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05BC11F9DC0CF00C86981 /* I2CSettingView.m */; };
 		ADC05BC51F9DD7A800C86981 /* SpiSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05BC41F9DD7A800C86981 /* SpiSettingView.m */; };
 		ADC05BC71F9DD7BC00C86981 /* SpiSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05BC61F9DD7BC00C86981 /* SpiSettingView.xib */; };
-		ADC05C121F9EEE5700C86981 /* PVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC05C111F9EEE5700C86981 /* PVSDK.framework */; };
+		ADC05C2E1FA05EDB00C86981 /* PVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC05C2D1FA05EDB00C86981 /* PVSDK.framework */; };
 		ADC2578A1F8F3EBE00418881 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC257891F8F3EBE00418881 /* main.m */; };
 		ADC2578D1F8F3EBE00418881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC2578C1F8F3EBE00418881 /* AppDelegate.m */; };
 		ADC257901F8F3EBE00418881 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC2578F1F8F3EBE00418881 /* ViewController.m */; };
@@ -60,7 +60,7 @@
 		ADC05BC31F9DD7A800C86981 /* SpiSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiSettingView.h; sourceTree = "<group>"; };
 		ADC05BC41F9DD7A800C86981 /* SpiSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpiSettingView.m; sourceTree = "<group>"; };
 		ADC05BC61F9DD7BC00C86981 /* SpiSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpiSettingView.xib; sourceTree = "<group>"; };
-		ADC05C111F9EEE5700C86981 /* PVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PVSDK.framework; sourceTree = "<group>"; };
+		ADC05C2D1FA05EDB00C86981 /* PVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PVSDK.framework; sourceTree = "<group>"; };
 		ADC257851F8F3EBE00418881 /* PVSDK_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PVSDK_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC257891F8F3EBE00418881 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ADC2578B1F8F3EBE00418881 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADC257D21F8F82A700418881 /* libc++.tbd in Frameworks */,
-				ADC05C121F9EEE5700C86981 /* PVSDK.framework in Frameworks */,
+				ADC05C2E1FA05EDB00C86981 /* PVSDK.framework in Frameworks */,
 				8DC72A3E39B8110A7B24B250 /* libPods-PVSDK_Demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,7 +131,7 @@
 		75D83CAA1EE3D167C4B0A7E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ADC05C111F9EEE5700C86981 /* PVSDK.framework */,
+				ADC05C2D1FA05EDB00C86981 /* PVSDK.framework */,
 				ADC257D11F8F82A700418881 /* libc++.tbd */,
 				D61FD7D405CF23A5560576BE /* libPods-PVSDK_Demo.a */,
 			);
