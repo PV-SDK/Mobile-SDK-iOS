@@ -383,7 +383,7 @@
     }
     if (_portType == PVMountPortTypeSPI) {
         [_mountController querySpiParamWithBlock:^(PVSDK_MOUNTAPI_SPI_PARAM param) {
-            [self showTipsAlertWithContent:[NSString stringWithFormat:@"模式:%d  波特率:%d  有效位先发:%d  数据大小:%d  CRC使能:%d",param.mode,param.bps,param.firstBit,param.dataSize,param.crcEnable]];
+            [self showTipsAlertWithContent:[NSString stringWithFormat:@"模式:%d  速率:%d  有效位先发:%d  数据大小:%d  CRC使能:%d",param.mode,param.bps,param.firstBit,param.dataSize,param.crcEnable]];
         }];
     }
     if (_portType == PVMountPortTypeI2C) {
@@ -451,7 +451,7 @@
         gpioParam.deviceNumber = [_gpioSettingView.deviceNumText.text intValue];
         gpioParam.periodHigh = [_gpioSettingView.periodHighText.text intValue];
         gpioParam.periodLow = [_gpioSettingView.periodLowText.text intValue];
-        gpioParam.periodRatio = 1;
+        gpioParam.periodRatio = [_gpioSettingView.periodRatioTextField.text intValue];
         [self.mountController setGpioParam:gpioParam withSetResultBlock:^(PVSDK_MOUNTAPI_SET_PARAM param) {
             [weakSelf showTipsAlertWithContent:@"GPIO参数设置成功"];
         }];
@@ -484,7 +484,7 @@
     if (buttonIndex == 1) {
         UITextField *txt = [alertView textFieldAtIndex:0];
         [_mountController queryGpioParamWithGpioNumber:[txt.text intValue] WithBlock:^(PVSDK_MOUNTAPI_GPIO_PARAM param) {
-            [self showTipsAlertWithContent:[NSString stringWithFormat:@"设备编号:%d  低电平持续时间:%d  高电平持续时间:%d",param.deviceNumber,param.periodLow,param.periodHigh]];
+            [self showTipsAlertWithContent:[NSString stringWithFormat:@"设备编号:%d  低电平持续时间:%d  高电平持续时间:%d  周期值分辨率:%d",param.deviceNumber,param.periodLow,param.periodHigh,param.periodRatio]];
         }];
     }
 }

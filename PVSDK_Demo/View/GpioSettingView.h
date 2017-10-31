@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *deviceNumText;
 @property (weak, nonatomic) IBOutlet UITextField *periodLowText;
 @property (weak, nonatomic) IBOutlet UITextField *periodHighText;
+@property (weak, nonatomic) IBOutlet UITextField *periodRatioTextField;
 
 @end
