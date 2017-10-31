@@ -4,17 +4,17 @@
  * Created by Layne on 17/8/22.
  * Copyright © 2017年 Layne. All rights reserved.
  *
- * @brief 飞行接口文件
+ * @brief flight interface  file
  *
  */
 
 /**
- * @defgroup PVSDK_CORE_API_FLIGHTCONTROL 核心SDK飞行相关接口
+ * @defgroup PVSDK_CORE_API_FLIGHTCONTROL Core interfaces related to SDK flight
  * @{
  */
 
 /**
- * @page flight-page 飞行器接口
+ * @page flight-page aircraft interface
  */
 
 #import <Foundation/Foundation.h>
@@ -22,23 +22,23 @@
 #import "PVFlightControllerState.h"
 
 ////////////////////////////////////////
-/// @brief 飞行器状态类型
+/// @brief aircraft state type
 ///
-/// 定义了飞行器状态类型
+/// define aircraft state type
 ////////////////////////////////////////
 typedef enum _PVStateUpdate{
-    PVFlightConnectStateUpdate, ///< 连接状态更新
-    PVAttitudeStateUpdate, ///< 飞行器姿态更新
-    PVAircraftPositionStateUpdate, ///< 飞行器位置更新
-    PVHomePositionStateUpdate, ///< 飞行器Home点更新
-    PVGPSCountStateUpdate, ///< 飞行器卫星颗数更新
-    PVBatteryStateUpdate, ///< 飞行器电池电量更新
-    PVModeStateUpdate, ///< 飞行器模式更新
-    PVFlighParamSetStateUpdate, ///< 飞行器返航点更新
-    PVFlightLandPositionStateUpdate, ///< 飞行器返航点更新
-    PVAlarmMessageUpdate, ///< 报警信息更新
-    PVAutoMissionStateUpdate, ///< 任务状态更新
-    PVFlightLocatingTypeUpdate, ///< 定位方式更新
+    PVFlightConnectStateUpdate, ///< Update the connection state.
+    PVAttitudeStateUpdate, ///< Update the aircraft attitude state.
+    PVAircraftPositionStateUpdate, ///<Update the aircraft position.
+    PVHomePositionStateUpdate, ///<Update the home position of aircraft.
+    PVGPSCountStateUpdate, ///< Update the satellite number of aircraft.
+    PVBatteryStateUpdate, ///<Update the battery power of aircraft.
+    PVModeStateUpdate, ///< Update the mode of aircraft.
+    PVFlighParamSetStateUpdate, ///<Update the return point of aircraft.
+    PVFlightLandPositionStateUpdate, ///<Update the return point of aircraft.
+    PVAlarmMessageUpdate, ///<Update the alarm information of aircraft.
+    PVAutoMissionStateUpdate, ///<Update the task status.
+    PVFlightLocatingTypeUpdate, ///<Update the location mode.
 }PVStateUpdate;
 
 @class PVFlightController;
@@ -47,10 +47,10 @@ typedef enum _PVStateUpdate{
 @optional
 
 /**
- *  飞机信息改变时回调
+ * Callback when the information of aircraft changes
  *
  *  @param fc    flightController
- *  @param state 飞机信息
+ *  @param state       Aircraft information
  */
 - (void)flightController:(PVFlightController *)fc didUpdateFlightState:(PVFlightControllerState *)state stateType:(PVStateUpdate)stateUpdate;
 
@@ -59,33 +59,34 @@ typedef enum _PVStateUpdate{
 @interface PVFlightController : PVBaseComponent
 
 /**
- 设备当前状态
+ Current state of equipment
  */
 @property (nonatomic,strong) PVFlightControllerState *flightControllerState;
 
 /**
- 设备当前连接状态
+ Current connection status of device
  */
 @property (nonatomic,assign)PVFlightConnectState flightConnectState;
 
 @property (nonatomic,weak)id <PVFlightControllerDelegate>delegate;
 
 /**
- *  开始连接飞机
+ * Now start to connect the aircraft.
  *
- *  @return 成功与失败是指连接方法的调用，不是飞行器连接成功与否，飞行器连接状态需要从代理方法中获取（didUpdateFlightState）
+ *  @return  Success and failure are related to calls about connection method,not the connection of the aircraft.The connection state of aircraft needs to be obtained from the agent method.
+            (didUpdateFlightState）
  */
 - (void)startConnectFlightBlockWithSuccess:(void (^)(PVFlightController *fc))success failure:(void (^)(PVFlightController *fc))failure;
 
 /**
- *  断开飞机连接
+ * Disconnect the aircraft
  *
- *  @return 成功返回YES，否则返回NO
+ *  @return   The screen will show "YES"when aircraft return successfully.otherwise the screen will show "NO"
  */
 - (BOOL)stopConnectFlight;
 
 /**
- *  重连飞机
+ *  Reconnect the aircraft
  *
 */
 - (void)reConnectTCPAndAircraft;

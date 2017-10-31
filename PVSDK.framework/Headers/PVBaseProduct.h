@@ -3,7 +3,7 @@
  * @author Layne
  * Created by Layne on 17/8/22.
  * Copyright © 2017年 Layne. All rights reserved.
- * @brief 基类文件
+ * @brief base class file
  *
  */
 
@@ -12,4 +12,3 @@
 @interface PVBaseProduct : NSObject
 
 @end
- 

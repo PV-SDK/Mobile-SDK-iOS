@@ -2,26 +2,26 @@
  * @file PVMountController.h
  * @author Layne
  *
- * @brief 挂载接口文件
+ * @brief Mount interface file
  *
  */
 
 /**
- * @defgroup PVSDK_CORE_API_MOUNTCONTROL 核心SDK挂载接口
+ * @defgroup PVSDK_CORE_API_MOUNTCONTROL Core interface of SDK mount.
  * @{
  */
 
 /**
- * @page mount-page 挂载接口
+ * @page mount-page  Mount interface
  */
 
 
 #import <Foundation/Foundation.h>
 
 ////////////////////////////////////////
-/// @brief 挂载设备类型
+/// @brief   The type of mount interface.
 ///
-/// 定义了挂载设备的类型
+/// Define the type of mount interface.
 ////////////////////////////////////////
 typedef enum _PVMountPortType{
     PVMountPortTypeUART, //!< Uart
@@ -32,13 +32,13 @@ typedef enum _PVMountPortType{
 }PVMountPortType;
 
 //////////////////////////////////////////////////
-/// @brief 挂载设备状态接口参数
+/// @brief Parameters about the status of mount device.
 ///
-/// 定义关于挂载设备状态接口参数
+/// Define interface parameters about the status of mount device.
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_MOUNTSTATE_DEVICE {
-    int uart; ///< 串口
-    int can; ///< 网口
+    int uart; ///< gorge
+    int can; ///< internet access
     int i2c; ///< I2C
     int spi; ///< SPI
     int gpio1; ///< GPIO1
@@ -47,218 +47,220 @@ typedef struct PVSDK_MOUNTAPI_MOUNTSTATE_DEVICE {
 } PVSDK_MOUNTAPI_MOUNTSTATE_DEVICE;
 
 //////////////////////////////////////////////////
-/// @brief 串口设置接口参数
+/// @brief Parameters about gorge settings.
 ///
-/// 定义关于串口设置接口参数
+/// Define interface parameters about gorge settings.
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_UART_PARAM {
-    int bps; ///< 串口波特率 0:9600 1:14400 2:19200 3:38400 4:57600 5:115200
-    int dataBits; ///< 数据位数 0:8位 1:9位
-    int stopBits; ///< 停止位数 0:1位 1:2位
-    int parity; ///< 校验 0:无校验 1:奇校验 2:偶校验
-    int flowCtrl; ///< 流控 0:无流控 1:RTS有效 2:CTS有效 3:RTS和CTS同时有效
+    int bps; ///< Gorge baudrate 0:9600 1:14400 2:19200 3:38400 4:57600 5:115200
+    int dataBits; ///<   Data bits 0:8bits 1:9bits
+    int stopBits; ///<  Stop bits0:1bits 1:2bits
+    int parity; ///<  verify 0:no verification1:odd parity check 2:even parity check
+    int flowCtrl; ///< fluid control  0:no fluid control 1:RTS is effective2:CTS is effective3:RTS and CTS are effective at the same time.
 } PVSDK_MOUNTAPI_UART_PARAM;
 
 //////////////////////////////////////////////////
-/// @brief Can设置接口参数
+/// @brief Parameters about Can settings.
 ///
-/// 定义关于Can设置接口参数
+/// Define interface parameters about Can settings.
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_CAN_PARAM {
-    int mode; ///< 模式 0:正常模式 1:静默模式 2:回环模式 3:静默回环模式
-    int bps; ///< 波特率设置 0:5k 1:10k 2:20k 3:50k 4:100k 5:125k 6:250k 7:500k 8:800k 9:1000k
+    int mode; ///<Mode 0:Normal mode1:Silent mode2:Loopback mode 3:Silent loopback mode
+    int bps; ///<  Baud rate0:5k 1:10k 2:20k 3:50k 4:100k 5:125k 6:250k 7:500k 8:800k 9:1000k
 } PVSDK_MOUNTAPI_CAN_PARAM;
 
 //////////////////////////////////////////////////
-/// @brief I2c设置接口参数
+/// @brief Parameters about I2c settings.
 ///
-/// 定义关于I2c设置接口参数
+/// Define interface parameters about I2c settings.
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_I2C_PARAM {
-    int mode; ///< 模式 0:主模式 1:从模式
-    int bps; ///< 速率设置 0:100kbps 1:400kbps
-    int deviceAddr; ///< 设备地址 (0~127)
+    int mode; ///< Mode  0:Master mode  1:Slave mode
+    int bps; ///< Rate setting  0:100kbps 1:400kbps
+    int deviceAddr; ///< Device address(0~127)Device address
 } PVSDK_MOUNTAPI_I2C_PARAM;
 
 //////////////////////////////////////////////////
-/// @brief Spi设置接口参数
+/// @brief Interface parameters about Spi settings.
 ///
-/// 定义关于Spi设置接口参数
+/// Define interface parameters about Spi settings.
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_SPI_PARAM {
-    int mode; ///< 模式 0:主模式 1:从模式
-    int bps; ///< 速率设置 0:1Mbps 1:2Mbps 2:4Mbps 3:8Mbps 4:16Mbps
-    int firstBit; ///< 有效位先发 0:MSB first 1:LSB first
-    int dataSize; ///< 数据大小 0:8位 1:16位
-    int crcEnable; ///< Crc使能 0:不使能crc 1:使能crc
+    int mode; ///< Mode 0:Master mode 1:Slave mode
+    int bps; ///< Rate setting 0:1Mbps 1:2Mbps 2:4Mbps 3:8Mbps 4:16Mbps
+    int firstBit; ///< Significance first  0:MSB first 1:LSB first
+    int dataSize; ///< Data size 0:8bit 1:16bit
+    int crcEnable; ///< Crc enable0:not enablecrc 1:enablecrc
 } PVSDK_MOUNTAPI_SPI_PARAM;
 
 //////////////////////////////////////////////////
-/// @brief Can滤波设置接口参数
+/// @brief Interface parameters about Can filtering settings.
 ///
-/// 定义关于Can滤波设置接口参数
+/// Define interface parameters about Can filtering settings.
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_CAN_FILTER_PARAM {
-    int number; ///< 滤波器编号 取值范围0~13
-    int mode; ///< 滤波器模式 0:mask模式 1:id list模式
-    int matchId; ///< ID匹配值
-    int maskId; ///< ID掩码值
-    int type; ///< ID类型 0:标准ID 1:扩展ID
-    int format; ///< 帧格式 0:数据帧 1:远程帧
-    int Enable; ///< 滤波器使能 0:不使能 1:使能
+    int number; ///< The span of filter number is 0~13.
+    int mode; ///< Filter mode 0:mask Mode 1:id list Mode
+    int matchId; ///< ID matching value
+    int maskId; ///< ID mask value
+    int type; ///< ID type0:StandardID 1:ExtendID
+    int format; ///< Frame format 0:data frame 1:remote frame
+    int Enable; ///< Filter enable 0:Not enable 1:Enable
 } PVSDK_MOUNTAPI_CAN_FILTER_PARAM;
 
 //////////////////////////////////////////////////
-/// @brief Can滤波设置接口参数
+/// @brief Interface parameters about Can filtering settings.
 ///
-/// 定义关于Can滤波设置接口参数
+/// Define interface parameters about Can filtering settings.
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_GPIO_PARAM {
-    int deviceNumber; ///< gpio设备编号 0:gpio1 1:gpio2 2:gpio3
-    int periodRatio; ///< 周期值分辨率,取值范围(0~0xffff),单位 1/64us
-    int periodLow; ///< 一个周期内低电平持续时间, 取值范围(0~0xffff)
-    int periodHigh; ///< 一个周期内高电平持续时间,取值范围(0~0xffff)
+    int deviceNumber; ///< gpio device number 0:gpio1 1:gpio2 2:gpio3
+    int periodRatio; ///< The span of cycle value resolution is (0~0xffff).The unit is 1/64us.
+    int periodLow; ///< The span of low level duration in a circle is (0~0xffff).
+    int periodHigh; ///< (0~0xffff)The span of high level duration in a circle is (0~0xffff).
 } PVSDK_MOUNTAPI_GPIO_PARAM;
 
 //////////////////////////////////////////////////
-/// @brief Uart数据接口参数
+/// @brief Interface parameters of Uart data
 ///
-/// 定义关于Uart数据接口参数
+/// Define interface parameters about Uart data
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_UART_DATA {
-    char data[245]; ///< 数据内容
-    int len; ///< 数据长度
-    int encryption; ///<加密方式 0:不加密 1:xxTea加密 2:RSA加密
+    char data[245]; ///< Data content
+    int len; ///< Data length
+    int encryption; ///Encryption 0:no encryption    1:xxTea encrypt 2:RSA encrypt
 } PVSDK_MOUNTAPI_UART_DATA;
 
 //////////////////////////////////////////////////
-/// @brief Can数据接口参数
+/// @brief Interface parameters of Can data.
 ///
-/// 定义关于Can数据接口参数
+/// Define interface parameters about Can data
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_CAN_DATA {
-    int type; ///< id:类型 0:标准 1:扩展id
-    int format; ///< 帧格式 0:数据帧 1:远程帧
-    int id; ///< 帧id bit0~bit28位有效 bit0~bit10是标准帧 bit11~bit28是扩展帧
-    char data[239]; ///< 数据内容
-    int len; ///< 数据长度
-    int encryption; ///< 加密方式 0:不加密 1:xxTea加密 2:RSA加密
+    int type; ///< id:type0:standard 1:expanded id
+    int format; ///< Frame format  0: data frame  1:remote frame
+    int id; ///< Frame id bit0~bit28bit is effective。 bit0~bit10 is  standard frame.bit11~bit28 is expanded format.
+    char data[239]; ///< Data content
+    int len; ///< Data length
+    int encryption; ///< Encryption 0:no encryption    1:xxTea encrypt 2:RSA encrypt
 } PVSDK_MOUNTAPI_CAN_DATA;
 
 //////////////////////////////////////////////////
-/// @brief I2c数据接口参数
+/// @brief Interface parameters of I2c data
 ///
-/// 定义关于I2c数据接口参数
+/// Define interface parameters about I2c data
+//////////////////////////////////////////////////
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_I2C_DATA {
-    int ramAddr; ///< 内存地址
-    int addrType; ///< 地址类型 0:单字节地址 1:双字节地址
-    char data[242]; ///< 发送的数据
-    int len; ///< 发送数据的长度
-    int encryption; ///< 0:不加密 1:xxTea加密 2:RSA加密
+    int ramAddr; ///< Memory address
+    int addrType; ///< Address type   0:Single-byte address 1: double byte address
+    char data[242]; ///< Sending data
+    int len; ///< The length of sending data
+    int encryption; ///< 0:no encryption    1:xxTea encrypt 2:RSA encrypt
 } PVSDK_MOUNTAPI_I2C_DATA;
 
 //////////////////////////////////////////////////
-/// @brief Spi数据接口参数
+/// @brief The parameters about Spi data interface
 ///
-/// 定义关于Spi数据接口参数
+/// Define interface parameters about Spi data
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_SPI_DATA {
-    char data[245]; ///< 数据内容
-    int len; ///< 数据长度
-    int encryption; ///< 加密方式 0:不加密 1:xxTea加密 2:RSA加密
+    char data[245]; ///< Data content
+    int len; ///< Data length
+    int encryption; ///< Encryption 0:no encryption    1:xxTea encrypt 2:RSA encrypt
 } PVSDK_MOUNTAPI_SPI_DATA;
 
 //////////////////////////////////////////////////
-/// @brief Can滤波编号参数
+/// @brief Interface parameters about Can filter number
 ///
-/// 定义关于Can滤波编号接口参数
+/// Define interface parameters about Can filter number
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_DEL_CAN_FILTER {
-    int number; ///< 滤波器编号 0~13
+    int number; ///<Filter number0~13
 } PVSDK_MOUNTAPI_DEL_CAN_FILTER;
 
 //////////////////////////////////////////////////
-/// @brief Can滤波设置、删除、查询参数
+/// @brief The filter setting,remove,query interface parameters of Can
 ///
-/// 定义关于Can滤波设置、删除、查询接口参数
+/// Define parameters of Can about its filter setting,remove,query interface
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_RETURN_CAN_FILTER_PARAM {
-    int totalNumber; ///< 使能的滤波器个数
-    PVSDK_MOUNTAPI_CAN_FILTER_PARAM filter[14]; ///< 使能的滤波器参数
+    int totalNumber; ///< The number of enabling filter
+    PVSDK_MOUNTAPI_CAN_FILTER_PARAM filter[14]; ///<The parameters of enabling filter
 } PVSDK_MOUNTAPI_RETURN_CAN_FILTER_PARAM;
 
 //////////////////////////////////////////////////
-/// @brief 数据发送状态参数
+/// @brief Parameters about data delivery status
 ///
-/// 定义关于数据发送状态接口参数
+/// Define interface parameters about data delivery status
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_SEND_DATA_RETURN {
-    int state; ///< 发送状态 0:成功 -1:失败
-    int error; ///< 错误码
+    int state; ///< Send state  0:success -1:failure
+    int error; ///< error code
 } PVSDK_MOUNTAPI_SEND_DATA_RETURN;
 
 //////////////////////////////////////////////////
-/// @brief 参数设置状态参数
+/// @briefParameters about the parameters Settings
 ///
-/// 定义关于参数设置状态接口参数
+/// Define interface parameters about the parameters Settings
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_SET_PARAM {
-    int state; ///< 发送状态 0:成功 -1:失败
-    int error; ///< 错误码
+    int state; ///< Send state  0:success -1:failure
+    int error; ///< error code
 } PVSDK_MOUNTAPI_SET_PARAM;
 
 //////////////////////////////////////////////////
-/// @brief I2c读取数据参数
+/// @brief I2c read the data of request parameters
 ///
-/// 定义I2c读取数据接口参数
+/// Define I2c read the data of request interface parameters
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_I2C_RETURN_DATA {
-    char data[245]; ///< 数据内容
-    int len; ///< 数据长度
-    int encryption; ///< 加密方式 0:不加密 1:xxTea加密 2:RSA加密
+    char data[245]; ///< Data content
+    int len; ///< Data length
+    int encryption; ///<  Encryption 0:no encryption    1:xxTea encrypt 2:RSA encrypt
 } PVSDK_MOUNTAPI_I2C_RETURN_DATA;
 
 //////////////////////////////////////////////////
-/// @brief Spi读取数据参数
+/// @brief Spi read the data of request parameters
 ///
-/// 定义Spi读取数据接口参数
+/// Define Spi read the data of request interface parameters
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_SPI_RETURN_DATA {
-    char data[245]; ///< 数据内容
-    int len; ///< 数据长度
-    int encryption; ///< 0:不加密 1:xxTea加密 2:RSA加密
+    char data[245]; ///< Data content
+    int len; ///<  Data length
+    int encryption; ///< 0:no encryption    1:xxTea encrypt 2:RSA encrypt
 } PVSDK_MOUNTAPI_SPI_RETURN_DATA;
 
 //////////////////////////////////////////////////
-/// @brief I2c读取数据请求参数
+/// @brief I2c read the data of request parameters
 ///
-/// 定义I2c读取数据请求接口参数
+/// Define I2c read the data of request interface parameters
+//////////////////////////////////////////////////
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_READI2C_DATA {
-    int ramAddr; ///< 内存地址
-    int addrType; ///< 地址类型 0:单字节地址 1:双字节地址
-    int dataNumber; ///< 读取数据的字节个数 1~245
+    int ramAddr; ///<Memory address
+    int addrType; ///<  Address type   0:Single-byte address 1: double byte address
+    int dataNumber; ///< Read the number of bytes in the data.1~245
 } PVSDK_MOUNTAPI_READI2C_DATA;
 
 //////////////////////////////////////////////////
-/// @brief Spi读取数据请求参数
+/// @brief Spi read the data of request parameters
 ///
-/// 定义Spi读取数据请求接口参数
+/// Define Spi read the data of request interface parameters
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_READSPI_DATA {
-    int ramAddr; ///< 读取地址
-    int dataNumber; ///< 读取数据的字节个数 1~245
+    int ramAddr; ///< Read the address
+    int dataNumber; ///< Read the number of bytes in the data 1~245Read
 } PVSDK_MOUNTAPI_READSPI_DATA;
 
 //////////////////////////////////////////////////
-/// @brief 设备版本获取参数
+/// @brief Take the parameter of equipment version
 ///
-/// 定义设备版本获取接口参数
+/// Define equipment version access interface parameters
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_DEVICE_VERSION {
-    int ver; ///< 版本号
-    int date; 
+    int ver; ///< version number
+    int date;
 } PVSDK_MOUNTAPI_DEVICE_VERSION;
 
 
@@ -293,19 +295,19 @@ typedef void (^_Nullable PVSDKQueryDeviceVersionBlock)(PVSDK_MOUNTAPI_DEVICE_VER
 @protocol PVMountControllerDelegate <NSObject>
 
 /**
- 接收Uart数据代理
+ Receive Uart data agent
 
  @param mc mc
- @param mData 数据内容
+ @param  Data content
  */
 
 - (void)mounthController:(PVMountController * _Nonnull)mc reciveUartData:(PVSDK_MOUNTAPI_UART_DATA)mData;
 
 /**
- * 接收Can数据代理
+ * Receive can data agent
  *
  * @param mc mc
- * @param mData 数据内容
+ * @param mData Data content
  */
 - (void)mounthController:(PVMountController * _Nonnull)mc reciveCanData:(PVSDK_MOUNTAPI_CAN_DATA)mData;
 
@@ -314,185 +316,181 @@ typedef void (^_Nullable PVSDKQueryDeviceVersionBlock)(PVSDK_MOUNTAPI_DEVICE_VER
 
 @interface PVMountController : NSObject
 
-NS_ASSUME_NONNULL_BEGIN //在其区间的属性都会获得nonnull属性
+NS_ASSUME_NONNULL_BEGIN //Attribute in its rang will getattr nonnull
 
 @property (nonatomic,weak)id <PVMountControllerDelegate> delegate;
 
 NS_ASSUME_NONNULL_END
 
 /**
- * 装载挂载设备
+ * Loading mounted equipment
  *
- * @param deviceType 设备类型
+ * @param deviceType Device type
  */
 - (void)loadDevice:(PVMountPortType)deviceType WithComplection:(PVLoadDeviceResultBlock)block;
 
 /**
- 发送Uart数据
+ Send Uart data
 
- @param data 数据内容
- @param block 发送状态
+ @param data data content
+ @param block send state
  */
 - (void)sendUartData:(PVSDK_MOUNTAPI_UART_DATA)data withSendResultBlock:(PVSendDataResultBlock)block;
 
 /**
- 发送Can数据
- 
- @param data 数据内容
- @param block 发送状态
+ Send Can data
+
+ @param data Data content
+ @param block Send state
  */
 - (void)sendCanData:(PVSDK_MOUNTAPI_CAN_DATA)data withSendResultBlock:(PVSendDataResultBlock)block;
 
 /**
- 发送I2c数据
- 
- @param data 数据内容
- @param block 发送状态
+Send I2c data
+
+ @param data Data content
+ @param block Send state
  */
 - (void)sendI2cData:(PVSDK_MOUNTAPI_I2C_DATA)data withSendResultBlock:(PVSendDataResultBlock)block;
 
 /**
- 发送Spi数据
- 
- @param data 数据内容
- @param block 发送状态
+ Send Spi data
+
+ @param data  Data content
+ @param block Send state
  */
 - (void)sendSpiData:(PVSDK_MOUNTAPI_SPI_DATA)data withSendResultBlock:(PVSendDataResultBlock)block;
 
 /**
- 设置Uart参数
+ Set Uart parameter
 
- @param param 参数内容
- @param block 设置结果
+ @param param Parameter content
+ @param block Block results
  */
 - (void)setUartParam:(PVSDK_MOUNTAPI_UART_PARAM)param withSetResultBlock:(PVSetParamResultBlock)block;
 
 
 /**
- 设置Can参数
- 
- @param param 参数内容
- @param block 设置结果
+ 设置Can参数 set Can parameter
+
+ @param param  Parameter content
+ @param block block results
  */
 - (void)setCanParam:(PVSDK_MOUNTAPI_CAN_PARAM)param withSetResultBlock:(PVSetParamResultBlock)block;
 
 
 /**
- 设置Can滤波器
+ Set Can filter
 
- @param param 滤波器参数
- @param block 设置结果
+ @param param    filter parameter
+ @param block    block results
  */
 - (void)setCanFilterParam:(PVSDK_MOUNTAPI_CAN_FILTER_PARAM)param withSetResultBlock:(PVSetCanFilterParamResultBlock)block;
 
 /**
- 删除Can滤波器
+ Remove Can filter
 
- @param param 滤波器参数
- @param block 设置结果
+ @param param     filter parameter
+ @param block     block results
  */
 - (void)deleteCanFilterParam:(PVSDK_MOUNTAPI_DEL_CAN_FILTER)param withSetResultBlock:(PVSetCanFilterParamResultBlock)block;
 
 
 /**
- 设置I2c参数
- 
- @param param 参数内容
- @param block 设置结果
+ Set the parameters of I2c
+
+ @param param     parameter content
+ @param block     block results
  */
 - (void)setI2cParam:(PVSDK_MOUNTAPI_I2C_PARAM)param withSetResultBlock:(PVSetParamResultBlock)block;
 
 /**
- 设置Spi参数
- 
- @param param 参数内容
- @param block 设置结果
+Set the parameters of Spi
+
+ @param param     parameter content
+ @param block     block results
  */
 - (void)setSpiParam:(PVSDK_MOUNTAPI_SPI_PARAM)param withSetResultBlock:(PVSetParamResultBlock)block;
 
 /**
- 设置Gpio参数
+ Set the parameters of Gpio
 
- @param param 参数内容
- @param block 设置结果
+ @param param     parameter content
+ @param block     block results
  */
 - (void)setGpioParam:(PVSDK_MOUNTAPI_GPIO_PARAM)param withSetResultBlock:(PVSetParamResultBlock)block;
 
 /**
- 查询Uart参数
- 
- @param block 查询结果
+ Query the parameters of Jart
+
+ @param block query results
  */
 - (void)queryUartParamWithBlock:(PVQueryUartParamBlock)block;
 
 /**
- 查询Can参数
+ Query the parameters of Can
 
- @param block 查询结果
+ @param block query results
  */
 - (void)queryCanParamWithBlock:(PVQueryCanParamBlock)block;
 
 /**
- 查询Can滤波器参数
- 
- @param block 查询结果
+Query the filter parameters of Can
+
+ @param block query results
  */
 - (void)queryCanFilterParamWithBlock:(PVQueryCanFilterParamBlock)block;
 
 
 /**
- 查询Spi参数
+ Query the parameters of Spi
 
- @param block 查询结果
+ @param block query results
  */
 - (void)querySpiParamWithBlock:(PVQuerySpiParamBlock)block;
 
 
 /**
- 查询I2c参数
+ Query the parameters of I2c
 
- @param block 查询结果
+ @param block query results
  */
 - (void)queryI2cParamWithBlock:(PVQueryI2cParamBlock)block;
 
-//typedef int (*MountApi_inquireGpioParamNotify)(const MOUNTAPI_GPIO_PARAM info); //请求Gpio参数通知
-//PVSDK_API int MountApi_inquireGpioParam(int device);
-
-
 /**
- 查询Gpio设备参数
+ Query the equipment parameters of Gpio
 
- @param block 查询结果
+ @param block query results
  */
 - (void)queryGpioParamWithGpioNumber:(NSInteger)num WithBlock:(PVQueryGpioParamBlock)block;
 
 /**
- 读取I2c数据
+ Read the data of I2c
 
- @param readInfo 读取参数设置
- @param block 读取内容
+ @param readInfo read parameter settings
+ @param block read content
  */
 - (void)readI2cData:(PVSDK_MOUNTAPI_READI2C_DATA)readInfo WithReadDataBlock:(PVSDKReadI2cDataBlock)block;
 
 /**
- 读取Spi数据
+ Read the data of spi
 
- @param readInfo 读取参数设置
- @param block 读取内容
+ @param readInfo read parameter settings
+ @param block read content
  */
 - (void)readSpiData:(PVSDK_MOUNTAPI_READSPI_DATA)readInfo WithReadDataBlock:(PVSDKReadSpiDataBlock)block;
 
 /**
- 查询设备软件版本
+ The software version of query device
 
- @param block 查询结果
+ @param block query results
  */
 - (void)queryDeviceSoftVersionWithBlock:(PVSDKQueryDeviceVersionBlock)block;
 
 /**
- 查询设备硬件版本
+ The hardware version of query device
 
- @param block 查询结果
+ @param block query results
  */
 - (void)queryDeviceHardVersionWithBlock:(PVSDKQueryDeviceVersionBlock)block;
 

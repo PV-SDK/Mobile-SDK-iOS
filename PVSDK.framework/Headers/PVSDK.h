@@ -1,10 +1,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
-///  Copyright © 2017年
+///  Copyright © 2017year
 ///  All rights reserved.
 ///
 ///  @file      PVSDK.h
-///  @brief     SDK统一引用头文件
+///  @brief     SDK unified reference header file
 ///
 ///  @version   1.0.0
 ///  @author    Layne
@@ -17,21 +17,21 @@
  * @subpage mount-page
  * @subpage flight-page
  *
- * @section 简介
+ * @section Brief introduction
  *
- * 本文档为PowerVision公司产品iOS配套SDK开发手册。SDK功能主要包括以下两部分:
+ * This document is the SDK development manual for products made by PowerVision.SDK function mainly includes the following two parts：
  *
- * @li Flight       飞行控制库
- * @li Mount        模块配置库
+ * @li Flight       Flight control library
+ * @li Mount        Module configuration library
  *
- * @section 关于库引用
- * 使用iOS版SDK需要在工程的链接选项中添加“libc++.tbd”库的引用，具体操作请参照“iOS应用快速开发指南”。
- *
+ * @section About the reference of warehouse
+ * you need to add the reference of “libc++.tbd” warehouse to link options in the project when using the iOS version of SDK .
+ *Please refer to the "Guidelines for rapid development of iOS applications ".
  */
 
 
 /**
- * @mainpage 导出接口
+ * @mainpage Export interface
  * @subpage mount-page
  */
 
@@ -62,4 +62,3 @@ FOUNDATION_EXPORT const unsigned char PVSDKVersionString[];
 //#import "PVBaseStationManager.h"
 //#import "PVBaseStationConfig.h"
 //#import "PVBaseStationConfigDelegate.h"
-

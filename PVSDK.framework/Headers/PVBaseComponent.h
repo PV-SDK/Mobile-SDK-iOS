@@ -2,21 +2,21 @@
  * @file PVBaseComponent.h
  * @author Layne
  *
- * @brief 基类文件
+ * @brief   base class file
  * Created by Layne on 17/8/22.
- * Copyright © 2017年 Layne. All rights reserved.
+ * Copyright © 2017year Layne. All rights reserved.
  */
 
 #import <Foundation/Foundation.h>
 
 ////////////////////////////////////////
-/// @brief 激活状态类型
+/// @brief state of activation
 ///
-/// 定义了激活状态类型
+///define the state of activation
 ////////////////////////////////////////
 typedef enum _PVProductValidateState{
-    PVProductValidateStateInactive, ///< 未激活
-    PVProductValidateStateActivated, ///< 已激活
+    PVProductValidateStateInactive, ///<unactivated
+    PVProductValidateStateActivated, ///<activated
 }PVProductValidateState;
 
 
@@ -25,7 +25,7 @@ typedef void (^_Nullable PVCompletionBlock)(NSError *_Nullable error);
 @interface PVBaseComponent : NSObject
 
 /**
- 设置int型参数
+ set int parameters
 
  @param key key
  @param value value
@@ -34,7 +34,7 @@ typedef void (^_Nullable PVCompletionBlock)(NSError *_Nullable error);
 
 
 /**
- 设置float型参数
+ set float parameters
 
  @param key key
  @param value value

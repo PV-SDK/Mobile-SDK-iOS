@@ -2,7 +2,7 @@
  * @file PVFlightControllerState.h
  * @author Layne
  *
- * @brief 飞行状态文件
+ * @brief Flight state files
  *
  */
 
@@ -10,27 +10,27 @@
 #import <CoreLocation/CoreLocation.h>
 
 typedef enum _PVFlightConnectState{
-    PVFlightConnectStateTCPConnecting=0, ///< 链路连接中
-    PVFlightConnectStateTCPSuccess=1, ///< 链路连接成功
-    PVFlightConnectStateTCPDisConnect=2, ///< 链路连接断开
-    PVFlightConnectStateTCPTimeOut=3, ///< 链路连接超时
-    PVFlightConnectStateTCPFailed=4, ///< 链路连接失败
-    PVFlightConnectStateHeartTimeout=5, ///< 心跳超时
-    PVFlightConnectRemoteConnected =6, ///< 标准遥控器已连接
-    PVFlightConnectStateTGConnected=7, ///< 体感遥控器已连接
-    PVFlightConnectStateConnecting=8, ///< 飞行器连接中
-    PVFlightConnectStateConnected=9, ///< 飞行器已连接
-    PVFlightConnectStateDisConnected=10, ///< 飞行器连接断开
-    PVFlightConnectStateTimeout = 11, ///< 飞行器连接超时
-    PVFlightConnectStateFailed=12, ///< 飞行器连接失败
-    PVFlightConnectStateHeartTimeoutReply=14, ///< 心跳恢复
+    PVFlightConnectStateTCPConnecting=0, ///<  Link connecting
+    PVFlightConnectStateTCPSuccess=1, ///< Link connected successfully.
+    PVFlightConnectStateTCPDisConnect=2, ///< The connection of link  was interrupted.
+    PVFlightConnectStateTCPTimeOut=3, ///< The connection of link was timed out.
+    PVFlightConnectStateTCPFailed=4, ///< Failed to connect the link .
+    PVFlightConnectStateHeartTimeout=5, ///< Heartbeat timeout.
+    PVFlightConnectRemoteConnected =6, ///< Standard remote controller has been connected.
+    PVFlightConnectStateTGConnected=7, ///< Gesture-based remote controller has been connected.
+    PVFlightConnectStateConnecting=8, ///< Aircraft connecting
+    PVFlightConnectStateConnected=9, ///< The aircraft has been connected.
+    PVFlightConnectStateDisConnected=10, ///< The connection of aircraft was interrupted.
+    PVFlightConnectStateTimeout = 11, ///< The connection of aircraft was timed out.
+    PVFlightConnectStateFailed=12, ///< Failed to connect the aircraft.
+    PVFlightConnectStateHeartTimeoutReply=14, ///< Heartbeat has recovered.
 }PVFlightConnectState;
 
 
 @interface PVFlightControllerState : NSObject
 
 /**
- *  飞行器连接状态
+ *  Connection status of aircraft
  */
 @property (nonatomic,assign) PVFlightConnectState flightConnectState;
 

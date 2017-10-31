@@ -268,8 +268,8 @@
     NSMutableString *dataStr = [NSMutableString string];
     if (_portType == PVMountPortTypeSPI) {
         PVSDK_MOUNTAPI_READSPI_DATA spiConfig;
-        spiConfig.dataNumber = 16;
-        spiConfig.ramAddr = 2;
+        spiConfig.dataNumber = [_readSpiDataParamView.dataNumberTextField.text intValue];
+        spiConfig.ramAddr = [_readSpiDataParamView.ramAddrTextField.text intValue];
         [_mountController readSpiData:spiConfig WithReadDataBlock:^(PVSDK_MOUNTAPI_SPI_RETURN_DATA data) {
             for (int i = 0; i < data.len; i++) {
                 int x = data.data[i];
@@ -280,9 +280,9 @@
     }
     if (_portType == PVMountPortTypeI2C) {
         PVSDK_MOUNTAPI_READI2C_DATA i2cConfig;
-        i2cConfig.addrType = 0;
-        i2cConfig.dataNumber = 16;
-        i2cConfig.ramAddr = 2;
+        i2cConfig.addrType = [_readI2cDataParamView.addrTypeTextField.text intValue];
+        i2cConfig.dataNumber = [_readI2cDataParamView.dataNumberTextField.text intValue];
+        i2cConfig.ramAddr = [_readI2cDataParamView.ramAddrTextField.text intValue];
         [_mountController readI2cData:i2cConfig WithReadDataBlock:^(PVSDK_MOUNTAPI_I2C_RETURN_DATA data) {
             for (int i = 0; i < data.len; i++) {
                 int x = data.data[i];
