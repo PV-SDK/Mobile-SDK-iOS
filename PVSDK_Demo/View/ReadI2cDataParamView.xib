@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ReadI2cDataParamView">
+            <rect key="frame" x="0.0" y="0.0" width="208" height="136"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内存地址:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Wf-ut-bGu">
+                    <rect key="frame" x="0.0" y="10" width="60" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="2hy-f1-92O"/>
+                        <constraint firstAttribute="width" constant="60" id="Vkv-PF-N4U"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址类型:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7VX-cb-wPa">
+                    <rect key="frame" x="0.0" y="51" width="60" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="dXg-x1-CLX"/>
+                        <constraint firstAttribute="width" constant="60" id="h9V-QB-9ht"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="读取字节数:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaE-dV-Kb1">
+                    <rect key="frame" x="0.0" y="103" width="70" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="T9J-wt-kiJ"/>
+                        <constraint firstAttribute="height" constant="21" id="VeF-JV-S0S"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JRO-hN-Iey">
+                    <rect key="frame" x="56" y="5" width="146" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0:单字节 1:双字节" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="8jM-1I-VlC">
+                    <rect key="frame" x="55" y="46" width="147" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1~245" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EVI-4a-M1l">
+                    <rect key="frame" x="70" y="99" width="132" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="JRO-hN-Iey" secondAttribute="trailing" constant="6" id="5fK-6x-G5h"/>
+                <constraint firstItem="7VX-cb-wPa" firstAttribute="top" secondItem="1Wf-ut-bGu" secondAttribute="bottom" constant="20" id="C7f-51-XUn"/>
+                <constraint firstItem="EVI-4a-M1l" firstAttribute="leading" secondItem="RaE-dV-Kb1" secondAttribute="trailing" id="VrY-HL-vrz"/>
+                <constraint firstItem="8jM-1I-VlC" firstAttribute="leading" secondItem="7VX-cb-wPa" secondAttribute="trailing" constant="-5" id="YtF-5h-Wmk"/>
+                <constraint firstAttribute="bottom" secondItem="RaE-dV-Kb1" secondAttribute="bottom" constant="12" id="bhn-5T-xHE"/>
+                <constraint firstItem="1Wf-ut-bGu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="cae-76-3Fx"/>
+                <constraint firstItem="JRO-hN-Iey" firstAttribute="leading" secondItem="1Wf-ut-bGu" secondAttribute="trailing" constant="-4" id="ce5-p9-Yf0"/>
+                <constraint firstItem="1Wf-ut-bGu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eEf-wx-qTT"/>
+                <constraint firstItem="JRO-hN-Iey" firstAttribute="centerY" secondItem="1Wf-ut-bGu" secondAttribute="centerY" id="eVc-A8-iH4"/>
+                <constraint firstItem="8jM-1I-VlC" firstAttribute="trailing" secondItem="JRO-hN-Iey" secondAttribute="trailing" id="jg9-ia-NVP"/>
+                <constraint firstItem="EVI-4a-M1l" firstAttribute="centerY" secondItem="RaE-dV-Kb1" secondAttribute="centerY" id="lgf-fX-3xt"/>
+                <constraint firstItem="RaE-dV-Kb1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qH9-tK-aBr"/>
+                <constraint firstItem="EVI-4a-M1l" firstAttribute="trailing" secondItem="8jM-1I-VlC" secondAttribute="trailing" id="tyP-Xc-mZi"/>
+                <constraint firstItem="8jM-1I-VlC" firstAttribute="centerY" secondItem="7VX-cb-wPa" secondAttribute="centerY" id="wQ6-87-GJu"/>
+                <constraint firstItem="7VX-cb-wPa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="x9c-Az-dF4"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addrTypeTextField" destination="8jM-1I-VlC" id="oHc-QC-maR"/>
+                <outlet property="dataNumberTextField" destination="EVI-4a-M1l" id="ZHl-xJ-YGU"/>
+                <outlet property="ramAddrTextField" destination="JRO-hN-Iey" id="E4R-LV-uNt"/>
+            </connections>
+            <point key="canvasLocation" x="-132" y="-13"/>
+        </view>
+    </objects>
+</document>

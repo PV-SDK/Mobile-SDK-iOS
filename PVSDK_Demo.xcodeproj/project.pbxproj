@@ -14,7 +14,19 @@
 		ADC05BC21F9DC0CF00C86981 /* I2CSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05BC11F9DC0CF00C86981 /* I2CSettingView.m */; };
 		ADC05BC51F9DD7A800C86981 /* SpiSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05BC41F9DD7A800C86981 /* SpiSettingView.m */; };
 		ADC05BC71F9DD7BC00C86981 /* SpiSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05BC61F9DD7BC00C86981 /* SpiSettingView.xib */; };
-		ADC05C2E1FA05EDB00C86981 /* PVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC05C2D1FA05EDB00C86981 /* PVSDK.framework */; };
+		ADC05C3B1FA1C4DF00C86981 /* SendCanDataParamView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05C3A1FA1C4DF00C86981 /* SendCanDataParamView.m */; };
+		ADC05C3D1FA1C4EE00C86981 /* SendCanDataParamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05C3C1FA1C4EE00C86981 /* SendCanDataParamView.xib */; };
+		ADC05C401FA1CAB500C86981 /* SendI2cDataParamView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05C3F1FA1CAB500C86981 /* SendI2cDataParamView.m */; };
+		ADC05C421FA1CAC900C86981 /* SendI2cDataParamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05C411FA1CAC900C86981 /* SendI2cDataParamView.xib */; };
+		ADC05C451FA1E34700C86981 /* CanFilterSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05C441FA1E34700C86981 /* CanFilterSettingView.m */; };
+		ADC05C471FA1E35700C86981 /* CanFilterSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05C461FA1E35700C86981 /* CanFilterSettingView.xib */; };
+		ADC05C501FA3392E00C86981 /* GpioSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05C4F1FA3392E00C86981 /* GpioSettingView.m */; };
+		ADC05C521FA3393E00C86981 /* GpioSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05C511FA3393E00C86981 /* GpioSettingView.xib */; };
+		ADC05C831FA7168700C86981 /* ReadI2cDataParamView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05C821FA7168700C86981 /* ReadI2cDataParamView.m */; };
+		ADC05C861FA7169E00C86981 /* ReadSpiDataParamView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05C851FA7169E00C86981 /* ReadSpiDataParamView.m */; };
+		ADC05C881FA716AF00C86981 /* ReadI2cDataParamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05C871FA716AF00C86981 /* ReadI2cDataParamView.xib */; };
+		ADC05C8A1FA716B900C86981 /* ReadSpiDataParamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05C891FA716B900C86981 /* ReadSpiDataParamView.xib */; };
+		ADC05CA11FA84CF200C86981 /* PVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC05CA01FA84CF200C86981 /* PVSDK.framework */; };
 		ADC2578A1F8F3EBE00418881 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC257891F8F3EBE00418881 /* main.m */; };
 		ADC2578D1F8F3EBE00418881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC2578C1F8F3EBE00418881 /* AppDelegate.m */; };
 		ADC257901F8F3EBE00418881 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC2578F1F8F3EBE00418881 /* ViewController.m */; };
@@ -60,7 +72,25 @@
 		ADC05BC31F9DD7A800C86981 /* SpiSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiSettingView.h; sourceTree = "<group>"; };
 		ADC05BC41F9DD7A800C86981 /* SpiSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpiSettingView.m; sourceTree = "<group>"; };
 		ADC05BC61F9DD7BC00C86981 /* SpiSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpiSettingView.xib; sourceTree = "<group>"; };
-		ADC05C2D1FA05EDB00C86981 /* PVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PVSDK.framework; sourceTree = "<group>"; };
+		ADC05C391FA1C4DF00C86981 /* SendCanDataParamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendCanDataParamView.h; sourceTree = "<group>"; };
+		ADC05C3A1FA1C4DF00C86981 /* SendCanDataParamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendCanDataParamView.m; sourceTree = "<group>"; };
+		ADC05C3C1FA1C4EE00C86981 /* SendCanDataParamView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendCanDataParamView.xib; sourceTree = "<group>"; };
+		ADC05C3E1FA1CAB500C86981 /* SendI2cDataParamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendI2cDataParamView.h; sourceTree = "<group>"; };
+		ADC05C3F1FA1CAB500C86981 /* SendI2cDataParamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendI2cDataParamView.m; sourceTree = "<group>"; };
+		ADC05C411FA1CAC900C86981 /* SendI2cDataParamView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendI2cDataParamView.xib; sourceTree = "<group>"; };
+		ADC05C431FA1E34700C86981 /* CanFilterSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanFilterSettingView.h; sourceTree = "<group>"; };
+		ADC05C441FA1E34700C86981 /* CanFilterSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanFilterSettingView.m; sourceTree = "<group>"; };
+		ADC05C461FA1E35700C86981 /* CanFilterSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanFilterSettingView.xib; sourceTree = "<group>"; };
+		ADC05C4E1FA3392E00C86981 /* GpioSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GpioSettingView.h; sourceTree = "<group>"; };
+		ADC05C4F1FA3392E00C86981 /* GpioSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GpioSettingView.m; sourceTree = "<group>"; };
+		ADC05C511FA3393E00C86981 /* GpioSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GpioSettingView.xib; sourceTree = "<group>"; };
+		ADC05C811FA7168700C86981 /* ReadI2cDataParamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadI2cDataParamView.h; sourceTree = "<group>"; };
+		ADC05C821FA7168700C86981 /* ReadI2cDataParamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadI2cDataParamView.m; sourceTree = "<group>"; };
+		ADC05C841FA7169E00C86981 /* ReadSpiDataParamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadSpiDataParamView.h; sourceTree = "<group>"; };
+		ADC05C851FA7169E00C86981 /* ReadSpiDataParamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadSpiDataParamView.m; sourceTree = "<group>"; };
+		ADC05C871FA716AF00C86981 /* ReadI2cDataParamView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadI2cDataParamView.xib; sourceTree = "<group>"; };
+		ADC05C891FA716B900C86981 /* ReadSpiDataParamView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadSpiDataParamView.xib; sourceTree = "<group>"; };
+		ADC05CA01FA84CF200C86981 /* PVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PVSDK.framework; sourceTree = "<group>"; };
 		ADC257851F8F3EBE00418881 /* PVSDK_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PVSDK_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC257891F8F3EBE00418881 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ADC2578B1F8F3EBE00418881 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,7 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADC257D21F8F82A700418881 /* libc++.tbd in Frameworks */,
-				ADC05C2E1FA05EDB00C86981 /* PVSDK.framework in Frameworks */,
+				ADC05CA11FA84CF200C86981 /* PVSDK.framework in Frameworks */,
 				8DC72A3E39B8110A7B24B250 /* libPods-PVSDK_Demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,11 +161,62 @@
 		75D83CAA1EE3D167C4B0A7E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ADC05C2D1FA05EDB00C86981 /* PVSDK.framework */,
+				ADC05CA01FA84CF200C86981 /* PVSDK.framework */,
 				ADC257D11F8F82A700418881 /* libc++.tbd */,
 				D61FD7D405CF23A5560576BE /* libPods-PVSDK_Demo.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ADC05C371FA1C45600C86981 /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				ADC2589C1F9455EC00418881 /* UartSettingView.h */,
+				ADC2589D1F9455EC00418881 /* UartSettingView.m */,
+				ADC2589F1F9455FF00418881 /* UartSettingView.xib */,
+				ADC05BB91F9DB9E100C86981 /* CanSettingView.h */,
+				ADC05BBA1F9DB9E100C86981 /* CanSettingView.m */,
+				ADC05BBC1F9DB9F400C86981 /* CanSettingView.xib */,
+				ADC05C431FA1E34700C86981 /* CanFilterSettingView.h */,
+				ADC05C441FA1E34700C86981 /* CanFilterSettingView.m */,
+				ADC05C461FA1E35700C86981 /* CanFilterSettingView.xib */,
+				ADC05BC01F9DC0CF00C86981 /* I2CSettingView.h */,
+				ADC05BC11F9DC0CF00C86981 /* I2CSettingView.m */,
+				ADC05BBE1F9DC0B500C86981 /* I2CSettingView.xib */,
+				ADC05BC31F9DD7A800C86981 /* SpiSettingView.h */,
+				ADC05BC41F9DD7A800C86981 /* SpiSettingView.m */,
+				ADC05BC61F9DD7BC00C86981 /* SpiSettingView.xib */,
+				ADC05C4E1FA3392E00C86981 /* GpioSettingView.h */,
+				ADC05C4F1FA3392E00C86981 /* GpioSettingView.m */,
+				ADC05C511FA3393E00C86981 /* GpioSettingView.xib */,
+			);
+			name = SettingView;
+			sourceTree = "<group>";
+		};
+		ADC05C381FA1C4A900C86981 /* SendParamView */ = {
+			isa = PBXGroup;
+			children = (
+				ADC05C391FA1C4DF00C86981 /* SendCanDataParamView.h */,
+				ADC05C3A1FA1C4DF00C86981 /* SendCanDataParamView.m */,
+				ADC05C3C1FA1C4EE00C86981 /* SendCanDataParamView.xib */,
+				ADC05C3E1FA1CAB500C86981 /* SendI2cDataParamView.h */,
+				ADC05C3F1FA1CAB500C86981 /* SendI2cDataParamView.m */,
+				ADC05C411FA1CAC900C86981 /* SendI2cDataParamView.xib */,
+			);
+			name = SendParamView;
+			sourceTree = "<group>";
+		};
+		ADC05C801FA7164500C86981 /* ReadParamView */ = {
+			isa = PBXGroup;
+			children = (
+				ADC05C811FA7168700C86981 /* ReadI2cDataParamView.h */,
+				ADC05C821FA7168700C86981 /* ReadI2cDataParamView.m */,
+				ADC05C871FA716AF00C86981 /* ReadI2cDataParamView.xib */,
+				ADC05C841FA7169E00C86981 /* ReadSpiDataParamView.h */,
+				ADC05C851FA7169E00C86981 /* ReadSpiDataParamView.m */,
+				ADC05C891FA716B900C86981 /* ReadSpiDataParamView.xib */,
+			);
+			name = ReadParamView;
 			sourceTree = "<group>";
 		};
 		ADC2577C1F8F3EBE00418881 = {
@@ -227,18 +308,9 @@
 		ADC2589B1F9455D200418881 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ADC2589C1F9455EC00418881 /* UartSettingView.h */,
-				ADC2589D1F9455EC00418881 /* UartSettingView.m */,
-				ADC2589F1F9455FF00418881 /* UartSettingView.xib */,
-				ADC05BB91F9DB9E100C86981 /* CanSettingView.h */,
-				ADC05BBA1F9DB9E100C86981 /* CanSettingView.m */,
-				ADC05BBC1F9DB9F400C86981 /* CanSettingView.xib */,
-				ADC05BC01F9DC0CF00C86981 /* I2CSettingView.h */,
-				ADC05BC11F9DC0CF00C86981 /* I2CSettingView.m */,
-				ADC05BBE1F9DC0B500C86981 /* I2CSettingView.xib */,
-				ADC05BC31F9DD7A800C86981 /* SpiSettingView.h */,
-				ADC05BC41F9DD7A800C86981 /* SpiSettingView.m */,
-				ADC05BC61F9DD7BC00C86981 /* SpiSettingView.xib */,
+				ADC05C801FA7164500C86981 /* ReadParamView */,
+				ADC05C381FA1C4A900C86981 /* SendParamView */,
+				ADC05C371FA1C45600C86981 /* SettingView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -366,13 +438,19 @@
 			files = (
 				ADC05BBD1F9DB9F400C86981 /* CanSettingView.xib in Resources */,
 				ADC257C31F8F62D000418881 /* Podfile in Resources */,
+				ADC05C471FA1E35700C86981 /* CanFilterSettingView.xib in Resources */,
 				ADC05BBF1F9DC0B500C86981 /* I2CSettingView.xib in Resources */,
 				ADC258A01F9455FF00418881 /* UartSettingView.xib in Resources */,
+				ADC05C881FA716AF00C86981 /* ReadI2cDataParamView.xib in Resources */,
+				ADC05C8A1FA716B900C86981 /* ReadSpiDataParamView.xib in Resources */,
 				ADC05BC71F9DD7BC00C86981 /* SpiSettingView.xib in Resources */,
+				ADC05C3D1FA1C4EE00C86981 /* SendCanDataParamView.xib in Resources */,
 				ADC257981F8F3EBF00418881 /* LaunchScreen.storyboard in Resources */,
+				ADC05C521FA3393E00C86981 /* GpioSettingView.xib in Resources */,
 				ADC257C01F8F610500418881 /* dropdownMenu_cornerIcon.png in Resources */,
 				ADC257951F8F3EBF00418881 /* Assets.xcassets in Resources */,
 				ADC257931F8F3EBF00418881 /* Main.storyboard in Resources */,
+				ADC05C421FA1CAC900C86981 /* SendI2cDataParamView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,9 +477,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PVSDK_Demo/Pods-PVSDK_Demo-frameworks.sh",
+				"${PODS_ROOT}/DJI-SDK-iOS/iOS_Mobile_SDK/DJISDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJISDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -414,13 +495,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PVSDK_Demo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A3D44E615DE38566692210EB /* [CP] Copy Pods Resources */ = {
@@ -429,9 +513,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PVSDK_Demo/Pods-PVSDK_Demo-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -447,13 +534,19 @@
 			files = (
 				ADC257901F8F3EBE00418881 /* ViewController.m in Sources */,
 				ADC05BBB1F9DB9E100C86981 /* CanSettingView.m in Sources */,
+				ADC05C451FA1E34700C86981 /* CanFilterSettingView.m in Sources */,
 				ADC05BC21F9DC0CF00C86981 /* I2CSettingView.m in Sources */,
 				ADC257C11F8F610500418881 /* LMJDropdownMenu.m in Sources */,
+				ADC05C861FA7169E00C86981 /* ReadSpiDataParamView.m in Sources */,
+				ADC05C401FA1CAB500C86981 /* SendI2cDataParamView.m in Sources */,
+				ADC05C501FA3392E00C86981 /* GpioSettingView.m in Sources */,
 				ADC2578D1F8F3EBE00418881 /* AppDelegate.m in Sources */,
 				ADC05BC51F9DD7A800C86981 /* SpiSettingView.m in Sources */,
 				ADC258A61F94669C00418881 /* UIView+Size.m in Sources */,
 				ADC2589E1F9455EC00418881 /* UartSettingView.m in Sources */,
+				ADC05C831FA7168700C86981 /* ReadI2cDataParamView.m in Sources */,
 				ADC2578A1F8F3EBE00418881 /* main.m in Sources */,
+				ADC05C3B1FA1C4DF00C86981 /* SendCanDataParamView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

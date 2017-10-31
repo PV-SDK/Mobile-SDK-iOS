@@ -46,7 +46,7 @@
     _dataBitsMenu.left = _dataBitsLabel.right+10;
     _dataBitsMenu.top = _dataBitsLabel.top;
     [_dataBitsMenu.mainBtn setTitle:@"请选择" forState:UIControlStateNormal];
-    [_dataBitsMenu setMenuTitles:@[@"5位",@"6位",@"7位",@"8位"] rowHeight:25];
+    [_dataBitsMenu setMenuTitles:@[@"8位",@"9位"] rowHeight:25];
     [self addSubview:_dataBitsMenu];
     
     _stopBitsMenu = [[LMJDropdownMenu alloc] init];
@@ -55,7 +55,7 @@
     _stopBitsMenu.left = _stopBitsLabel.right+10;
     _stopBitsMenu.top = _stopBitsLabel.top;
     [_stopBitsMenu.mainBtn setTitle:@"请选择" forState:UIControlStateNormal];
-    [_stopBitsMenu setMenuTitles:@[@"1位",@"5位",@"2位"] rowHeight:25];
+    [_stopBitsMenu setMenuTitles:@[@"1位",@"2位"] rowHeight:25];
     [self addSubview:_stopBitsMenu];
     
     _parityMenu = [[LMJDropdownMenu alloc] init];
@@ -74,7 +74,7 @@
     _flowCtrlMenu.left = _flowCtrlLabel.right+10;
     _flowCtrlMenu.top = _flowCtrlLabel.top;
     [_flowCtrlMenu.mainBtn setTitle:@"请选择" forState:UIControlStateNormal];
-    [_flowCtrlMenu setMenuTitles:@[@"无流控",@"硬流控",@"软流控"] rowHeight:25];
+    [_flowCtrlMenu setMenuTitles:@[@"无流控",@"RTS有效",@":CTS有效",@"RTS和CTS同时有效"] rowHeight:25];
     [self addSubview:_flowCtrlMenu];
 }
 

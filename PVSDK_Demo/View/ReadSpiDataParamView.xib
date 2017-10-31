@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ReadSpiDataParamView">
+            <rect key="frame" x="0.0" y="0.0" width="208" height="136"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="读取地址:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obc-qA-pIO">
+                    <rect key="frame" x="16" y="26" width="69" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="读取字节数:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayY-xd-2aP">
+                    <rect key="frame" x="16" y="71" width="69" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="E5q-qh-jl9"/>
+                        <constraint firstAttribute="width" constant="69" id="NxI-Uj-IuZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1~245" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3j-6z-oZF">
+                    <rect key="frame" x="84" y="66" width="118" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ebp-TB-LVs">
+                    <rect key="frame" x="84" y="18" width="118" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ebp-TB-LVs" firstAttribute="centerY" secondItem="obc-qA-pIO" secondAttribute="centerY" id="LGT-93-3wH"/>
+                <constraint firstItem="ebp-TB-LVs" firstAttribute="leading" secondItem="obc-qA-pIO" secondAttribute="trailing" constant="-1" id="OkG-hl-S3s"/>
+                <constraint firstItem="b3j-6z-oZF" firstAttribute="leading" secondItem="ayY-xd-2aP" secondAttribute="trailing" constant="-1" id="PtZ-4w-w0z"/>
+                <constraint firstItem="obc-qA-pIO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="26" id="RNc-pv-Ql2"/>
+                <constraint firstItem="obc-qA-pIO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Voe-hw-Sgd"/>
+                <constraint firstItem="ebp-TB-LVs" firstAttribute="trailing" secondItem="b3j-6z-oZF" secondAttribute="trailing" id="dAl-9c-XJV"/>
+                <constraint firstItem="obc-qA-pIO" firstAttribute="width" secondItem="ayY-xd-2aP" secondAttribute="width" id="dUd-Ff-4F4"/>
+                <constraint firstAttribute="bottom" secondItem="ayY-xd-2aP" secondAttribute="bottom" constant="44" id="fGX-Z9-3Fs"/>
+                <constraint firstItem="ayY-xd-2aP" firstAttribute="leading" secondItem="obc-qA-pIO" secondAttribute="leading" id="fSa-go-vUr"/>
+                <constraint firstItem="b3j-6z-oZF" firstAttribute="centerY" secondItem="ayY-xd-2aP" secondAttribute="centerY" id="hwH-rO-2cc"/>
+                <constraint firstAttribute="trailing" secondItem="b3j-6z-oZF" secondAttribute="trailing" constant="6" id="juu-g7-mI0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dataNumberTextField" destination="b3j-6z-oZF" id="82R-Wt-MkI"/>
+                <outlet property="ramAddrTextField" destination="ebp-TB-LVs" id="6hn-hn-sR6"/>
+            </connections>
+            <point key="canvasLocation" x="30" y="70"/>
+        </view>
+    </objects>
+</document>
