@@ -72,7 +72,7 @@
     [self mountController];
 }
 
-#pragma mark -- 懒加载
+#pragma mark -- 懒加载（Lazying...）
 
 - (PVFlightController *)flightController
 {
