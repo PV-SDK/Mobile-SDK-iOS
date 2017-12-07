@@ -3,7 +3,7 @@
 //  PVSDK_Demo
 //
 //  Created by Layne on 2017/10/26.
-//  Copyright © 2017年 Layne. All rights reserved.
+//  Copyright © 2017 Layne. All rights reserved.
 //
 
 #import "SendI2cDataParamView.h"

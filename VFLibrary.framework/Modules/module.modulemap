@@ -1,0 +1,6 @@
+framework module VFLibrary {
+  umbrella header "VFLibrary.h"
+
+  export *
+  module * { export * }
+}

@@ -2,9 +2,9 @@
  * @file PVBaseComponent.h
  * @author Layne
  *
- * @brief   base class file
+ * @brief base class file
  * Created by Layne on 17/8/22.
- * Copyright © 2017year Layne. All rights reserved.
+ * Copyright © 2017 Layne. All rights reserved.
  */
 
 #import <Foundation/Foundation.h>
@@ -12,11 +12,11 @@
 ////////////////////////////////////////
 /// @brief state of activation
 ///
-///define the state of activation
+/// define the state of activation
 ////////////////////////////////////////
 typedef enum _PVProductValidateState{
-    PVProductValidateStateInactive, ///<unactivated
-    PVProductValidateStateActivated, ///<activated
+    PVProductValidateStateInactive,     ///< unactivated
+    PVProductValidateStateActivated,    ///< activated
 }PVProductValidateState;
 
 
@@ -26,7 +26,7 @@ typedef void (^_Nullable PVCompletionBlock)(NSError *_Nullable error);
 
 /**
  set int parameters
-
+ 
  @param key key
  @param value value
  */
@@ -35,7 +35,7 @@ typedef void (^_Nullable PVCompletionBlock)(NSError *_Nullable error);
 
 /**
  set float parameters
-
+ 
  @param key key
  @param value value
  */
