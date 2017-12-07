@@ -12,14 +12,14 @@
  */
 
 /**
- * @page mount-page  Mount interface
+ * @page mount-page Mount interface
  */
 
 
 #import <Foundation/Foundation.h>
 
 ////////////////////////////////////////
-/// @brief   The type of mount interface.
+/// @brief The type of mount interface.
 ///
 /// Define the type of mount interface.
 ////////////////////////////////////////
@@ -49,13 +49,13 @@ typedef struct PVSDK_MOUNTAPI_MOUNTSTATE_DEVICE {
 //////////////////////////////////////////////////
 /// @brief Parameters about gorge settings.
 ///
-/// Define interface parameters about gorge settings.
+///  Define interface parameters about gorge settings.
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_UART_PARAM {
-    int bps; ///< Gorge baudrate 0:9600 1:14400 2:19200 3:38400 4:57600 5:115200
-    int dataBits; ///<   Data bits 0:8bits 1:9bits
-    int stopBits; ///<  Stop bits0:1bits 1:2bits
-    int parity; ///<  verify 0:no verification1:odd parity check 2:even parity check
+    int bps; ///< Gorge baudrate  0:9600 1:14400 2:19200 3:38400 4:57600 5:115200
+    int dataBits; ///<  Data bits 0:8bits 1:9bits
+    int stopBits; ///< Stop bits0:1bits 1:2bits
+    int parity; ///< verify 0:no verification1:odd parity check 2:even parity check
     int flowCtrl; ///< fluid control  0:no fluid control 1:RTS is effective2:CTS is effective3:RTS and CTS are effective at the same time.
 } PVSDK_MOUNTAPI_UART_PARAM;
 
@@ -65,19 +65,19 @@ typedef struct PVSDK_MOUNTAPI_UART_PARAM {
 /// Define interface parameters about Can settings.
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_CAN_PARAM {
-    int mode; ///<Mode 0:Normal mode1:Silent mode2:Loopback mode 3:Silent loopback mode
-    int bps; ///<  Baud rate0:5k 1:10k 2:20k 3:50k 4:100k 5:125k 6:250k 7:500k 8:800k 9:1000k
+    int mode; ///< Mode 0:Normal mode1:Silent mode2:Loopback mode 3:Silent loopback mode
+    int bps; ///< Baud rate0:5k 1:10k 2:20k 3:50k 4:100k 5:125k 6:250k 7:500k 8:800k 9:1000k
 } PVSDK_MOUNTAPI_CAN_PARAM;
 
 //////////////////////////////////////////////////
-/// @brief Parameters about I2c settings.
+/// @briefParameters about I2c settings.
 ///
 /// Define interface parameters about I2c settings.
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_I2C_PARAM {
-    int mode; ///< Mode  0:Master mode  1:Slave mode
+    int mode; ///<  Mode  0:Master mode  1:Slave mode
     int bps; ///< Rate setting  0:100kbps 1:400kbps
-    int deviceAddr; ///< Device address(0~127)Device address
+    int deviceAddr; ///<Device address(0~127)Device address
 } PVSDK_MOUNTAPI_I2C_PARAM;
 
 //////////////////////////////////////////////////
@@ -86,7 +86,7 @@ typedef struct PVSDK_MOUNTAPI_I2C_PARAM {
 /// Define interface parameters about Spi settings.
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_SPI_PARAM {
-    int mode; ///< Mode 0:Master mode 1:Slave mode
+    int mode; ///<  Mode 0:Master mode 1:Slave mode
     int bps; ///< Rate setting 0:1Mbps 1:2Mbps 2:4Mbps 3:8Mbps 4:16Mbps
     int firstBit; ///< Significance first  0:MSB first 1:LSB first
     int dataSize; ///< Data size 0:8bit 1:16bit
@@ -96,12 +96,12 @@ typedef struct PVSDK_MOUNTAPI_SPI_PARAM {
 //////////////////////////////////////////////////
 /// @brief Interface parameters about Can filtering settings.
 ///
-/// Define interface parameters about Can filtering settings.
+///Define interface parameters about Can filtering settings.
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_CAN_FILTER_PARAM {
-    int number; ///< The span of filter number is 0~13.
+    int number; ///<  The span of filter number is 0~13.
     int mode; ///< Filter mode 0:mask Mode 1:id list Mode
-    int matchId; ///< ID matching value
+    int matchId; ///<  ID matching value
     int maskId; ///< ID mask value
     int type; ///< ID type0:StandardID 1:ExtendID
     int format; ///< Frame format 0:data frame 1:remote frame
@@ -123,12 +123,12 @@ typedef struct PVSDK_MOUNTAPI_GPIO_PARAM {
 //////////////////////////////////////////////////
 /// @brief Interface parameters of Uart data
 ///
-/// Define interface parameters about Uart data
+///  Define interface parameters about Uart data
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_UART_DATA {
-    char data[245]; ///< Data content
+    char data[245]; ///<Data content
     int len; ///< Data length
-    int encryption; ///Encryption 0:no encryption    1:xxTea encrypt 2:RSA encrypt
+    int encryption; ///<Encryption 0:no encryption    1:xxTea encrypt 2:RSA encrypt
 } PVSDK_MOUNTAPI_UART_DATA;
 
 //////////////////////////////////////////////////
@@ -139,44 +139,43 @@ typedef struct PVSDK_MOUNTAPI_UART_DATA {
 typedef struct PVSDK_MOUNTAPI_CAN_DATA {
     int type; ///< id:type0:standard 1:expanded id
     int format; ///< Frame format  0: data frame  1:remote frame
-    int id; ///< Frame id bit0~bit28bit is effective。 bit0~bit10 is  standard frame.bit11~bit28 is expanded format.
-    char data[239]; ///< Data content
+    int id; ///<  Frame id bit0~bit28bit is effective。 bit0~bit10 is  standard frame.bit11~bit28 is expanded format.
+    char data[239]; ///<  Data content
     int len; ///< Data length
-    int encryption; ///< Encryption 0:no encryption    1:xxTea encrypt 2:RSA encrypt
+    int encryption; ///<  Encryption 0:no encryption    1:xxTea encrypt 2:RSA encrypt
 } PVSDK_MOUNTAPI_CAN_DATA;
 
 //////////////////////////////////////////////////
 /// @brief Interface parameters of I2c data
 ///
-/// Define interface parameters about I2c data
-//////////////////////////////////////////////////
+///  Define interface parameters about I2c data
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_I2C_DATA {
     int ramAddr; ///< Memory address
     int addrType; ///< Address type   0:Single-byte address 1: double byte address
-    char data[242]; ///< Sending data
+    char data[242]; ///<  Sending data
     int len; ///< The length of sending data
     int encryption; ///< 0:no encryption    1:xxTea encrypt 2:RSA encrypt
 } PVSDK_MOUNTAPI_I2C_DATA;
 
 //////////////////////////////////////////////////
-/// @brief The parameters about Spi data interface
+/// @brief  The parameters about Spi data interface
 ///
 /// Define interface parameters about Spi data
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_SPI_DATA {
-    char data[245]; ///< Data content
+    char data[245]; ///<  Data content
     int len; ///< Data length
     int encryption; ///< Encryption 0:no encryption    1:xxTea encrypt 2:RSA encrypt
 } PVSDK_MOUNTAPI_SPI_DATA;
 
 //////////////////////////////////////////////////
-/// @brief Interface parameters about Can filter number
+/// @brief  Interface parameters about Can filter number
 ///
 /// Define interface parameters about Can filter number
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_DEL_CAN_FILTER {
-    int number; ///<Filter number0~13
+    int number; ///< Filter number0~13
 } PVSDK_MOUNTAPI_DEL_CAN_FILTER;
 
 //////////////////////////////////////////////////
@@ -186,7 +185,7 @@ typedef struct PVSDK_MOUNTAPI_DEL_CAN_FILTER {
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_RETURN_CAN_FILTER_PARAM {
     int totalNumber; ///< The number of enabling filter
-    PVSDK_MOUNTAPI_CAN_FILTER_PARAM filter[14]; ///<The parameters of enabling filter
+    PVSDK_MOUNTAPI_CAN_FILTER_PARAM filter[14]; ///< The parameters of enabling filter
 } PVSDK_MOUNTAPI_RETURN_CAN_FILTER_PARAM;
 
 //////////////////////////////////////////////////
@@ -195,27 +194,27 @@ typedef struct PVSDK_MOUNTAPI_RETURN_CAN_FILTER_PARAM {
 /// Define interface parameters about data delivery status
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_SEND_DATA_RETURN {
-    int state; ///< Send state  0:success -1:failure
+    int state; ///<  Send state  0:success -1:failure
     int error; ///< error code
 } PVSDK_MOUNTAPI_SEND_DATA_RETURN;
 
 //////////////////////////////////////////////////
-/// @briefParameters about the parameters Settings
-///
+/// @brief Parameters about the parameters Settings
+
 /// Define interface parameters about the parameters Settings
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_SET_PARAM {
     int state; ///< Send state  0:success -1:failure
-    int error; ///< error code
+    int error; ///<error code
 } PVSDK_MOUNTAPI_SET_PARAM;
 
 //////////////////////////////////////////////////
-/// @brief I2c read the data of request parameters
+/// @brief  I2c read the data of request parameters
 ///
-/// Define I2c read the data of request interface parameters
+///  Define I2c read the data of request interface parameters
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_I2C_RETURN_DATA {
-    char data[245]; ///< Data content
+    char data[245]; ///<Data content
     int len; ///< Data length
     int encryption; ///<  Encryption 0:no encryption    1:xxTea encrypt 2:RSA encrypt
 } PVSDK_MOUNTAPI_I2C_RETURN_DATA;
@@ -226,37 +225,36 @@ typedef struct PVSDK_MOUNTAPI_I2C_RETURN_DATA {
 /// Define Spi read the data of request interface parameters
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_SPI_RETURN_DATA {
-    char data[245]; ///< Data content
-    int len; ///<  Data length
-    int encryption; ///< 0:no encryption    1:xxTea encrypt 2:RSA encrypt
+    char data[245]; ///<Data content
+    int len; ///< Data length
+    int encryption; ///<Encryption 0:no encryption    1:xxTea encrypt 2:RSA encrypt
 } PVSDK_MOUNTAPI_SPI_RETURN_DATA;
 
 //////////////////////////////////////////////////
-/// @brief I2c read the data of request parameters
+/// @brief  I2c read the data of request parameters
 ///
 /// Define I2c read the data of request interface parameters
 //////////////////////////////////////////////////
-//////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_READI2C_DATA {
     int ramAddr; ///<Memory address
-    int addrType; ///<  Address type   0:Single-byte address 1: double byte address
+    int addrType; ///< Address type   0:Single-byte address 1: double byte address
     int dataNumber; ///< Read the number of bytes in the data.1~245
 } PVSDK_MOUNTAPI_READI2C_DATA;
 
 //////////////////////////////////////////////////
-/// @brief Spi read the data of request parameters
+/// @brief  Spi read the data of request parameters
 ///
-/// Define Spi read the data of request interface parameters
+///  Define Spi read the data of request interface parameters
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_READSPI_DATA {
-    int ramAddr; ///< Read the address
-    int dataNumber; ///< Read the number of bytes in the data 1~245Read
+    int ramAddr; ///< Memory address
+    int dataNumber; ///< Read the number of bytes in the data.1~245
 } PVSDK_MOUNTAPI_READSPI_DATA;
 
 //////////////////////////////////////////////////
-/// @brief Take the parameter of equipment version
+/// @brief  Take the parameter of equipment version
 ///
-/// Define equipment version access interface parameters
+///   Define equipment version access interface parameters
 //////////////////////////////////////////////////
 typedef struct PVSDK_MOUNTAPI_DEVICE_VERSION {
     int ver; ///< version number
@@ -296,18 +294,18 @@ typedef void (^_Nullable PVSDKQueryDeviceVersionBlock)(PVSDK_MOUNTAPI_DEVICE_VER
 
 /**
  Receive Uart data agent
-
+ 
  @param mc mc
- @param  Data content
+ @param mData content
  */
 
 - (void)mounthController:(PVMountController * _Nonnull)mc reciveUartData:(PVSDK_MOUNTAPI_UART_DATA)mData;
 
 /**
- * Receive can data agent
+ *  Receive can data agent
  *
  * @param mc mc
- * @param mData Data content
+ * @param mData  Data content
  */
 - (void)mounthController:(PVMountController * _Nonnull)mc reciveCanData:(PVSDK_MOUNTAPI_CAN_DATA)mData;
 
@@ -331,120 +329,121 @@ NS_ASSUME_NONNULL_END
 
 /**
  Send Uart data
-
+ 
  @param data data content
- @param block send state
+ @param send state
  */
 - (void)sendUartData:(PVSDK_MOUNTAPI_UART_DATA)data withSendResultBlock:(PVSendDataResultBlock)block;
 
 /**
  Send Can data
-
+ 
  @param data Data content
- @param block Send state
+ @param  Send state
  */
 - (void)sendCanData:(PVSDK_MOUNTAPI_CAN_DATA)data withSendResultBlock:(PVSendDataResultBlock)block;
 
 /**
-Send I2c data
-
+ Send I2c data
+ 
  @param data Data content
- @param block Send state
+ @param Send state
  */
 - (void)sendI2cData:(PVSDK_MOUNTAPI_I2C_DATA)data withSendResultBlock:(PVSendDataResultBlock)block;
 
 /**
  Send Spi data
-
- @param data  Data content
- @param block Send state
+ 
+ @param data Data content
+ @param  Send state
  */
 - (void)sendSpiData:(PVSDK_MOUNTAPI_SPI_DATA)data withSendResultBlock:(PVSendDataResultBlock)block;
 
 /**
  Set Uart parameter
-
+ 
  @param param Parameter content
- @param block Block results
+ @param block   results
  */
 - (void)setUartParam:(PVSDK_MOUNTAPI_UART_PARAM)param withSetResultBlock:(PVSetParamResultBlock)block;
 
 
 /**
- 设置Can参数 set Can parameter
-
- @param param  Parameter content
- @param block block results
+ set Can parameter
+ 
+ @param param Parameter content
+ @param block  results
  */
 - (void)setCanParam:(PVSDK_MOUNTAPI_CAN_PARAM)param withSetResultBlock:(PVSetParamResultBlock)block;
 
 
 /**
  Set Can filter
-
- @param param    filter parameter
- @param block    block results
+ 
+ @param param  filter parameter
+ @param block  results
  */
 - (void)setCanFilterParam:(PVSDK_MOUNTAPI_CAN_FILTER_PARAM)param withSetResultBlock:(PVSetCanFilterParamResultBlock)block;
 
 /**
  Remove Can filter
-
- @param param     filter parameter
- @param block     block results
+ 
+ @param param  filter parameter
+ @param block    results
  */
 - (void)deleteCanFilterParam:(PVSDK_MOUNTAPI_DEL_CAN_FILTER)param withSetResultBlock:(PVSetCanFilterParamResultBlock)block;
 
 
 /**
  Set the parameters of I2c
-
- @param param     parameter content
- @param block     block results
+ 
+ 
+ @param param parameter content
+ @param block   results
  */
 - (void)setI2cParam:(PVSDK_MOUNTAPI_I2C_PARAM)param withSetResultBlock:(PVSetParamResultBlock)block;
 
 /**
-Set the parameters of Spi
-
- @param param     parameter content
- @param block     block results
+ Set the parameters of Spi
+ 
+ @param param  parameter content
+ @param block  results
  */
 - (void)setSpiParam:(PVSDK_MOUNTAPI_SPI_PARAM)param withSetResultBlock:(PVSetParamResultBlock)block;
 
 /**
  Set the parameters of Gpio
-
- @param param     parameter content
- @param block     block results
+ 
+ @param param parameter content
+ @param block  results
  */
 - (void)setGpioParam:(PVSDK_MOUNTAPI_GPIO_PARAM)param withSetResultBlock:(PVSetParamResultBlock)block;
 
 /**
  Query the parameters of Jart
-
+ 
  @param block query results
  */
 - (void)queryUartParamWithBlock:(PVQueryUartParamBlock)block;
 
 /**
  Query the parameters of Can
-
- @param block query results
+ 
+ @param block  query results
  */
 - (void)queryCanParamWithBlock:(PVQueryCanParamBlock)block;
 
 /**
-Query the filter parameters of Can
-
- @param block query results
+ Query the filter parameters of Can
+ 
+ @param block  query results
  */
 - (void)queryCanFilterParamWithBlock:(PVQueryCanFilterParamBlock)block;
 
 
 /**
  Query the parameters of Spi
-
+ 
  @param block query results
  */
 - (void)querySpiParamWithBlock:(PVQuerySpiParamBlock)block;
@@ -452,29 +451,34 @@ Query the filter parameters of Can
 
 /**
  Query the parameters of I2c
-
+ 
  @param block query results
  */
 - (void)queryI2cParamWithBlock:(PVQueryI2cParamBlock)block;
 
+//typedef int (*MountApi_inquireGpioParamNotify)(const MOUNTAPI_GPIO_PARAM info); //请求Gpio参数通知
+//PVSDK_API int MountApi_inquireGpioParam(int device);
+
+
 /**
  Query the equipment parameters of Gpio
-
+ 
  @param block query results
  */
 - (void)queryGpioParamWithGpioNumber:(NSInteger)num WithBlock:(PVQueryGpioParamBlock)block;
 
 /**
  Read the data of I2c
-
- @param readInfo read parameter settings
+ 
+ @param readInfo  read parameter settings
  @param block read content
  */
 - (void)readI2cData:(PVSDK_MOUNTAPI_READI2C_DATA)readInfo WithReadDataBlock:(PVSDKReadI2cDataBlock)block;
 
 /**
  Read the data of spi
-
+ 
+ 
  @param readInfo read parameter settings
  @param block read content
  */
@@ -482,14 +486,14 @@ Query the filter parameters of Can
 
 /**
  The software version of query device
-
+ 
  @param block query results
  */
 - (void)queryDeviceSoftVersionWithBlock:(PVSDKQueryDeviceVersionBlock)block;
 
 /**
  The hardware version of query device
-
+ 
  @param block query results
  */
 - (void)queryDeviceHardVersionWithBlock:(PVSDKQueryDeviceVersionBlock)block;

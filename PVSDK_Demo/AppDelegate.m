@@ -3,7 +3,7 @@
 //  PVSDK_Demo
 //
 //  Created by Layne on 2017/10/12.
-//  Copyright © 2017年 Layne. All rights reserved.
+//  Copyright © 2017 PowerVision. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -24,6 +24,7 @@
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ApplicationWillResignActive" object:nil];
 }
 
 
@@ -40,6 +41,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ApplicationDidBecomeActive" object:nil];
 }
 
 
