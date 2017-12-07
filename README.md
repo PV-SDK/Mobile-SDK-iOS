@@ -17,7 +17,7 @@ Developer's Guide and API document.
 Demo and the SDK document instructions for more details about api.
 
 **The following picture is PowerEye**
-![](https://github.com/PV-SDK/Mobile-SDK-Android/blob/master/powervision-sdk-demo/gcs_api/powerEye.jpg?raw=true)
+![](https://github.com/PV-SDK/Mobile-SDK-iOS/blob/master/Source/Images/PowerEye.jpg?raw=true)
 
 For more information about products,please visit our [PowerVision](http://www.powervision.me/en/)
 
