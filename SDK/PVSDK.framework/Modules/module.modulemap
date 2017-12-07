@@ -1,0 +1,6 @@
+framework module PVSDK {
+  umbrella header "PVSDK.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,88 @@
+\hypertarget{_p_v_camera_8h}{}\section{P\+V\+S\+D\+K.\+framework/\+Headers/\+P\+V\+Camera.h File Reference}
+\label{_p_v_camera_8h}\index{P\+V\+S\+D\+K.\+framework/\+Headers/\+P\+V\+Camera.\+h@{P\+V\+S\+D\+K.\+framework/\+Headers/\+P\+V\+Camera.\+h}}
+{\ttfamily \#import \char`\"{}P\+V\+Base\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#import \char`\"{}P\+V\+Camera\+S\+D\+Card\+State.\+h\char`\"{}}\newline
+{\ttfamily \#import \char`\"{}P\+V\+Camera\+Settings\+Def.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+protocol \hyperlink{protocol_p_v_camera_delegate_01-p}{$<$\+P\+V\+Camera\+Delegate $>$}
+\item 
+class \hyperlink{interface_p_v_camera}{P\+V\+Camera}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{_p_v_camera_8h_ade6efa872b8de1e4f42302efcfebaa00}{N\+S\+\_\+\+E\+N\+UM} (N\+S\+U\+Integer, P\+V\+Camera\+Type)
+\item 
+typedef \hyperlink{_p_v_camera_8h_ac5ec01dd89a0b9aeb3cb69e912294372}{N\+S\+\_\+\+E\+N\+UM} (N\+S\+U\+Integer, P\+V\+Camera\+Mode)
+\item 
+typedef \hyperlink{_p_v_camera_8h_a43bd9b2d3155a0105c1c87fbb1b73140}{N\+S\+\_\+\+E\+N\+UM} (N\+S\+U\+Integer, P\+V\+Camera\+State)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_p_v_camera_8h_ade6efa872b8de1e4f42302efcfebaa00}\label{_p_v_camera_8h_ade6efa872b8de1e4f42302efcfebaa00}} 
+\index{P\+V\+Camera.\+h@{P\+V\+Camera.\+h}!N\+S\+\_\+\+E\+N\+UM@{N\+S\+\_\+\+E\+N\+UM}}
+\index{N\+S\+\_\+\+E\+N\+UM@{N\+S\+\_\+\+E\+N\+UM}!P\+V\+Camera.\+h@{P\+V\+Camera.\+h}}
+\subsubsection{\texorpdfstring{N\+S\+\_\+\+E\+N\+U\+M()}{NS\_ENUM()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily typedef N\+S\+\_\+\+E\+N\+UM (\begin{DoxyParamCaption}\item[{N\+S\+U\+Integer}]{,  }\item[{P\+V\+Camera\+Type}]{ }\end{DoxyParamCaption})}
+
+相机类型
+
+
+\begin{DoxyItemize}
+\item P\+V\+Camera\+Type\+Unknown\+: Unknown
+\item P\+V\+Camera\+Type\+Shunmeng\+:
+\item P\+V\+Camera\+Type\+Zcamera\+:
+\item P\+V\+Camera\+Type\+Encoder\+\_\+zcamera\+: Visible light camera
+\item P\+V\+Camera\+Type\+Encoder\+\_\+flir\+: Infrared camera 
+\end{DoxyItemize}\mbox{\Hypertarget{_p_v_camera_8h_ac5ec01dd89a0b9aeb3cb69e912294372}\label{_p_v_camera_8h_ac5ec01dd89a0b9aeb3cb69e912294372}} 
+\index{P\+V\+Camera.\+h@{P\+V\+Camera.\+h}!N\+S\+\_\+\+E\+N\+UM@{N\+S\+\_\+\+E\+N\+UM}}
+\index{N\+S\+\_\+\+E\+N\+UM@{N\+S\+\_\+\+E\+N\+UM}!P\+V\+Camera.\+h@{P\+V\+Camera.\+h}}
+\subsubsection{\texorpdfstring{N\+S\+\_\+\+E\+N\+U\+M()}{NS\_ENUM()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily typedef N\+S\+\_\+\+E\+N\+UM (\begin{DoxyParamCaption}\item[{N\+S\+U\+Integer}]{,  }\item[{P\+V\+Camera\+Mode}]{ }\end{DoxyParamCaption})}
+
+拍摄模式
+
+
+\begin{DoxyItemize}
+\item P\+V\+Camera\+Mode\+Shoot\+Photo\+: shoot mode
+\item P\+V\+Camera\+Mode\+Record\+Video\+: record mode 
+\end{DoxyItemize}\mbox{\Hypertarget{_p_v_camera_8h_a43bd9b2d3155a0105c1c87fbb1b73140}\label{_p_v_camera_8h_a43bd9b2d3155a0105c1c87fbb1b73140}} 
+\index{P\+V\+Camera.\+h@{P\+V\+Camera.\+h}!N\+S\+\_\+\+E\+N\+UM@{N\+S\+\_\+\+E\+N\+UM}}
+\index{N\+S\+\_\+\+E\+N\+UM@{N\+S\+\_\+\+E\+N\+UM}!P\+V\+Camera.\+h@{P\+V\+Camera.\+h}}
+\subsubsection{\texorpdfstring{N\+S\+\_\+\+E\+N\+U\+M()}{NS\_ENUM()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily typedef N\+S\+\_\+\+E\+N\+UM (\begin{DoxyParamCaption}\item[{N\+S\+U\+Integer}]{,  }\item[{P\+V\+Camera\+State}]{ }\end{DoxyParamCaption})}
+
+Camera State
+
+
+\begin{DoxyItemize}
+\item P\+V\+Camera\+State\+Exist\+: Camera exist
+\item P\+V\+Camera\+State\+Rec\+Stop\+: Finished recording
+\item P\+V\+Camera\+State\+Recing\+: Recording
+\item P\+V\+Camera\+State\+Rec\+Start\+Error\+: Failed to start recording
+\item P\+V\+Camera\+State\+Rec\+Stop\+Error\+: Failed to finish recording
+\item P\+V\+Camera\+State\+Rec\+Mode\+Success\+: Switch to rec mode successfully.
+\item P\+V\+Camera\+State\+Rec\+Mode\+Error\+: Failed to switch to rec mode
+\item P\+V\+Camera\+State\+Shoot\+Success\+: Shoot successfully
+\item P\+V\+Camera\+State\+Shooting\+: Shooting
+\item P\+V\+Camera\+State\+Shoot\+Error\+: Shooting error
+\item P\+V\+Camera\+State\+Shoot\+Mode\+Success\+: Switch to shooting mode successfully
+\item P\+V\+Camera\+State\+Shoot\+Mode\+Error\+: Failed to switch to shooting mode
+\item P\+V\+Camera\+State\+Timeout\+: Camera operation timeout
+\item P\+V\+Camera\+State\+Shoot\+Error\+S\+D\+Full\+: SD card is full when taking photos
+\item P\+V\+Camera\+State\+Shoot\+Error\+S\+D\+Error\+: SD card error when taking photos
+\item P\+V\+Camera\+State\+Shoot\+Error\+S\+D\+Null\+: SD card is empty when taking photos
+\item P\+V\+Camera\+State\+Rec\+Error\+S\+D\+Full\+: The SD card is full when recording
+\item P\+V\+Camera\+State\+Rec\+Error\+S\+D\+Error\+: SD card error when recording
+\item P\+V\+Camera\+State\+Rec\+Error\+S\+D\+Null\+: SD card is empty when recording
+\item P\+V\+Camera\+State\+Flir\+Shoot\+Success\+: Shoot successfully by infrared camera
+\item P\+V\+Camera\+State\+Flir\+Recing\+: Infrared camera is recording
+\item P\+V\+Camera\+State\+Flir\+Rec\+Stop\+: Infrared camera stop recording
+\item P\+V\+Camera\+State\+Change\+Flir\+: Completed switching to infrared camera
+\item P\+V\+Camera\+State\+Change\+Normal\+: Switch to camera successfully
+\item P\+V\+Camera\+State\+Flir\+Cal\+Success\+: Infrared camera calibrate successfully
+\item P\+V\+Camera\+State\+Flir\+Cal\+Fail\+: Failed to calibrate by infrared camera 
+\end{DoxyItemize}
