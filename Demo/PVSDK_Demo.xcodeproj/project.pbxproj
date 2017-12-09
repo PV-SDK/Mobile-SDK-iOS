@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		86598F7E1FCD644B000BFCE8 /* PVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86598F7D1FCD644B000BFCE8 /* PVSDK.framework */; };
 		86632CA21FD29EEB0077CCD8 /* CameraSettingParameterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 86632C991FD29EEB0077CCD8 /* CameraSettingParameterVC.m */; };
 		86632CA31FD29EEB0077CCD8 /* CameraSettingValueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 86632C9B1FD29EEB0077CCD8 /* CameraSettingValueVC.m */; };
 		86632CA41FD29EEB0077CCD8 /* CameraSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 86632C9D1FD29EEB0077CCD8 /* CameraSettingVC.m */; };
@@ -16,7 +15,8 @@
 		86632CB11FD29F4C0077CCD8 /* MountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86632CAE1FD29F4C0077CCD8 /* MountViewController.m */; };
 		86632CB41FD2A0D40077CCD8 /* RemoteModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86632CB31FD2A0D40077CCD8 /* RemoteModeViewController.m */; };
 		86632CBB1FD2A1DD0077CCD8 /* FlightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86632CB81FD2A1DD0077CCD8 /* FlightViewController.m */; };
-		86632CC21FD93AA20077CCD8 /* VFLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86632CC11FD93AA20077CCD8 /* VFLibrary.framework */; };
+		86632CC51FDB7E5C0077CCD8 /* PVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86632CC31FDB7E5C0077CCD8 /* PVSDK.framework */; };
+		86632CC61FDB7E5C0077CCD8 /* VFLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86632CC41FDB7E5C0077CCD8 /* VFLibrary.framework */; };
 		868056401FC7F77800E1CDC4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8680563E1FC7F77800E1CDC4 /* MainViewController.m */; };
 		8680565F1FC8666E00E1CDC4 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8680565D1FC7F86800E1CDC4 /* VideoToolbox.framework */; };
 		86CFD6DD1FCD839B00625FBE /* PVSDK_UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CFD6D81FCD839B00625FBE /* PVSDK_UIUtils.m */; };
@@ -75,7 +75,6 @@
 
 /* Begin PBXFileReference section */
 		62FBD8C81F5949C340CB6738 /* Pods-PVSDK_Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PVSDK_Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PVSDK_Demo/Pods-PVSDK_Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		86598F7D1FCD644B000BFCE8 /* PVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PVSDK.framework; sourceTree = "<group>"; };
 		86632C981FD29EEB0077CCD8 /* CameraSettingParameterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSettingParameterVC.h; sourceTree = "<group>"; };
 		86632C991FD29EEB0077CCD8 /* CameraSettingParameterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSettingParameterVC.m; sourceTree = "<group>"; };
 		86632C9A1FD29EEB0077CCD8 /* CameraSettingValueVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSettingValueVC.h; sourceTree = "<group>"; };
@@ -92,7 +91,8 @@
 		86632CB31FD2A0D40077CCD8 /* RemoteModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteModeViewController.m; sourceTree = "<group>"; };
 		86632CB71FD2A1DD0077CCD8 /* FlightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightViewController.h; sourceTree = "<group>"; };
 		86632CB81FD2A1DD0077CCD8 /* FlightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightViewController.m; sourceTree = "<group>"; };
-		86632CC11FD93AA20077CCD8 /* VFLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VFLibrary.framework; sourceTree = "<group>"; };
+		86632CC31FDB7E5C0077CCD8 /* PVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PVSDK.framework; path = Framework/PVSDK.framework; sourceTree = "<group>"; };
+		86632CC41FDB7E5C0077CCD8 /* VFLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VFLibrary.framework; path = Framework/VFLibrary.framework; sourceTree = "<group>"; };
 		8680563D1FC7F77800E1CDC4 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		8680563E1FC7F77800E1CDC4 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		868056571FC7F82300E1CDC4 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
@@ -166,11 +166,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86598F7E1FCD644B000BFCE8 /* PVSDK.framework in Frameworks */,
-				86632CC21FD93AA20077CCD8 /* VFLibrary.framework in Frameworks */,
 				8680565F1FC8666E00E1CDC4 /* VideoToolbox.framework in Frameworks */,
+				86632CC61FDB7E5C0077CCD8 /* VFLibrary.framework in Frameworks */,
 				ADC257D21F8F82A700418881 /* libc++.tbd in Frameworks */,
 				8DC72A3E39B8110A7B24B250 /* libPods-PVSDK_Demo.a in Frameworks */,
+				86632CC51FDB7E5C0077CCD8 /* PVSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,8 +203,8 @@
 		75D83CAA1EE3D167C4B0A7E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				86632CC11FD93AA20077CCD8 /* VFLibrary.framework */,
-				86598F7D1FCD644B000BFCE8 /* PVSDK.framework */,
+				86632CC31FDB7E5C0077CCD8 /* PVSDK.framework */,
+				86632CC41FDB7E5C0077CCD8 /* VFLibrary.framework */,
 				868056631FC8672D00E1CDC4 /* libz.tbd */,
 				8680565D1FC7F86800E1CDC4 /* VideoToolbox.framework */,
 				8680565B1FC7F83D00E1CDC4 /* libiconv.tbd */,
@@ -751,7 +751,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A3D44E615DE38566692210EB /* [CP] Copy Pods Resources */ = {
@@ -964,6 +964,7 @@
 					"$(PROJECT_DIR)/PVSDK_Demo/PVSDK_VideoStream",
 					"$(PROJECT_DIR)/PVSDK_Demo/PVSDK",
 					"$(PROJECT_DIR)/PVSDK_Demo/PVSDK/PVSDK_VideoStream",
+					"$(PROJECT_DIR)/Framework",
 				);
 				GCC_PREFIX_HEADER = PVSDK_Demo/PrefixHeader.pch;
 				INFOPLIST_FILE = PVSDK_Demo/Info.plist;
@@ -989,6 +990,7 @@
 					"$(PROJECT_DIR)/PVSDK_Demo/PVSDK_VideoStream",
 					"$(PROJECT_DIR)/PVSDK_Demo/PVSDK",
 					"$(PROJECT_DIR)/PVSDK_Demo/PVSDK/PVSDK_VideoStream",
+					"$(PROJECT_DIR)/Framework",
 				);
 				GCC_PREFIX_HEADER = PVSDK_Demo/PrefixHeader.pch;
 				INFOPLIST_FILE = PVSDK_Demo/Info.plist;
