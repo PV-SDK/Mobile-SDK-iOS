@@ -505,7 +505,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dzq-tb-bcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1520" y="-3316"/>
+            <point key="canvasLocation" x="1588" y="-3316"/>
         </scene>
         <!--RemoteController-->
         <scene sceneID="xLx-43-inG">
@@ -543,7 +543,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Pm-Fp-Lrc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1519.5652173913045" y="-2514.4927536231885"/>
+            <point key="canvasLocation" x="1588" y="-2515"/>
         </scene>
         <!--BatterController-->
         <scene sceneID="fmb-10-uPD">
@@ -580,7 +580,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="187-Jy-8VR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1519.5652173913045" y="-1707.2463768115942"/>
+            <point key="canvasLocation" x="1588" y="-1710"/>
         </scene>
         <!--Camera Setting ParameterVC-->
         <scene sceneID="4T7-lS-qDX">
@@ -619,7 +619,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32C-1T-8QR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2186" y="-3316"/>
+            <point key="canvasLocation" x="2435" y="-3316"/>
         </scene>
         <!--Remote Mode View Controller-->
         <scene sceneID="6by-yY-H1b">
@@ -656,7 +656,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2E-Fn-UhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2184.7826086956525" y="-2514.4927536231885"/>
+            <point key="canvasLocation" x="2435" y="-2515"/>
         </scene>
         <!--Camera Setting ValueVC-->
         <scene sceneID="fYq-mj-UNN">
@@ -691,7 +691,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XhS-9k-a9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2863" y="-3316"/>
+            <point key="canvasLocation" x="3284" y="-3316"/>
         </scene>
     </scenes>
 </document>

@@ -23,7 +23,6 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application {
 
-    //  此处 post notification 是为了在App Resign(放弃) Active 时 通知图传 Pause
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ApplicationWillResignActive" object:nil];
 }
 
@@ -40,7 +39,7 @@
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    //  此处 post notification 是为了在App Become Active 时 通知图传 Play
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ApplicationDidBecomeActive" object:nil];
 }
 
