@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3s0-0W-RRn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-745" y="432"/>
+            <point key="canvasLocation" x="-1077" y="-1498"/>
         </scene>
         <!--PowerVision-->
         <scene sceneID="Wuk-0R-itr">
@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BqS-kU-cRF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-60.326086956521742" y="431.8840579710145"/>
+            <point key="canvasLocation" x="-115" y="-1498"/>
         </scene>
         <!--Mount View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -169,7 +169,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eyn-RI-bnv">
-                                <rect key="frame" x="270" y="158" width="226" height="182"/>
+                                <rect key="frame" x="270" y="150" width="226" height="190"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="发送数据配置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vme-90-qdx">
                                         <rect key="frame" x="0.0" y="0.0" width="92" height="18"/>
@@ -182,7 +182,7 @@
                                 <color key="backgroundColor" red="0.89139578900000005" green="0.89139578900000005" blue="0.89139578900000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0Z-lC-JB0">
-                                <rect key="frame" x="270" y="53" width="226" height="95"/>
+                                <rect key="frame" x="270" y="15" width="226" height="125"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="读取数据配置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5G-vL-gJi">
                                         <rect key="frame" x="0.0" y="0.0" width="92" height="21"/>
@@ -197,7 +197,7 @@
                                 <color key="backgroundColor" red="0.89139578900000005" green="0.89139578900000005" blue="0.89139578900000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="k5G-vL-gJi" firstAttribute="leading" secondItem="g0Z-lC-JB0" secondAttribute="leading" id="HHw-0u-Mmw"/>
-                                    <constraint firstAttribute="height" constant="95" id="aT7-8s-SC9"/>
+                                    <constraint firstAttribute="height" constant="125" id="aT7-8s-SC9"/>
                                     <constraint firstItem="k5G-vL-gJi" firstAttribute="top" secondItem="g0Z-lC-JB0" secondAttribute="top" id="b7d-A0-fcg"/>
                                 </constraints>
                             </view>
@@ -246,7 +246,7 @@
                             <constraint firstItem="d1a-hS-N0h" firstAttribute="leading" secondItem="g0Z-lC-JB0" secondAttribute="trailing" constant="10" id="uCN-tQ-M3V"/>
                             <constraint firstItem="eR0-M4-4ov" firstAttribute="width" secondItem="dw6-2Q-6uN" secondAttribute="width" constant="-8" id="ulp-XI-OIO"/>
                             <constraint firstItem="D6K-xU-wNZ" firstAttribute="trailing" secondItem="pw8-Kv-9zG" secondAttribute="trailing" id="vGL-MR-eDm"/>
-                            <constraint firstItem="g0Z-lC-JB0" firstAttribute="top" secondItem="pw8-Kv-9zG" secondAttribute="top" id="xZs-7T-YKt"/>
+                            <constraint firstItem="g0Z-lC-JB0" firstAttribute="top" secondItem="pw8-Kv-9zG" secondAttribute="top" constant="-38" id="xZs-7T-YKt"/>
                             <constraint firstItem="koF-Rc-Vbp" firstAttribute="top" secondItem="Yvs-Fj-rKx" secondAttribute="bottom" constant="8" id="xxC-yN-AnQ"/>
                             <constraint firstItem="Cr4-IL-tHp" firstAttribute="trailing" secondItem="koF-Rc-Vbp" secondAttribute="trailing" id="ysD-gH-OCx"/>
                             <constraint firstItem="Eyn-RI-bnv" firstAttribute="trailing" secondItem="g0Z-lC-JB0" secondAttribute="trailing" id="zbK-th-uT7"/>
@@ -264,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="719.83695652173924" y="995.65217391304361"/>
+            <point key="canvasLocation" x="-115" y="-932"/>
         </scene>
         <!--Flight View Controller-->
         <scene sceneID="u5T-WX-CIg">
@@ -548,7 +548,7 @@
         <!--BatterController-->
         <scene sceneID="fmb-10-uPD">
             <objects>
-                <viewController title="BatterController" id="WLg-Sb-tAm" customClass="BatterViewController" sceneMemberID="viewController">
+                <viewController title="BatterController" id="WLg-Sb-tAm" customClass="BatteryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rkj-A7-ls6"/>
                         <viewControllerLayoutGuide type="bottom" id="s7q-Cf-4TC"/>

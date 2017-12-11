@@ -1,15 +1,15 @@
 //
-//  BatterViewController.m
+//  BatteryViewController.m
 //  PVSDK_Demo
 //
 //  Created by Gavin.Guo on 2017/12/2.
 //  Copyright © 2017 PowerVision. All rights reserved.
 //
 
-#import "BatterViewController.h"
+#import "BatteryViewController.h"
 #import <PVSDK/PVSDK.h>
 
-@interface BatterViewController ()
+@interface BatteryViewController ()
 <
 UITableViewDelegate,UITableViewDataSource
 >
@@ -22,7 +22,7 @@ UITableViewDelegate,UITableViewDataSource
 
 @end
 
-@implementation BatterViewController
+@implementation BatteryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

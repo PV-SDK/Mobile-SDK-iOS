@@ -1,5 +1,5 @@
 //
-//  BatterViewController.h
+//  BatteryViewController.h
 //  PVSDK_Demo
 //
 //  Created by Gavin.Guo on 2017/12/2.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BatterViewController : UIViewController
+@interface BatteryViewController : UIViewController
 
 @end

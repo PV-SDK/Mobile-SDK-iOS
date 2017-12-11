@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		86632CA21FD29EEB0077CCD8 /* CameraSettingParameterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 86632C991FD29EEB0077CCD8 /* CameraSettingParameterVC.m */; };
-		86632CA31FD29EEB0077CCD8 /* CameraSettingValueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 86632C9B1FD29EEB0077CCD8 /* CameraSettingValueVC.m */; };
-		86632CA41FD29EEB0077CCD8 /* CameraSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 86632C9D1FD29EEB0077CCD8 /* CameraSettingVC.m */; };
-		86632CA81FD29F080077CCD8 /* RemoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86632CA71FD29F080077CCD8 /* RemoteViewController.m */; };
-		86632CAB1FD29F210077CCD8 /* BatterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86632CAA1FD29F210077CCD8 /* BatterViewController.m */; };
-		86632CB11FD29F4C0077CCD8 /* MountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86632CAE1FD29F4C0077CCD8 /* MountViewController.m */; };
-		86632CB41FD2A0D40077CCD8 /* RemoteModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86632CB31FD2A0D40077CCD8 /* RemoteModeViewController.m */; };
+		864542FC1FDE723600980170 /* BatteryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 864542E91FDE723600980170 /* BatteryViewController.m */; };
+		864542FD1FDE723600980170 /* CameraSettingParameterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 864542ED1FDE723600980170 /* CameraSettingParameterVC.m */; };
+		864542FE1FDE723600980170 /* CameraSettingValueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 864542EF1FDE723600980170 /* CameraSettingValueVC.m */; };
+		864542FF1FDE723600980170 /* CameraSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 864542F11FDE723600980170 /* CameraSettingVC.m */; };
+		864543011FDE723600980170 /* RemoteModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 864542F91FDE723600980170 /* RemoteModeViewController.m */; };
+		864543021FDE723600980170 /* RemoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 864542FB1FDE723600980170 /* RemoteViewController.m */; };
+		8645430C1FDE726A00980170 /* MountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8645430B1FDE726A00980170 /* MountViewController.m */; };
 		86632CBB1FD2A1DD0077CCD8 /* FlightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86632CB81FD2A1DD0077CCD8 /* FlightViewController.m */; };
 		86632CC51FDB7E5C0077CCD8 /* PVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86632CC31FDB7E5C0077CCD8 /* PVSDK.framework */; };
 		86632CC61FDB7E5C0077CCD8 /* VFLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86632CC41FDB7E5C0077CCD8 /* VFLibrary.framework */; };
@@ -75,20 +75,20 @@
 
 /* Begin PBXFileReference section */
 		62FBD8C81F5949C340CB6738 /* Pods-PVSDK_Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PVSDK_Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PVSDK_Demo/Pods-PVSDK_Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		86632C981FD29EEB0077CCD8 /* CameraSettingParameterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSettingParameterVC.h; sourceTree = "<group>"; };
-		86632C991FD29EEB0077CCD8 /* CameraSettingParameterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSettingParameterVC.m; sourceTree = "<group>"; };
-		86632C9A1FD29EEB0077CCD8 /* CameraSettingValueVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSettingValueVC.h; sourceTree = "<group>"; };
-		86632C9B1FD29EEB0077CCD8 /* CameraSettingValueVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSettingValueVC.m; sourceTree = "<group>"; };
-		86632C9C1FD29EEB0077CCD8 /* CameraSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSettingVC.h; sourceTree = "<group>"; };
-		86632C9D1FD29EEB0077CCD8 /* CameraSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSettingVC.m; sourceTree = "<group>"; };
-		86632CA61FD29F080077CCD8 /* RemoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteViewController.h; sourceTree = "<group>"; };
-		86632CA71FD29F080077CCD8 /* RemoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteViewController.m; sourceTree = "<group>"; };
-		86632CA91FD29F210077CCD8 /* BatterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatterViewController.h; sourceTree = "<group>"; };
-		86632CAA1FD29F210077CCD8 /* BatterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatterViewController.m; sourceTree = "<group>"; };
-		86632CAD1FD29F4C0077CCD8 /* MountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MountViewController.h; sourceTree = "<group>"; };
-		86632CAE1FD29F4C0077CCD8 /* MountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MountViewController.m; sourceTree = "<group>"; };
-		86632CB21FD2A0D40077CCD8 /* RemoteModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteModeViewController.h; sourceTree = "<group>"; };
-		86632CB31FD2A0D40077CCD8 /* RemoteModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteModeViewController.m; sourceTree = "<group>"; };
+		864542E81FDE723600980170 /* BatteryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatteryViewController.h; sourceTree = "<group>"; };
+		864542E91FDE723600980170 /* BatteryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatteryViewController.m; sourceTree = "<group>"; };
+		864542EC1FDE723600980170 /* CameraSettingParameterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSettingParameterVC.h; sourceTree = "<group>"; };
+		864542ED1FDE723600980170 /* CameraSettingParameterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSettingParameterVC.m; sourceTree = "<group>"; };
+		864542EE1FDE723600980170 /* CameraSettingValueVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSettingValueVC.h; sourceTree = "<group>"; };
+		864542EF1FDE723600980170 /* CameraSettingValueVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSettingValueVC.m; sourceTree = "<group>"; };
+		864542F01FDE723600980170 /* CameraSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSettingVC.h; sourceTree = "<group>"; };
+		864542F11FDE723600980170 /* CameraSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSettingVC.m; sourceTree = "<group>"; };
+		864542F81FDE723600980170 /* RemoteModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteModeViewController.h; sourceTree = "<group>"; };
+		864542F91FDE723600980170 /* RemoteModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteModeViewController.m; sourceTree = "<group>"; };
+		864542FA1FDE723600980170 /* RemoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteViewController.h; sourceTree = "<group>"; };
+		864542FB1FDE723600980170 /* RemoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteViewController.m; sourceTree = "<group>"; };
+		8645430A1FDE726A00980170 /* MountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MountViewController.h; sourceTree = "<group>"; };
+		8645430B1FDE726A00980170 /* MountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MountViewController.m; sourceTree = "<group>"; };
 		86632CB71FD2A1DD0077CCD8 /* FlightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightViewController.h; sourceTree = "<group>"; };
 		86632CB81FD2A1DD0077CCD8 /* FlightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightViewController.m; sourceTree = "<group>"; };
 		86632CC31FDB7E5C0077CCD8 /* PVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PVSDK.framework; path = Framework/PVSDK.framework; sourceTree = "<group>"; };
@@ -216,122 +216,79 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		86632C8F1FD29E8F0077CCD8 /* BatterViewController */ = {
+		864542E61FDE723600980170 /* Battery */ = {
 			isa = PBXGroup;
 			children = (
-				86632C911FD29EC20077CCD8 /* Controllers */,
-				86632C921FD29EC20077CCD8 /* Models */,
-				86632C931FD29EC20077CCD8 /* Views */,
+				864542E71FDE723600980170 /* Controllers */,
 			);
-			path = BatterViewController;
+			path = Battery;
 			sourceTree = "<group>";
 		};
-		86632C901FD29E8F0077CCD8 /* RemoteViewController */ = {
+		864542E71FDE723600980170 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				86632C941FD29ECA0077CCD8 /* Controllers */,
-				86632C951FD29ECA0077CCD8 /* Models */,
-				86632C961FD29ECA0077CCD8 /* Views */,
-			);
-			path = RemoteViewController;
-			sourceTree = "<group>";
-		};
-		86632C911FD29EC20077CCD8 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				86632CA91FD29F210077CCD8 /* BatterViewController.h */,
-				86632CAA1FD29F210077CCD8 /* BatterViewController.m */,
+				864542E81FDE723600980170 /* BatteryViewController.h */,
+				864542E91FDE723600980170 /* BatteryViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		86632C921FD29EC20077CCD8 /* Models */ = {
+		864542EA1FDE723600980170 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				864542EB1FDE723600980170 /* Controllers */,
 			);
-			path = Models;
+			path = Camera;
 			sourceTree = "<group>";
 		};
-		86632C931FD29EC20077CCD8 /* Views */ = {
+		864542EB1FDE723600980170 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		86632C941FD29ECA0077CCD8 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				86632CA61FD29F080077CCD8 /* RemoteViewController.h */,
-				86632CA71FD29F080077CCD8 /* RemoteViewController.m */,
-				86632CB21FD2A0D40077CCD8 /* RemoteModeViewController.h */,
-				86632CB31FD2A0D40077CCD8 /* RemoteModeViewController.m */,
+				864542EC1FDE723600980170 /* CameraSettingParameterVC.h */,
+				864542ED1FDE723600980170 /* CameraSettingParameterVC.m */,
+				864542EE1FDE723600980170 /* CameraSettingValueVC.h */,
+				864542EF1FDE723600980170 /* CameraSettingValueVC.m */,
+				864542F01FDE723600980170 /* CameraSettingVC.h */,
+				864542F11FDE723600980170 /* CameraSettingVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		86632C951FD29ECA0077CCD8 /* Models */ = {
+		864542F61FDE723600980170 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				864542F71FDE723600980170 /* Controllers */,
 			);
-			path = Models;
+			path = Remote;
 			sourceTree = "<group>";
 		};
-		86632C961FD29ECA0077CCD8 /* Views */ = {
+		864542F71FDE723600980170 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		86632C971FD29EEB0077CCD8 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				86632C9C1FD29EEB0077CCD8 /* CameraSettingVC.h */,
-				86632C9D1FD29EEB0077CCD8 /* CameraSettingVC.m */,
-				86632C981FD29EEB0077CCD8 /* CameraSettingParameterVC.h */,
-				86632C991FD29EEB0077CCD8 /* CameraSettingParameterVC.m */,
-				86632C9A1FD29EEB0077CCD8 /* CameraSettingValueVC.h */,
-				86632C9B1FD29EEB0077CCD8 /* CameraSettingValueVC.m */,
+				864542F81FDE723600980170 /* RemoteModeViewController.h */,
+				864542F91FDE723600980170 /* RemoteModeViewController.m */,
+				864542FA1FDE723600980170 /* RemoteViewController.h */,
+				864542FB1FDE723600980170 /* RemoteViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		86632CA01FD29EEB0077CCD8 /* Models */ = {
+		864543081FDE726A00980170 /* MountViewController */ = {
 			isa = PBXGroup;
 			children = (
+				864543091FDE726A00980170 /* Controllers */,
 			);
-			path = Models;
-			sourceTree = "<group>";
+			name = MountViewController;
+			path = PVSDK_Demo/MountViewController;
+			sourceTree = SOURCE_ROOT;
 		};
-		86632CA11FD29EEB0077CCD8 /* Views */ = {
+		864543091FDE726A00980170 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		86632CAC1FD29F4C0077CCD8 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				86632CAD1FD29F4C0077CCD8 /* MountViewController.h */,
-				86632CAE1FD29F4C0077CCD8 /* MountViewController.m */,
+				8645430A1FDE726A00980170 /* MountViewController.h */,
+				8645430B1FDE726A00980170 /* MountViewController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		86632CAF1FD29F4C0077CCD8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		86632CB01FD29F4C0077CCD8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		86632CB51FD2A1DD0077CCD8 /* FlightViewController */ = {
@@ -375,16 +332,6 @@
 			path = PVSDK;
 			sourceTree = "<group>";
 		};
-		8670DAD61FC8FEC100FAB09B /* CameraViewController */ = {
-			isa = PBXGroup;
-			children = (
-				86632C971FD29EEB0077CCD8 /* Controllers */,
-				86632CA01FD29EEB0077CCD8 /* Models */,
-				86632CA11FD29EEB0077CCD8 /* Views */,
-			);
-			path = CameraViewController;
-			sourceTree = "<group>";
-		};
 		86CFD6D61FCD839B00625FBE /* PVSDK_VideoStream */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,16 +342,6 @@
 				86CFD6DB1FCD839B00625FBE /* PVSDK_VideoStreamView.m */,
 			);
 			path = PVSDK_VideoStream;
-			sourceTree = "<group>";
-		};
-		86CFD6E01FCE746F00625FBE /* MountViewController */ = {
-			isa = PBXGroup;
-			children = (
-				86632CAC1FD29F4C0077CCD8 /* Controllers */,
-				86632CAF1FD29F4C0077CCD8 /* Models */,
-				86632CB01FD29F4C0077CCD8 /* Views */,
-			);
-			path = MountViewController;
 			sourceTree = "<group>";
 		};
 		ADC05C371FA1C45600C86981 /* SettingView */ = {
@@ -492,11 +429,11 @@
 				8680563D1FC7F77800E1CDC4 /* MainViewController.h */,
 				8680563E1FC7F77800E1CDC4 /* MainViewController.m */,
 				86632CB51FD2A1DD0077CCD8 /* FlightViewController */,
-				8670DAD61FC8FEC100FAB09B /* CameraViewController */,
-				86632C8F1FD29E8F0077CCD8 /* BatterViewController */,
-				86632C901FD29E8F0077CCD8 /* RemoteViewController */,
-				86CFD6E01FCE746F00625FBE /* MountViewController */,
+				864543081FDE726A00980170 /* MountViewController */,
 				ADC257911F8F3EBF00418881 /* Main.storyboard */,
+				864542EA1FDE723600980170 /* Camera */,
+				864542E61FDE723600980170 /* Battery */,
+				864542F61FDE723600980170 /* Remote */,
 				ADC257941F8F3EBF00418881 /* Assets.xcassets */,
 				ADC257961F8F3EBF00418881 /* LaunchScreen.storyboard */,
 				ADC257991F8F3EBF00418881 /* Info.plist */,
@@ -779,30 +716,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86632CB41FD2A0D40077CCD8 /* RemoteModeViewController.m in Sources */,
 				86CFD6DE1FCD839B00625FBE /* PVSDK_VideoStreamView.m in Sources */,
 				ADC05BBB1F9DB9E100C86981 /* CanSettingView.m in Sources */,
-				86632CA31FD29EEB0077CCD8 /* CameraSettingValueVC.m in Sources */,
+				864542FD1FDE723600980170 /* CameraSettingParameterVC.m in Sources */,
 				ADC05C451FA1E34700C86981 /* CanFilterSettingView.m in Sources */,
 				ADC05BC21F9DC0CF00C86981 /* I2CSettingView.m in Sources */,
+				864543011FDE723600980170 /* RemoteModeViewController.m in Sources */,
+				8645430C1FDE726A00980170 /* MountViewController.m in Sources */,
 				ADC257C11F8F610500418881 /* LMJDropdownMenu.m in Sources */,
+				864543021FDE723600980170 /* RemoteViewController.m in Sources */,
 				ADC05C861FA7169E00C86981 /* ReadSpiDataParamView.m in Sources */,
+				864542FC1FDE723600980170 /* BatteryViewController.m in Sources */,
 				ADC05C401FA1CAB500C86981 /* SendI2cDataParamView.m in Sources */,
 				868056401FC7F77800E1CDC4 /* MainViewController.m in Sources */,
 				ADC05C501FA3392E00C86981 /* GpioSettingView.m in Sources */,
-				86632CB11FD29F4C0077CCD8 /* MountViewController.m in Sources */,
 				ADC2578D1F8F3EBE00418881 /* AppDelegate.m in Sources */,
 				ADC05BC51F9DD7A800C86981 /* SpiSettingView.m in Sources */,
 				ADC258A61F94669C00418881 /* UIView+Size.m in Sources */,
 				86632CBB1FD2A1DD0077CCD8 /* FlightViewController.m in Sources */,
-				86632CA41FD29EEB0077CCD8 /* CameraSettingVC.m in Sources */,
 				ADC2589E1F9455EC00418881 /* UartSettingView.m in Sources */,
-				86632CA21FD29EEB0077CCD8 /* CameraSettingParameterVC.m in Sources */,
-				86632CAB1FD29F210077CCD8 /* BatterViewController.m in Sources */,
 				ADC05C831FA7168700C86981 /* ReadI2cDataParamView.m in Sources */,
 				ADC2578A1F8F3EBE00418881 /* main.m in Sources */,
 				86CFD6DD1FCD839B00625FBE /* PVSDK_UIUtils.m in Sources */,
-				86632CA81FD29F080077CCD8 /* RemoteViewController.m in Sources */,
+				864542FE1FDE723600980170 /* CameraSettingValueVC.m in Sources */,
+				864542FF1FDE723600980170 /* CameraSettingVC.m in Sources */,
 				ADC05C3B1FA1C4DF00C86981 /* SendCanDataParamView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
