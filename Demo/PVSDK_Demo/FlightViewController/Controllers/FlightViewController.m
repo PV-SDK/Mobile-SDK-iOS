@@ -40,6 +40,7 @@ PVRemoteControllerDelegate
 
 @property (weak, nonatomic) IBOutlet UIButton *changeCameraModeButton;
 @property (weak, nonatomic) IBOutlet UIButton *shootButton;
+@property (weak, nonatomic) IBOutlet UIView *gimabalControlView;
 
 @property (nonatomic, strong) PVCamera *cameraManager;
 @property (nonatomic, strong) PVFlightController *flightController;
@@ -114,7 +115,7 @@ PVRemoteControllerDelegate
 - (void)openVideoStream
 {
     if (_streamView == nil) {
-        [self.view insertSubview:self.streamView belowSubview:self.cameraControlView];
+        [self.view insertSubview:self.streamView belowSubview:self.gimabalControlView];
     }
     [_streamView openVideoStreamCallBack:^(PVCameraCommandReceive result, NSInteger error) {
         NSLog(@"【Open video stream】Receive:%lu,ErrorID:%ld",(unsigned long)result, (long)error);
@@ -499,6 +500,11 @@ PVRemoteControllerDelegate
         _streamView = [[PVSDK_VideoStreamView alloc] initWithFrame:frame];
     }
     return _streamView;
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"ApplicationWillResignActive" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"ApplicationDidBecomeActive" object:nil];
 }
 
 - (void)didReceiveMemoryWarning

@@ -460,6 +460,7 @@
                     <connections>
                         <outlet property="cameraControlView" destination="BPn-kj-pGM" id="HN0-US-W3e"/>
                         <outlet property="changeCameraModeButton" destination="zo7-7H-rN1" id="JO3-Lb-Oez"/>
+                        <outlet property="gimabalControlView" destination="WUp-gb-EWf" id="QrR-Yq-q6O"/>
                         <outlet property="shootButton" destination="1DT-4L-ddt" id="vIV-7h-TCB"/>
                         <segue destination="QZh-mW-YKp" kind="show" identifier="PushToCameraSettingVC" id="AkW-AV-QHs"/>
                     </connections>
