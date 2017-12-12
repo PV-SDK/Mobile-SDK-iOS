@@ -20,6 +20,6 @@ Demo and the SDK document instructions for more details about api.
 
 ![](https://github.com/PV-SDK/Mobile-SDK-iOS/blob/master/Source/Images/PowerEye.jpg?raw=true)
 
-For more information about products,please visit our [weisite](http://www.powervision.me/en/).
+For more information about products,please visit our [website](http://www.powervision.me/en/).
 
 
