@@ -10,7 +10,7 @@
 #import <PVSDK/PVSDK.h>
 
 #import "CameraSettingVC.h"
-#import "PVSDK_VideoStreamView.h"
+#import "PVVideoStreamView.h"
 
 #define GimabalCommandTime 0.2f
 
@@ -50,7 +50,7 @@ PVRemoteControllerDelegate
 
 @property (nonatomic, assign) PVCameraHandleType handleType;
 
-@property (nonatomic, strong) PVSDK_VideoStreamView *streamView;
+@property (nonatomic, strong) PVVideoStreamView *streamView;
 
 @end
 
@@ -493,11 +493,11 @@ PVRemoteControllerDelegate
 }
 
 #pragma mark - Lazying...
--(PVSDK_VideoStreamView *)streamView
+-(PVVideoStreamView *)streamView
 {
     if (_streamView == nil) {
         CGRect frame = CGRectMake(0, 32, self.view.bounds.size.width, self.view.bounds.size.height - 32);
-        _streamView = [[PVSDK_VideoStreamView alloc] initWithFrame:frame];
+        _streamView = [[PVVideoStreamView alloc] initWithFrame:frame];
     }
     return _streamView;
 }

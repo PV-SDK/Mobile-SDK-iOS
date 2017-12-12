@@ -7,39 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		864542FC1FDE723600980170 /* BatteryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 864542E91FDE723600980170 /* BatteryViewController.m */; };
-		864542FD1FDE723600980170 /* CameraSettingParameterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 864542ED1FDE723600980170 /* CameraSettingParameterVC.m */; };
-		864542FE1FDE723600980170 /* CameraSettingValueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 864542EF1FDE723600980170 /* CameraSettingValueVC.m */; };
-		864542FF1FDE723600980170 /* CameraSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 864542F11FDE723600980170 /* CameraSettingVC.m */; };
-		864543011FDE723600980170 /* RemoteModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 864542F91FDE723600980170 /* RemoteModeViewController.m */; };
-		864543021FDE723600980170 /* RemoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 864542FB1FDE723600980170 /* RemoteViewController.m */; };
 		8645430C1FDE726A00980170 /* MountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8645430B1FDE726A00980170 /* MountViewController.m */; };
 		86632CBB1FD2A1DD0077CCD8 /* FlightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86632CB81FD2A1DD0077CCD8 /* FlightViewController.m */; };
 		86632CC51FDB7E5C0077CCD8 /* PVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86632CC31FDB7E5C0077CCD8 /* PVSDK.framework */; };
 		86632CC61FDB7E5C0077CCD8 /* VFLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86632CC41FDB7E5C0077CCD8 /* VFLibrary.framework */; };
 		868056401FC7F77800E1CDC4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8680563E1FC7F77800E1CDC4 /* MainViewController.m */; };
 		8680565F1FC8666E00E1CDC4 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8680565D1FC7F86800E1CDC4 /* VideoToolbox.framework */; };
-		86CFD6DD1FCD839B00625FBE /* PVSDK_UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CFD6D81FCD839B00625FBE /* PVSDK_UIUtils.m */; };
-		86CFD6DE1FCD839B00625FBE /* PVSDK_VideoStreamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CFD6DB1FCD839B00625FBE /* PVSDK_VideoStreamView.m */; };
+		86D9872A1FDFDE87002EA848 /* CanFilterSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D9870D1FDFDE87002EA848 /* CanFilterSettingView.m */; };
+		86D9872B1FDFDE87002EA848 /* CanFilterSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D9870E1FDFDE87002EA848 /* CanFilterSettingView.xib */; };
+		86D9872C1FDFDE87002EA848 /* CanSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987101FDFDE87002EA848 /* CanSettingView.m */; };
+		86D9872D1FDFDE87002EA848 /* CanSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D987111FDFDE87002EA848 /* CanSettingView.xib */; };
+		86D9872E1FDFDE87002EA848 /* GpioSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987131FDFDE87002EA848 /* GpioSettingView.m */; };
+		86D9872F1FDFDE87002EA848 /* GpioSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D987141FDFDE87002EA848 /* GpioSettingView.xib */; };
+		86D987301FDFDE87002EA848 /* I2CSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987161FDFDE87002EA848 /* I2CSettingView.m */; };
+		86D987311FDFDE87002EA848 /* I2CSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D987171FDFDE87002EA848 /* I2CSettingView.xib */; };
+		86D987321FDFDE87002EA848 /* ReadI2cDataParamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987191FDFDE87002EA848 /* ReadI2cDataParamView.m */; };
+		86D987331FDFDE87002EA848 /* ReadI2cDataParamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D9871A1FDFDE87002EA848 /* ReadI2cDataParamView.xib */; };
+		86D987341FDFDE87002EA848 /* ReadSpiDataParamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D9871C1FDFDE87002EA848 /* ReadSpiDataParamView.m */; };
+		86D987351FDFDE87002EA848 /* ReadSpiDataParamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D9871D1FDFDE87002EA848 /* ReadSpiDataParamView.xib */; };
+		86D987361FDFDE87002EA848 /* SendCanDataParamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D9871F1FDFDE87002EA848 /* SendCanDataParamView.m */; };
+		86D987371FDFDE87002EA848 /* SendCanDataParamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D987201FDFDE87002EA848 /* SendCanDataParamView.xib */; };
+		86D987381FDFDE87002EA848 /* SendI2cDataParamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987221FDFDE87002EA848 /* SendI2cDataParamView.m */; };
+		86D987391FDFDE87002EA848 /* SendI2cDataParamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D987231FDFDE87002EA848 /* SendI2cDataParamView.xib */; };
+		86D9873A1FDFDE87002EA848 /* SpiSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987251FDFDE87002EA848 /* SpiSettingView.m */; };
+		86D9873B1FDFDE87002EA848 /* SpiSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D987261FDFDE87002EA848 /* SpiSettingView.xib */; };
+		86D9873C1FDFDE87002EA848 /* UartSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987281FDFDE87002EA848 /* UartSettingView.m */; };
+		86D9873D1FDFDE87002EA848 /* UartSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D987291FDFDE87002EA848 /* UartSettingView.xib */; };
+		86D987531FDFDEDC002EA848 /* BatteryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987421FDFDEDC002EA848 /* BatteryViewController.m */; };
+		86D987541FDFDEDC002EA848 /* CameraSettingParameterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987461FDFDEDC002EA848 /* CameraSettingParameterVC.m */; };
+		86D987551FDFDEDC002EA848 /* CameraSettingValueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987481FDFDEDC002EA848 /* CameraSettingValueVC.m */; };
+		86D987561FDFDEDC002EA848 /* CameraSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D9874A1FDFDEDC002EA848 /* CameraSettingVC.m */; };
+		86D987571FDFDEDC002EA848 /* ComponentHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D9874C1FDFDEDC002EA848 /* ComponentHelper.m */; };
+		86D987581FDFDEDC002EA848 /* RemoteModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987501FDFDEDC002EA848 /* RemoteModeViewController.m */; };
+		86D987591FDFDEDC002EA848 /* RemoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987521FDFDEDC002EA848 /* RemoteViewController.m */; };
+		86D9876E1FDFE4F0002EA848 /* PVVideoStreamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D9876D1FDFE4F0002EA848 /* PVVideoStreamView.m */; };
 		8DC72A3E39B8110A7B24B250 /* libPods-PVSDK_Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D61FD7D405CF23A5560576BE /* libPods-PVSDK_Demo.a */; };
-		ADC05BBB1F9DB9E100C86981 /* CanSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05BBA1F9DB9E100C86981 /* CanSettingView.m */; };
-		ADC05BBD1F9DB9F400C86981 /* CanSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05BBC1F9DB9F400C86981 /* CanSettingView.xib */; };
-		ADC05BBF1F9DC0B500C86981 /* I2CSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05BBE1F9DC0B500C86981 /* I2CSettingView.xib */; };
-		ADC05BC21F9DC0CF00C86981 /* I2CSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05BC11F9DC0CF00C86981 /* I2CSettingView.m */; };
-		ADC05BC51F9DD7A800C86981 /* SpiSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05BC41F9DD7A800C86981 /* SpiSettingView.m */; };
-		ADC05BC71F9DD7BC00C86981 /* SpiSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05BC61F9DD7BC00C86981 /* SpiSettingView.xib */; };
-		ADC05C3B1FA1C4DF00C86981 /* SendCanDataParamView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05C3A1FA1C4DF00C86981 /* SendCanDataParamView.m */; };
-		ADC05C3D1FA1C4EE00C86981 /* SendCanDataParamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05C3C1FA1C4EE00C86981 /* SendCanDataParamView.xib */; };
-		ADC05C401FA1CAB500C86981 /* SendI2cDataParamView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05C3F1FA1CAB500C86981 /* SendI2cDataParamView.m */; };
-		ADC05C421FA1CAC900C86981 /* SendI2cDataParamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05C411FA1CAC900C86981 /* SendI2cDataParamView.xib */; };
-		ADC05C451FA1E34700C86981 /* CanFilterSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05C441FA1E34700C86981 /* CanFilterSettingView.m */; };
-		ADC05C471FA1E35700C86981 /* CanFilterSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05C461FA1E35700C86981 /* CanFilterSettingView.xib */; };
-		ADC05C501FA3392E00C86981 /* GpioSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05C4F1FA3392E00C86981 /* GpioSettingView.m */; };
-		ADC05C521FA3393E00C86981 /* GpioSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05C511FA3393E00C86981 /* GpioSettingView.xib */; };
-		ADC05C831FA7168700C86981 /* ReadI2cDataParamView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05C821FA7168700C86981 /* ReadI2cDataParamView.m */; };
-		ADC05C861FA7169E00C86981 /* ReadSpiDataParamView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC05C851FA7169E00C86981 /* ReadSpiDataParamView.m */; };
-		ADC05C881FA716AF00C86981 /* ReadI2cDataParamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05C871FA716AF00C86981 /* ReadI2cDataParamView.xib */; };
-		ADC05C8A1FA716B900C86981 /* ReadSpiDataParamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC05C891FA716B900C86981 /* ReadSpiDataParamView.xib */; };
 		ADC2578A1F8F3EBE00418881 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC257891F8F3EBE00418881 /* main.m */; };
 		ADC2578D1F8F3EBE00418881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC2578C1F8F3EBE00418881 /* AppDelegate.m */; };
 		ADC257931F8F3EBF00418881 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC257911F8F3EBF00418881 /* Main.storyboard */; };
@@ -51,8 +53,6 @@
 		ADC257C11F8F610500418881 /* LMJDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC257BF1F8F610500418881 /* LMJDropdownMenu.m */; };
 		ADC257C31F8F62D000418881 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = ADC257C21F8F62D000418881 /* Podfile */; };
 		ADC257D21F8F82A700418881 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC257D11F8F82A700418881 /* libc++.tbd */; };
-		ADC2589E1F9455EC00418881 /* UartSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC2589D1F9455EC00418881 /* UartSettingView.m */; };
-		ADC258A01F9455FF00418881 /* UartSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC2589F1F9455FF00418881 /* UartSettingView.xib */; };
 		ADC258A61F94669C00418881 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC258A51F94669C00418881 /* UIView+Size.m */; };
 /* End PBXBuildFile section */
 
@@ -75,18 +75,6 @@
 
 /* Begin PBXFileReference section */
 		62FBD8C81F5949C340CB6738 /* Pods-PVSDK_Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PVSDK_Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PVSDK_Demo/Pods-PVSDK_Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		864542E81FDE723600980170 /* BatteryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatteryViewController.h; sourceTree = "<group>"; };
-		864542E91FDE723600980170 /* BatteryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatteryViewController.m; sourceTree = "<group>"; };
-		864542EC1FDE723600980170 /* CameraSettingParameterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSettingParameterVC.h; sourceTree = "<group>"; };
-		864542ED1FDE723600980170 /* CameraSettingParameterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSettingParameterVC.m; sourceTree = "<group>"; };
-		864542EE1FDE723600980170 /* CameraSettingValueVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSettingValueVC.h; sourceTree = "<group>"; };
-		864542EF1FDE723600980170 /* CameraSettingValueVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSettingValueVC.m; sourceTree = "<group>"; };
-		864542F01FDE723600980170 /* CameraSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSettingVC.h; sourceTree = "<group>"; };
-		864542F11FDE723600980170 /* CameraSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSettingVC.m; sourceTree = "<group>"; };
-		864542F81FDE723600980170 /* RemoteModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteModeViewController.h; sourceTree = "<group>"; };
-		864542F91FDE723600980170 /* RemoteModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteModeViewController.m; sourceTree = "<group>"; };
-		864542FA1FDE723600980170 /* RemoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteViewController.h; sourceTree = "<group>"; };
-		864542FB1FDE723600980170 /* RemoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteViewController.m; sourceTree = "<group>"; };
 		8645430A1FDE726A00980170 /* MountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MountViewController.h; sourceTree = "<group>"; };
 		8645430B1FDE726A00980170 /* MountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MountViewController.m; sourceTree = "<group>"; };
 		86632CB71FD2A1DD0077CCD8 /* FlightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightViewController.h; sourceTree = "<group>"; };
@@ -100,39 +88,53 @@
 		8680565B1FC7F83D00E1CDC4 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		8680565D1FC7F86800E1CDC4 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		868056631FC8672D00E1CDC4 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		86CFD6D71FCD839B00625FBE /* PVSDK_UIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSDK_UIUtils.h; sourceTree = "<group>"; };
-		86CFD6D81FCD839B00625FBE /* PVSDK_UIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSDK_UIUtils.m; sourceTree = "<group>"; };
-		86CFD6D91FCD839B00625FBE /* PVSDK_VideoStreamHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSDK_VideoStreamHeader.h; sourceTree = "<group>"; };
-		86CFD6DA1FCD839B00625FBE /* PVSDK_VideoStreamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSDK_VideoStreamView.h; sourceTree = "<group>"; };
-		86CFD6DB1FCD839B00625FBE /* PVSDK_VideoStreamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSDK_VideoStreamView.m; sourceTree = "<group>"; };
 		86CFD6E41FCE759900625FBE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		ADC05BB91F9DB9E100C86981 /* CanSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanSettingView.h; sourceTree = "<group>"; };
-		ADC05BBA1F9DB9E100C86981 /* CanSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanSettingView.m; sourceTree = "<group>"; };
-		ADC05BBC1F9DB9F400C86981 /* CanSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanSettingView.xib; sourceTree = "<group>"; };
-		ADC05BBE1F9DC0B500C86981 /* I2CSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = I2CSettingView.xib; sourceTree = "<group>"; };
-		ADC05BC01F9DC0CF00C86981 /* I2CSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = I2CSettingView.h; sourceTree = "<group>"; };
-		ADC05BC11F9DC0CF00C86981 /* I2CSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = I2CSettingView.m; sourceTree = "<group>"; };
-		ADC05BC31F9DD7A800C86981 /* SpiSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiSettingView.h; sourceTree = "<group>"; };
-		ADC05BC41F9DD7A800C86981 /* SpiSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpiSettingView.m; sourceTree = "<group>"; };
-		ADC05BC61F9DD7BC00C86981 /* SpiSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpiSettingView.xib; sourceTree = "<group>"; };
-		ADC05C391FA1C4DF00C86981 /* SendCanDataParamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendCanDataParamView.h; sourceTree = "<group>"; };
-		ADC05C3A1FA1C4DF00C86981 /* SendCanDataParamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendCanDataParamView.m; sourceTree = "<group>"; };
-		ADC05C3C1FA1C4EE00C86981 /* SendCanDataParamView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendCanDataParamView.xib; sourceTree = "<group>"; };
-		ADC05C3E1FA1CAB500C86981 /* SendI2cDataParamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendI2cDataParamView.h; sourceTree = "<group>"; };
-		ADC05C3F1FA1CAB500C86981 /* SendI2cDataParamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendI2cDataParamView.m; sourceTree = "<group>"; };
-		ADC05C411FA1CAC900C86981 /* SendI2cDataParamView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendI2cDataParamView.xib; sourceTree = "<group>"; };
-		ADC05C431FA1E34700C86981 /* CanFilterSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanFilterSettingView.h; sourceTree = "<group>"; };
-		ADC05C441FA1E34700C86981 /* CanFilterSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanFilterSettingView.m; sourceTree = "<group>"; };
-		ADC05C461FA1E35700C86981 /* CanFilterSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanFilterSettingView.xib; sourceTree = "<group>"; };
-		ADC05C4E1FA3392E00C86981 /* GpioSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GpioSettingView.h; sourceTree = "<group>"; };
-		ADC05C4F1FA3392E00C86981 /* GpioSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GpioSettingView.m; sourceTree = "<group>"; };
-		ADC05C511FA3393E00C86981 /* GpioSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GpioSettingView.xib; sourceTree = "<group>"; };
-		ADC05C811FA7168700C86981 /* ReadI2cDataParamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadI2cDataParamView.h; sourceTree = "<group>"; };
-		ADC05C821FA7168700C86981 /* ReadI2cDataParamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadI2cDataParamView.m; sourceTree = "<group>"; };
-		ADC05C841FA7169E00C86981 /* ReadSpiDataParamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadSpiDataParamView.h; sourceTree = "<group>"; };
-		ADC05C851FA7169E00C86981 /* ReadSpiDataParamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadSpiDataParamView.m; sourceTree = "<group>"; };
-		ADC05C871FA716AF00C86981 /* ReadI2cDataParamView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadI2cDataParamView.xib; sourceTree = "<group>"; };
-		ADC05C891FA716B900C86981 /* ReadSpiDataParamView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadSpiDataParamView.xib; sourceTree = "<group>"; };
+		86D9870C1FDFDE87002EA848 /* CanFilterSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanFilterSettingView.h; sourceTree = "<group>"; };
+		86D9870D1FDFDE87002EA848 /* CanFilterSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanFilterSettingView.m; sourceTree = "<group>"; };
+		86D9870E1FDFDE87002EA848 /* CanFilterSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanFilterSettingView.xib; sourceTree = "<group>"; };
+		86D9870F1FDFDE87002EA848 /* CanSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanSettingView.h; sourceTree = "<group>"; };
+		86D987101FDFDE87002EA848 /* CanSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CanSettingView.m; sourceTree = "<group>"; };
+		86D987111FDFDE87002EA848 /* CanSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanSettingView.xib; sourceTree = "<group>"; };
+		86D987121FDFDE87002EA848 /* GpioSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GpioSettingView.h; sourceTree = "<group>"; };
+		86D987131FDFDE87002EA848 /* GpioSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GpioSettingView.m; sourceTree = "<group>"; };
+		86D987141FDFDE87002EA848 /* GpioSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GpioSettingView.xib; sourceTree = "<group>"; };
+		86D987151FDFDE87002EA848 /* I2CSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = I2CSettingView.h; sourceTree = "<group>"; };
+		86D987161FDFDE87002EA848 /* I2CSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = I2CSettingView.m; sourceTree = "<group>"; };
+		86D987171FDFDE87002EA848 /* I2CSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = I2CSettingView.xib; sourceTree = "<group>"; };
+		86D987181FDFDE87002EA848 /* ReadI2cDataParamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadI2cDataParamView.h; sourceTree = "<group>"; };
+		86D987191FDFDE87002EA848 /* ReadI2cDataParamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadI2cDataParamView.m; sourceTree = "<group>"; };
+		86D9871A1FDFDE87002EA848 /* ReadI2cDataParamView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadI2cDataParamView.xib; sourceTree = "<group>"; };
+		86D9871B1FDFDE87002EA848 /* ReadSpiDataParamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadSpiDataParamView.h; sourceTree = "<group>"; };
+		86D9871C1FDFDE87002EA848 /* ReadSpiDataParamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadSpiDataParamView.m; sourceTree = "<group>"; };
+		86D9871D1FDFDE87002EA848 /* ReadSpiDataParamView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadSpiDataParamView.xib; sourceTree = "<group>"; };
+		86D9871E1FDFDE87002EA848 /* SendCanDataParamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendCanDataParamView.h; sourceTree = "<group>"; };
+		86D9871F1FDFDE87002EA848 /* SendCanDataParamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendCanDataParamView.m; sourceTree = "<group>"; };
+		86D987201FDFDE87002EA848 /* SendCanDataParamView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendCanDataParamView.xib; sourceTree = "<group>"; };
+		86D987211FDFDE87002EA848 /* SendI2cDataParamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendI2cDataParamView.h; sourceTree = "<group>"; };
+		86D987221FDFDE87002EA848 /* SendI2cDataParamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendI2cDataParamView.m; sourceTree = "<group>"; };
+		86D987231FDFDE87002EA848 /* SendI2cDataParamView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendI2cDataParamView.xib; sourceTree = "<group>"; };
+		86D987241FDFDE87002EA848 /* SpiSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiSettingView.h; sourceTree = "<group>"; };
+		86D987251FDFDE87002EA848 /* SpiSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpiSettingView.m; sourceTree = "<group>"; };
+		86D987261FDFDE87002EA848 /* SpiSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpiSettingView.xib; sourceTree = "<group>"; };
+		86D987271FDFDE87002EA848 /* UartSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UartSettingView.h; sourceTree = "<group>"; };
+		86D987281FDFDE87002EA848 /* UartSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UartSettingView.m; sourceTree = "<group>"; };
+		86D987291FDFDE87002EA848 /* UartSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UartSettingView.xib; sourceTree = "<group>"; };
+		86D987411FDFDEDC002EA848 /* BatteryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatteryViewController.h; sourceTree = "<group>"; };
+		86D987421FDFDEDC002EA848 /* BatteryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatteryViewController.m; sourceTree = "<group>"; };
+		86D987451FDFDEDC002EA848 /* CameraSettingParameterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSettingParameterVC.h; sourceTree = "<group>"; };
+		86D987461FDFDEDC002EA848 /* CameraSettingParameterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSettingParameterVC.m; sourceTree = "<group>"; };
+		86D987471FDFDEDC002EA848 /* CameraSettingValueVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSettingValueVC.h; sourceTree = "<group>"; };
+		86D987481FDFDEDC002EA848 /* CameraSettingValueVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSettingValueVC.m; sourceTree = "<group>"; };
+		86D987491FDFDEDC002EA848 /* CameraSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSettingVC.h; sourceTree = "<group>"; };
+		86D9874A1FDFDEDC002EA848 /* CameraSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSettingVC.m; sourceTree = "<group>"; };
+		86D9874B1FDFDEDC002EA848 /* ComponentHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentHelper.h; sourceTree = "<group>"; };
+		86D9874C1FDFDEDC002EA848 /* ComponentHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentHelper.m; sourceTree = "<group>"; };
+		86D9874F1FDFDEDC002EA848 /* RemoteModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteModeViewController.h; sourceTree = "<group>"; };
+		86D987501FDFDEDC002EA848 /* RemoteModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteModeViewController.m; sourceTree = "<group>"; };
+		86D987511FDFDEDC002EA848 /* RemoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteViewController.h; sourceTree = "<group>"; };
+		86D987521FDFDEDC002EA848 /* RemoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteViewController.m; sourceTree = "<group>"; };
+		86D9876C1FDFE4F0002EA848 /* PVVideoStreamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVVideoStreamView.h; sourceTree = "<group>"; };
+		86D9876D1FDFE4F0002EA848 /* PVVideoStreamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVVideoStreamView.m; sourceTree = "<group>"; };
 		ADC257851F8F3EBE00418881 /* PVSDK_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PVSDK_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC257891F8F3EBE00418881 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ADC2578B1F8F3EBE00418881 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -152,9 +154,6 @@
 		ADC257BF1F8F610500418881 /* LMJDropdownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDropdownMenu.m; sourceTree = "<group>"; };
 		ADC257C21F8F62D000418881 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ADC257D11F8F82A700418881 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		ADC2589C1F9455EC00418881 /* UartSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UartSettingView.h; sourceTree = "<group>"; };
-		ADC2589D1F9455EC00418881 /* UartSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UartSettingView.m; sourceTree = "<group>"; };
-		ADC2589F1F9455FF00418881 /* UartSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UartSettingView.xib; sourceTree = "<group>"; };
 		ADC258A41F94669C00418881 /* UIView+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Size.h"; sourceTree = "<group>"; };
 		ADC258A51F94669C00418881 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
 		AFC0D37D64375F3BAB129B63 /* Pods-PVSDK_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PVSDK_Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PVSDK_Demo/Pods-PVSDK_Demo.release.xcconfig"; sourceTree = "<group>"; };
@@ -216,67 +215,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		864542E61FDE723600980170 /* Battery */ = {
-			isa = PBXGroup;
-			children = (
-				864542E71FDE723600980170 /* Controllers */,
-			);
-			path = Battery;
-			sourceTree = "<group>";
-		};
-		864542E71FDE723600980170 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				864542E81FDE723600980170 /* BatteryViewController.h */,
-				864542E91FDE723600980170 /* BatteryViewController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		864542EA1FDE723600980170 /* Camera */ = {
-			isa = PBXGroup;
-			children = (
-				864542EB1FDE723600980170 /* Controllers */,
-			);
-			path = Camera;
-			sourceTree = "<group>";
-		};
-		864542EB1FDE723600980170 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				864542EC1FDE723600980170 /* CameraSettingParameterVC.h */,
-				864542ED1FDE723600980170 /* CameraSettingParameterVC.m */,
-				864542EE1FDE723600980170 /* CameraSettingValueVC.h */,
-				864542EF1FDE723600980170 /* CameraSettingValueVC.m */,
-				864542F01FDE723600980170 /* CameraSettingVC.h */,
-				864542F11FDE723600980170 /* CameraSettingVC.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		864542F61FDE723600980170 /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-				864542F71FDE723600980170 /* Controllers */,
-			);
-			path = Remote;
-			sourceTree = "<group>";
-		};
-		864542F71FDE723600980170 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				864542F81FDE723600980170 /* RemoteModeViewController.h */,
-				864542F91FDE723600980170 /* RemoteModeViewController.m */,
-				864542FA1FDE723600980170 /* RemoteViewController.h */,
-				864542FB1FDE723600980170 /* RemoteViewController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		864543081FDE726A00980170 /* MountViewController */ = {
 			isa = PBXGroup;
 			children = (
 				864543091FDE726A00980170 /* Controllers */,
+				86D9870B1FDFDE87002EA848 /* Views */,
 			);
 			name = MountViewController;
 			path = PVSDK_Demo/MountViewController;
@@ -295,7 +238,6 @@
 			isa = PBXGroup;
 			children = (
 				86632CB61FD2A1DD0077CCD8 /* Controllers */,
-				86632CB91FD2A1DD0077CCD8 /* Models */,
 				86632CBA1FD2A1DD0077CCD8 /* Views */,
 			);
 			path = FlightViewController;
@@ -310,89 +252,134 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		86632CB91FD2A1DD0077CCD8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		86632CBA1FD2A1DD0077CCD8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				86D9876B1FDFE4F0002EA848 /* VideoStream */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		8670DAC61FC8F84900FAB09B /* PVSDK */ = {
+		86D9870B1FDFDE87002EA848 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				86CFD6D61FCD839B00625FBE /* PVSDK_VideoStream */,
+				86D9870C1FDFDE87002EA848 /* CanFilterSettingView.h */,
+				86D9870D1FDFDE87002EA848 /* CanFilterSettingView.m */,
+				86D9870E1FDFDE87002EA848 /* CanFilterSettingView.xib */,
+				86D9870F1FDFDE87002EA848 /* CanSettingView.h */,
+				86D987101FDFDE87002EA848 /* CanSettingView.m */,
+				86D987111FDFDE87002EA848 /* CanSettingView.xib */,
+				86D987121FDFDE87002EA848 /* GpioSettingView.h */,
+				86D987131FDFDE87002EA848 /* GpioSettingView.m */,
+				86D987141FDFDE87002EA848 /* GpioSettingView.xib */,
+				86D987151FDFDE87002EA848 /* I2CSettingView.h */,
+				86D987161FDFDE87002EA848 /* I2CSettingView.m */,
+				86D987171FDFDE87002EA848 /* I2CSettingView.xib */,
+				86D987181FDFDE87002EA848 /* ReadI2cDataParamView.h */,
+				86D987191FDFDE87002EA848 /* ReadI2cDataParamView.m */,
+				86D9871A1FDFDE87002EA848 /* ReadI2cDataParamView.xib */,
+				86D9871B1FDFDE87002EA848 /* ReadSpiDataParamView.h */,
+				86D9871C1FDFDE87002EA848 /* ReadSpiDataParamView.m */,
+				86D9871D1FDFDE87002EA848 /* ReadSpiDataParamView.xib */,
+				86D9871E1FDFDE87002EA848 /* SendCanDataParamView.h */,
+				86D9871F1FDFDE87002EA848 /* SendCanDataParamView.m */,
+				86D987201FDFDE87002EA848 /* SendCanDataParamView.xib */,
+				86D987211FDFDE87002EA848 /* SendI2cDataParamView.h */,
+				86D987221FDFDE87002EA848 /* SendI2cDataParamView.m */,
+				86D987231FDFDE87002EA848 /* SendI2cDataParamView.xib */,
+				86D987241FDFDE87002EA848 /* SpiSettingView.h */,
+				86D987251FDFDE87002EA848 /* SpiSettingView.m */,
+				86D987261FDFDE87002EA848 /* SpiSettingView.xib */,
+				86D987271FDFDE87002EA848 /* UartSettingView.h */,
+				86D987281FDFDE87002EA848 /* UartSettingView.m */,
+				86D987291FDFDE87002EA848 /* UartSettingView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		86D9873E1FDFDEDC002EA848 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				86D9873F1FDFDEDC002EA848 /* Battery */,
+				86D987431FDFDEDC002EA848 /* Camera */,
+				86D9874B1FDFDEDC002EA848 /* ComponentHelper.h */,
+				86D9874C1FDFDEDC002EA848 /* ComponentHelper.m */,
+				86D9874D1FDFDEDC002EA848 /* Remote */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		86D9873F1FDFDEDC002EA848 /* Battery */ = {
+			isa = PBXGroup;
+			children = (
+				86D987401FDFDEDC002EA848 /* Controllers */,
+			);
+			path = Battery;
+			sourceTree = "<group>";
+		};
+		86D987401FDFDEDC002EA848 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				86D987411FDFDEDC002EA848 /* BatteryViewController.h */,
+				86D987421FDFDEDC002EA848 /* BatteryViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		86D987431FDFDEDC002EA848 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				86D987441FDFDEDC002EA848 /* Controllers */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		86D987441FDFDEDC002EA848 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				86D987451FDFDEDC002EA848 /* CameraSettingParameterVC.h */,
+				86D987461FDFDEDC002EA848 /* CameraSettingParameterVC.m */,
+				86D987471FDFDEDC002EA848 /* CameraSettingValueVC.h */,
+				86D987481FDFDEDC002EA848 /* CameraSettingValueVC.m */,
+				86D987491FDFDEDC002EA848 /* CameraSettingVC.h */,
+				86D9874A1FDFDEDC002EA848 /* CameraSettingVC.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		86D9874D1FDFDEDC002EA848 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				86D9874E1FDFDEDC002EA848 /* Controllers */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		86D9874E1FDFDEDC002EA848 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				86D9874F1FDFDEDC002EA848 /* RemoteModeViewController.h */,
+				86D987501FDFDEDC002EA848 /* RemoteModeViewController.m */,
+				86D987511FDFDEDC002EA848 /* RemoteViewController.h */,
+				86D987521FDFDEDC002EA848 /* RemoteViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		86D9875E1FDFE052002EA848 /* PVSDK */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = PVSDK;
 			sourceTree = "<group>";
 		};
-		86CFD6D61FCD839B00625FBE /* PVSDK_VideoStream */ = {
+		86D9876B1FDFE4F0002EA848 /* VideoStream */ = {
 			isa = PBXGroup;
 			children = (
-				86CFD6D71FCD839B00625FBE /* PVSDK_UIUtils.h */,
-				86CFD6D81FCD839B00625FBE /* PVSDK_UIUtils.m */,
-				86CFD6D91FCD839B00625FBE /* PVSDK_VideoStreamHeader.h */,
-				86CFD6DA1FCD839B00625FBE /* PVSDK_VideoStreamView.h */,
-				86CFD6DB1FCD839B00625FBE /* PVSDK_VideoStreamView.m */,
+				86D9876C1FDFE4F0002EA848 /* PVVideoStreamView.h */,
+				86D9876D1FDFE4F0002EA848 /* PVVideoStreamView.m */,
 			);
-			path = PVSDK_VideoStream;
-			sourceTree = "<group>";
-		};
-		ADC05C371FA1C45600C86981 /* SettingView */ = {
-			isa = PBXGroup;
-			children = (
-				ADC2589C1F9455EC00418881 /* UartSettingView.h */,
-				ADC2589D1F9455EC00418881 /* UartSettingView.m */,
-				ADC2589F1F9455FF00418881 /* UartSettingView.xib */,
-				ADC05BB91F9DB9E100C86981 /* CanSettingView.h */,
-				ADC05BBA1F9DB9E100C86981 /* CanSettingView.m */,
-				ADC05BBC1F9DB9F400C86981 /* CanSettingView.xib */,
-				ADC05C431FA1E34700C86981 /* CanFilterSettingView.h */,
-				ADC05C441FA1E34700C86981 /* CanFilterSettingView.m */,
-				ADC05C461FA1E35700C86981 /* CanFilterSettingView.xib */,
-				ADC05BC01F9DC0CF00C86981 /* I2CSettingView.h */,
-				ADC05BC11F9DC0CF00C86981 /* I2CSettingView.m */,
-				ADC05BBE1F9DC0B500C86981 /* I2CSettingView.xib */,
-				ADC05BC31F9DD7A800C86981 /* SpiSettingView.h */,
-				ADC05BC41F9DD7A800C86981 /* SpiSettingView.m */,
-				ADC05BC61F9DD7BC00C86981 /* SpiSettingView.xib */,
-				ADC05C4E1FA3392E00C86981 /* GpioSettingView.h */,
-				ADC05C4F1FA3392E00C86981 /* GpioSettingView.m */,
-				ADC05C511FA3393E00C86981 /* GpioSettingView.xib */,
-			);
-			name = SettingView;
-			sourceTree = "<group>";
-		};
-		ADC05C381FA1C4A900C86981 /* SendParamView */ = {
-			isa = PBXGroup;
-			children = (
-				ADC05C391FA1C4DF00C86981 /* SendCanDataParamView.h */,
-				ADC05C3A1FA1C4DF00C86981 /* SendCanDataParamView.m */,
-				ADC05C3C1FA1C4EE00C86981 /* SendCanDataParamView.xib */,
-				ADC05C3E1FA1CAB500C86981 /* SendI2cDataParamView.h */,
-				ADC05C3F1FA1CAB500C86981 /* SendI2cDataParamView.m */,
-				ADC05C411FA1CAC900C86981 /* SendI2cDataParamView.xib */,
-			);
-			name = SendParamView;
-			sourceTree = "<group>";
-		};
-		ADC05C801FA7164500C86981 /* ReadParamView */ = {
-			isa = PBXGroup;
-			children = (
-				ADC05C811FA7168700C86981 /* ReadI2cDataParamView.h */,
-				ADC05C821FA7168700C86981 /* ReadI2cDataParamView.m */,
-				ADC05C871FA716AF00C86981 /* ReadI2cDataParamView.xib */,
-				ADC05C841FA7169E00C86981 /* ReadSpiDataParamView.h */,
-				ADC05C851FA7169E00C86981 /* ReadSpiDataParamView.m */,
-				ADC05C891FA716B900C86981 /* ReadSpiDataParamView.xib */,
-			);
-			name = ReadParamView;
+			path = VideoStream;
 			sourceTree = "<group>";
 		};
 		ADC2577C1F8F3EBE00418881 = {
@@ -421,9 +408,7 @@
 		ADC257871F8F3EBE00418881 /* PVSDK_Demo */ = {
 			isa = PBXGroup;
 			children = (
-				8670DAC61FC8F84900FAB09B /* PVSDK */,
-				ADC2589B1F9455D200418881 /* View */,
-				ADC257BB1F8F60E600418881 /* ThirdLibary */,
+				86D9875E1FDFE052002EA848 /* PVSDK */,
 				ADC2578B1F8F3EBE00418881 /* AppDelegate.h */,
 				ADC2578C1F8F3EBE00418881 /* AppDelegate.m */,
 				8680563D1FC7F77800E1CDC4 /* MainViewController.h */,
@@ -431,9 +416,8 @@
 				86632CB51FD2A1DD0077CCD8 /* FlightViewController */,
 				864543081FDE726A00980170 /* MountViewController */,
 				ADC257911F8F3EBF00418881 /* Main.storyboard */,
-				864542EA1FDE723600980170 /* Camera */,
-				864542E61FDE723600980170 /* Battery */,
-				864542F61FDE723600980170 /* Remote */,
+				86D9873E1FDFDEDC002EA848 /* Component */,
+				ADC257BB1F8F60E600418881 /* ThirdLibary */,
 				ADC257941F8F3EBF00418881 /* Assets.xcassets */,
 				ADC257961F8F3EBF00418881 /* LaunchScreen.storyboard */,
 				ADC257991F8F3EBF00418881 /* Info.plist */,
@@ -486,16 +470,6 @@
 				ADC257BF1F8F610500418881 /* LMJDropdownMenu.m */,
 			);
 			path = LMJDropdownMenu;
-			sourceTree = "<group>";
-		};
-		ADC2589B1F9455D200418881 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				ADC05C801FA7164500C86981 /* ReadParamView */,
-				ADC05C381FA1C4A900C86981 /* SendParamView */,
-				ADC05C371FA1C45600C86981 /* SettingView */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		ADC258A31F94669C00418881 /* Category */ = {
@@ -620,21 +594,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADC05BBD1F9DB9F400C86981 /* CanSettingView.xib in Resources */,
+				86D987351FDFDE87002EA848 /* ReadSpiDataParamView.xib in Resources */,
+				86D987311FDFDE87002EA848 /* I2CSettingView.xib in Resources */,
 				ADC257C31F8F62D000418881 /* Podfile in Resources */,
-				ADC05C471FA1E35700C86981 /* CanFilterSettingView.xib in Resources */,
-				ADC05BBF1F9DC0B500C86981 /* I2CSettingView.xib in Resources */,
-				ADC258A01F9455FF00418881 /* UartSettingView.xib in Resources */,
-				ADC05C881FA716AF00C86981 /* ReadI2cDataParamView.xib in Resources */,
-				ADC05C8A1FA716B900C86981 /* ReadSpiDataParamView.xib in Resources */,
-				ADC05BC71F9DD7BC00C86981 /* SpiSettingView.xib in Resources */,
-				ADC05C3D1FA1C4EE00C86981 /* SendCanDataParamView.xib in Resources */,
+				86D9872D1FDFDE87002EA848 /* CanSettingView.xib in Resources */,
+				86D9872F1FDFDE87002EA848 /* GpioSettingView.xib in Resources */,
+				86D987391FDFDE87002EA848 /* SendI2cDataParamView.xib in Resources */,
+				86D987371FDFDE87002EA848 /* SendCanDataParamView.xib in Resources */,
 				ADC257981F8F3EBF00418881 /* LaunchScreen.storyboard in Resources */,
-				ADC05C521FA3393E00C86981 /* GpioSettingView.xib in Resources */,
+				86D9873B1FDFDE87002EA848 /* SpiSettingView.xib in Resources */,
+				86D987331FDFDE87002EA848 /* ReadI2cDataParamView.xib in Resources */,
+				86D9872B1FDFDE87002EA848 /* CanFilterSettingView.xib in Resources */,
 				ADC257C01F8F610500418881 /* dropdownMenu_cornerIcon.png in Resources */,
+				86D9873D1FDFDE87002EA848 /* UartSettingView.xib in Resources */,
 				ADC257951F8F3EBF00418881 /* Assets.xcassets in Resources */,
 				ADC257931F8F3EBF00418881 /* Main.storyboard in Resources */,
-				ADC05C421FA1CAC900C86981 /* SendI2cDataParamView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,31 +690,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86CFD6DE1FCD839B00625FBE /* PVSDK_VideoStreamView.m in Sources */,
-				ADC05BBB1F9DB9E100C86981 /* CanSettingView.m in Sources */,
-				864542FD1FDE723600980170 /* CameraSettingParameterVC.m in Sources */,
-				ADC05C451FA1E34700C86981 /* CanFilterSettingView.m in Sources */,
-				ADC05BC21F9DC0CF00C86981 /* I2CSettingView.m in Sources */,
-				864543011FDE723600980170 /* RemoteModeViewController.m in Sources */,
+				86D987581FDFDEDC002EA848 /* RemoteModeViewController.m in Sources */,
+				86D987531FDFDEDC002EA848 /* BatteryViewController.m in Sources */,
+				86D987341FDFDE87002EA848 /* ReadSpiDataParamView.m in Sources */,
 				8645430C1FDE726A00980170 /* MountViewController.m in Sources */,
+				86D9873C1FDFDE87002EA848 /* UartSettingView.m in Sources */,
+				86D987561FDFDEDC002EA848 /* CameraSettingVC.m in Sources */,
 				ADC257C11F8F610500418881 /* LMJDropdownMenu.m in Sources */,
-				864543021FDE723600980170 /* RemoteViewController.m in Sources */,
-				ADC05C861FA7169E00C86981 /* ReadSpiDataParamView.m in Sources */,
-				864542FC1FDE723600980170 /* BatteryViewController.m in Sources */,
-				ADC05C401FA1CAB500C86981 /* SendI2cDataParamView.m in Sources */,
+				86D987571FDFDEDC002EA848 /* ComponentHelper.m in Sources */,
+				86D9872E1FDFDE87002EA848 /* GpioSettingView.m in Sources */,
+				86D987321FDFDE87002EA848 /* ReadI2cDataParamView.m in Sources */,
+				86D987301FDFDE87002EA848 /* I2CSettingView.m in Sources */,
+				86D9876E1FDFE4F0002EA848 /* PVVideoStreamView.m in Sources */,
 				868056401FC7F77800E1CDC4 /* MainViewController.m in Sources */,
-				ADC05C501FA3392E00C86981 /* GpioSettingView.m in Sources */,
+				86D9872C1FDFDE87002EA848 /* CanSettingView.m in Sources */,
+				86D987361FDFDE87002EA848 /* SendCanDataParamView.m in Sources */,
+				86D987551FDFDEDC002EA848 /* CameraSettingValueVC.m in Sources */,
 				ADC2578D1F8F3EBE00418881 /* AppDelegate.m in Sources */,
-				ADC05BC51F9DD7A800C86981 /* SpiSettingView.m in Sources */,
 				ADC258A61F94669C00418881 /* UIView+Size.m in Sources */,
 				86632CBB1FD2A1DD0077CCD8 /* FlightViewController.m in Sources */,
-				ADC2589E1F9455EC00418881 /* UartSettingView.m in Sources */,
-				ADC05C831FA7168700C86981 /* ReadI2cDataParamView.m in Sources */,
+				86D9872A1FDFDE87002EA848 /* CanFilterSettingView.m in Sources */,
+				86D987541FDFDEDC002EA848 /* CameraSettingParameterVC.m in Sources */,
+				86D9873A1FDFDE87002EA848 /* SpiSettingView.m in Sources */,
+				86D987381FDFDE87002EA848 /* SendI2cDataParamView.m in Sources */,
 				ADC2578A1F8F3EBE00418881 /* main.m in Sources */,
-				86CFD6DD1FCD839B00625FBE /* PVSDK_UIUtils.m in Sources */,
-				864542FE1FDE723600980170 /* CameraSettingValueVC.m in Sources */,
-				864542FF1FDE723600980170 /* CameraSettingVC.m in Sources */,
-				ADC05C3B1FA1C4DF00C86981 /* SendCanDataParamView.m in Sources */,
+				86D987591FDFDEDC002EA848 /* RemoteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
