@@ -2,7 +2,6 @@
 //  main.m
 //  PVSDK_Demo
 //
-//  Created by Layne on 2017/10/12.
 //  Copyright © 2017 Layne. All rights reserved.
 //
 

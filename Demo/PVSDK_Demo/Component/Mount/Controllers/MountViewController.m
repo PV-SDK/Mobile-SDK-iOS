@@ -2,7 +2,6 @@
 //  ViewController.m
 //  PVSDK_Demo
 //
-//  Created by Layne on 2017/10/12.
 //  Copyright © 2017 PowerVision. All rights reserved.
 //
 
@@ -12,7 +11,7 @@
 #import "MountViewController.h"
 #import "LMJDropdownMenu.h"
 #import <Masonry/Masonry.h>
-#import <PVSDK/PVSDK.h>
+#import "ComponentHelper.h"
 #import "UartSettingView.h"
 #import "CanSettingView.h"
 #import "I2CSettingView.h"
@@ -24,7 +23,6 @@
 #import "ReadSpiDataParamView.h"
 #import "ReadI2cDataParamView.h"
 
-#define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define NUM @"0123456789"
 #define ALPHA @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 #define ALPHANUM @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
@@ -506,7 +504,7 @@ I2cSettingViewDelegate
 - (PVFlightController *)flightController
 {
     if (_flightController==nil) {
-        _flightController = [[PVFlightController alloc] init];
+        _flightController = [ComponentHelper fetchFlightController];
         _flightController.delegate = self;
     }
     return _flightController;
@@ -515,7 +513,7 @@ I2cSettingViewDelegate
 - (PVMountController *)mountController
 {
     if (_mountController == nil) {
-        _mountController = [[PVMountController alloc] init];
+        _mountController = [ComponentHelper fetchMountController];
         _mountController.delegate = self;
     }
     return _mountController;

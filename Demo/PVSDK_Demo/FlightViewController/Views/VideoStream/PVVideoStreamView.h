@@ -2,7 +2,6 @@
 //  PVVideoStreamView.h
 //  PowerVision
 //
-//  Created by Gavin.Guo on 2017/11/23.
 //  Copyright © 2017 PowerVision. All rights reserved.
 //
 

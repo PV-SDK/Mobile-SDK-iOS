@@ -2,12 +2,11 @@
 //  FlightViewController.m
 //  PVSDK_Demo
 //
-//  Created by Gavin.Guo on 2017/11/22.
 //  Copyright © 2017 PowerVision. All rights reserved.
 //
 
 #import "FlightViewController.h"
-#import <PVSDK/PVSDK.h>
+#import "ComponentHelper.h"
 
 #import "CameraSettingVC.h"
 #import "PVVideoStreamView.h"
@@ -65,15 +64,22 @@ PVRemoteControllerDelegate
     
     [self.cameraManager configCameraManager];
     
+    //  断开与飞机的连接的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationToPopViewController:) name:@"NotificationToPopRootViewController" object:nil];
+    //  App 将要失去活跃状态的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:@"ApplicationWillResignActive" object:nil];
+    //  App 获得活跃状态的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:) name:@"ApplicationDidBecomeActive" object:nil];
 }
 
+#pragma mark - Notification-Selector
+- (void)notificationToPopViewController:(NSNotification *)notifi{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)applicationWillResignActive:(NSNotification *)notifi
 {
     [self.streamView.vfVideo Pause];
 }
-
 - (void)applicationDidBecomeActive:(NSNotification *)notifi
 {
     [self.streamView.vfVideo Play];
@@ -92,16 +98,16 @@ PVRemoteControllerDelegate
 #pragma mark - Configure manager
 - (void)configManager
 {
-    self.flightController = [PVFlightController new];
+    self.flightController = [ComponentHelper fetchFlightController];
     
-    self.cameraManager = [PVCamera new];
+    self.cameraManager = [ComponentHelper fetchCamera];
     self.cameraManager.delegate = self;
     
-    self.gimabalManager = [PVGimabal new];
+    self.gimabalManager = [ComponentHelper fetchGimabal];
     
-    self.batteryManager = [PVBattery new];
+    self.batteryManager = [ComponentHelper fetchBattery];
     
-    self.remoteController = [PVRemoteController new];
+    self.remoteController = [ComponentHelper fetchRemoteController];
     self.remoteController.delegate = self;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -503,6 +509,7 @@ PVRemoteControllerDelegate
 }
 
 -(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"NotificationToPopRootViewController" object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"ApplicationWillResignActive" object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"ApplicationDidBecomeActive" object:nil];
 }

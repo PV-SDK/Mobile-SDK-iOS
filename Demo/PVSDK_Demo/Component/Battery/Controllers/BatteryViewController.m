@@ -64,7 +64,7 @@ UITableViewDelegate,UITableViewDataSource
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.items.count;
+    return _items.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"";
@@ -74,8 +74,8 @@ UITableViewDelegate,UITableViewDataSource
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.detailTextLabel.textColor = [UIColor blueColor];
-    cell.textLabel.text = self.items[indexPath.row];
-    cell.detailTextLabel.text = self.values[indexPath.row];
+    cell.textLabel.text = _items[indexPath.row];
+    cell.detailTextLabel.text = _values[indexPath.row];
     return cell;
 }
 

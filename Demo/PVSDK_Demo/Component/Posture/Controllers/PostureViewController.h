@@ -1,5 +1,5 @@
 //
-//  FlightViewController.h
+//  PostureViewController.h
 //  PVSDK_Demo
 //
 //  Copyright © 2017 PowerVision. All rights reserved.
@@ -7,6 +7,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FlightViewController : UIViewController
+@interface PostureViewController : UIViewController
 
 @end

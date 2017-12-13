@@ -2,32 +2,33 @@
 //  MainViewController.m
 //  PVSDK_Demo
 //
-//  Created by Gavin.Guo on 2017/11/22.
 //  Copyright © 2017 PowerVision. All rights reserved.
 //
 
+#define DEBUG_METHOD 0
+
 #import "MainViewController.h"
-#import <PVSDK/PVSDK.h>
+#import "ComponentHelper.h"
 
 #import "FlightViewController.h"
 #import "MountViewController.h"
 
 typedef enum : NSUInteger {
-    FlightConnectStateDisConnected  = 0,
-    FlightConnectStateConnected     = 1
-} FlightConnectState;
+    PowerEyeConnectStateDisConnected  = 0,
+    PowerEyeConnectStateConnected     = 1
+} PowerEyeConnectState;
 
 @interface MainViewController ()
 <
-PVFlightControllerDelegate,
-UITableViewDelegate,UITableViewDataSource
+PVFlightControllerDelegate
 >
 {
     NSArray *titleArray;
 }
-@property (weak, nonatomic) IBOutlet UITableView *listView;
+@property (weak, nonatomic) IBOutlet UIButton *connectThePowerEyeButton;
+- (IBAction)didClickToConnectThePowerEye:(UIButton *)sender;
 
-@property (nonatomic, assign) FlightConnectState connectState;
+@property (nonatomic, assign) PowerEyeConnectState connectState;
 
 @property (nonatomic, strong) PVFlightController *flightController;
 
@@ -35,39 +36,17 @@ UITableViewDelegate,UITableViewDataSource
 
 @implementation MainViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    [self initDataSource];
-    
-    [self initFlightController];
-    
-    [self connectThePlane];
-}
-
-#pragma mark - Init DataSource
-- (void)initDataSource{
-    titleArray = @[@"FlightViewController",@"MountViewController"];
-}
-
-#pragma mark - Init FlightController
-- (void)initFlightController{
-    self.flightController = [PVFlightController new];
-    self.flightController.delegate = self;
-}
-
-#pragma mark - Connect The Plane
-- (void)connectThePlane{
-    if (self.connectState == FlightConnectStateDisConnected) {
+- (IBAction)didClickToConnectThePowerEye:(UIButton *)sender {
+    sender.userInteractionEnabled = NO;
+    if (self.connectState == PowerEyeConnectStateDisConnected) {
         [self.flightController startConnectFlight];
-    }
-}
-
-#pragma mark - Disconnect Flight
-- (void)disconnectFlight{
-    if (self.connectState == FlightConnectStateConnected) {
+    }else if (self.connectState == PowerEyeConnectStateConnected) {
         [self.flightController stopConnectFlight];
     }
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
 }
 
 #pragma mark - PVFlightControllerDelegate
@@ -86,62 +65,30 @@ UITableViewDelegate,UITableViewDataSource
 - (void)updateConnectStatus:(PVFlightConnectState)state
 {
     if (state == PVFlightConnectStateConnected) {
-        self.connectState = FlightConnectStateConnected;
-        NSLog(@"Connected");
+        self.connectState = PowerEyeConnectStateConnected;
+        [self.connectThePowerEyeButton setTitle:@"Disconnect The PowerEye" forState:UIControlStateNormal];
+        [self performSegueWithIdentifier:@"ShowFlightViewController" sender:self];
     } else {
-        self.connectState = FlightConnectStateDisConnected;
-        NSLog(@"DisConnecte");
-    }
-}
-#pragma mark - UITableViewDelegate,UITableViewDataSource
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 0.01;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 0.01;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 44;
-}
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *CellIdentifier = @"";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.text = titleArray[indexPath.row];
-    return cell;
-}
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (self.connectState == FlightConnectStateDisConnected) {
-        //  DisConnected
-        return;
-    }
-    static NSString *PushToFirstVCIdentifier = @"ShowFirstViewController";
-    static NSString *PushToSecondVCIdentifier = @"ShowSecondViewController";
-    switch (indexPath.row) {
-        case 0:
-        {
-            [self performSegueWithIdentifier:PushToFirstVCIdentifier sender:self];
+        self.connectState = PowerEyeConnectStateDisConnected;
+        [self.connectThePowerEyeButton setTitle:@"Connect The PowerEye" forState:UIControlStateNormal];
+        if ([[self.navigationController.viewControllers lastObject] isKindOfClass:[FlightViewController class]]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationToPopRootViewController" object:nil];
+            ShowResult(@"Notification：PowerEye is disconnect!");
         }
-            break;
-        case 1:
-        {
-            [self performSegueWithIdentifier:PushToSecondVCIdentifier sender:self];
+        if (DEBUG_METHOD) {
+            [self performSegueWithIdentifier:@"ShowFlightViewController" sender:self];
         }
-            break;
-            
-        default:
-            break;
     }
+    self.connectThePowerEyeButton.userInteractionEnabled = YES;
+}
+
+#pragma mark - Lazying...
+-(PVFlightController *)flightController{
+    if (_flightController == nil) {
+        _flightController = [ComponentHelper fetchFlightController];
+        _flightController.delegate = self;
+    }
+    return _flightController;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -158,5 +105,6 @@ UITableViewDelegate,UITableViewDataSource
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end
