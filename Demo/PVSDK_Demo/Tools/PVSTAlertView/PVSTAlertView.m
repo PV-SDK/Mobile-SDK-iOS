@@ -1,8 +1,8 @@
 //
 //  PVSTAlertView.m
-//  PVSDK_Demo
+//  PVSDK
 //
-//  Copyright © 2017 DJI. All rights reserved.
+//  Copyright © 2017 PowerVision. All rights reserved.
 //
 /**
  *  A helper function to pop-up a simple alert view. 
@@ -38,7 +38,7 @@ void ShowResult(NSString *format, ...)
 
 @implementation PVSTAlertView
 
-+(instancetype _Nullable) showAlertViewWithMessage:(NSString* _Nullable)message titles:(NSArray<NSString*> * _Nullable)titles action:(PVSTAlertViewActionBlock _Nullable)actionBlock presentedViewController:(UIViewController *)viewController
++(instancetype _Nullable)showAlertViewWithMessage:(NSString* _Nullable)message titles:(NSArray<NSString*> * _Nullable)titles action:(PVSTAlertViewActionBlock _Nullable)actionBlock presentedViewController:(UIViewController *)viewController
 {
     PVSTAlertView* alertView = [[PVSTAlertView alloc] init];
     
@@ -57,7 +57,7 @@ void ShowResult(NSString *format, ...)
     return alertView;
 }
 
-+(instancetype _Nullable) showAlertViewWithMessage:(NSString* _Nullable)message titles:(NSArray<NSString*> * _Nullable)titles action:(PVSTAlertViewActionBlock _Nullable)actionBlock
++(instancetype _Nullable)showAlertViewWithMessage:(NSString* _Nullable)message titles:(NSArray<NSString*> * _Nullable)titles action:(PVSTAlertViewActionBlock _Nullable)actionBlock
 {
     PVSTAlertView* alertView = [[PVSTAlertView alloc] init];
 
@@ -77,7 +77,7 @@ void ShowResult(NSString *format, ...)
     return alertView;
 }
 
-+(instancetype _Nullable) showAlertViewWithMessage:(NSString* _Nullable)message titles:(NSArray<NSString*> * _Nullable)titles textFields:(NSArray<NSString*>* _Nullable)textFields action:(PVSTAlertInputViewActionBlock _Nullable)actionBlock
++(instancetype _Nullable)showAlertViewWithMessage:(NSString* _Nullable)message titles:(NSArray<NSString*> * _Nullable)titles textFields:(NSArray<NSString*>* _Nullable)textFields action:(PVSTAlertInputViewActionBlock _Nullable)actionBlock
 {
     PVSTAlertView* alertView = [[PVSTAlertView alloc] init];
 
@@ -105,12 +105,12 @@ void ShowResult(NSString *format, ...)
     return alertView;
 }
 
--(void) unpdateMessage:(nullable NSString *)message
+-(void)updateMessage:(nullable NSString *)message
 {
     self.alertController.message = message;
 }
 
--(void) dismissAlertView
+-(void)dismissAlertView
 {
     [self.alertController dismissViewControllerAnimated:YES completion:nil];
 }

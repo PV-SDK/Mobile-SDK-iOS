@@ -44,6 +44,10 @@
 		86D987AD1FE0DB06002EA848 /* UartSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D987981FE0DB06002EA848 /* UartSettingView.xib */; };
 		86D987B11FE124FB002EA848 /* PVSTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987B01FE124FB002EA848 /* PVSTAlertView.m */; };
 		86D987BB1FE149C5002EA848 /* SailingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987BA1FE149C5002EA848 /* SailingViewController.m */; };
+		86D987C11FE218E7002EA848 /* PVSTGPSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987BE1FE218E7002EA848 /* PVSTGPSLocation.m */; };
+		86D987C21FE218E7002EA848 /* PVSTGPSLocationPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987C01FE218E7002EA848 /* PVSTGPSLocationPicker.m */; };
+		86D987C81FE21A3B002EA848 /* MBProgressHUD+DetailLabelAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987C51FE21A3B002EA848 /* MBProgressHUD+DetailLabelAlignment.m */; };
+		86D987C91FE21A3B002EA848 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987C71FE21A3B002EA848 /* MBProgressHUD.m */; };
 		8DC72A3E39B8110A7B24B250 /* libPods-PVSDK_Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D61FD7D405CF23A5560576BE /* libPods-PVSDK_Demo.a */; };
 		ADC2578A1F8F3EBE00418881 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC257891F8F3EBE00418881 /* main.m */; };
 		ADC2578D1F8F3EBE00418881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC2578C1F8F3EBE00418881 /* AppDelegate.m */; };
@@ -146,6 +150,14 @@
 		86D987B41FE12648002EA848 /* PrefixHeaderImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeaderImport.h; sourceTree = "<group>"; };
 		86D987B91FE149C5002EA848 /* SailingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SailingViewController.h; sourceTree = "<group>"; };
 		86D987BA1FE149C5002EA848 /* SailingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SailingViewController.m; sourceTree = "<group>"; };
+		86D987BD1FE218E7002EA848 /* PVSTGPSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSTGPSLocation.h; sourceTree = "<group>"; };
+		86D987BE1FE218E7002EA848 /* PVSTGPSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSTGPSLocation.m; sourceTree = "<group>"; };
+		86D987BF1FE218E7002EA848 /* PVSTGPSLocationPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSTGPSLocationPicker.h; sourceTree = "<group>"; };
+		86D987C01FE218E7002EA848 /* PVSTGPSLocationPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSTGPSLocationPicker.m; sourceTree = "<group>"; };
+		86D987C41FE21A3B002EA848 /* MBProgressHUD+DetailLabelAlignment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+DetailLabelAlignment.h"; sourceTree = "<group>"; };
+		86D987C51FE21A3B002EA848 /* MBProgressHUD+DetailLabelAlignment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+DetailLabelAlignment.m"; sourceTree = "<group>"; };
+		86D987C61FE21A3B002EA848 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		86D987C71FE21A3B002EA848 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		ADC257851F8F3EBE00418881 /* PVSDK_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PVSDK_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC257891F8F3EBE00418881 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ADC2578B1F8F3EBE00418881 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -343,6 +355,7 @@
 		86D9876F1FDFE8C8002EA848 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				86D987BC1FE218E7002EA848 /* PVSTGPSLocation */,
 				86D987701FDFE8C8002EA848 /* PVSTAlertView */,
 			);
 			path = Tools;
@@ -455,6 +468,28 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		86D987BC1FE218E7002EA848 /* PVSTGPSLocation */ = {
+			isa = PBXGroup;
+			children = (
+				86D987BD1FE218E7002EA848 /* PVSTGPSLocation.h */,
+				86D987BE1FE218E7002EA848 /* PVSTGPSLocation.m */,
+				86D987BF1FE218E7002EA848 /* PVSTGPSLocationPicker.h */,
+				86D987C01FE218E7002EA848 /* PVSTGPSLocationPicker.m */,
+			);
+			path = PVSTGPSLocation;
+			sourceTree = "<group>";
+		};
+		86D987C31FE21A3B002EA848 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				86D987C41FE21A3B002EA848 /* MBProgressHUD+DetailLabelAlignment.h */,
+				86D987C51FE21A3B002EA848 /* MBProgressHUD+DetailLabelAlignment.m */,
+				86D987C61FE21A3B002EA848 /* MBProgressHUD.h */,
+				86D987C71FE21A3B002EA848 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		ADC2577C1F8F3EBE00418881 = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +565,7 @@
 		ADC257BB1F8F60E600418881 /* ThirdLibary */ = {
 			isa = PBXGroup;
 			children = (
+				86D987C31FE21A3B002EA848 /* MBProgressHUD */,
 				ADC258A31F94669C00418881 /* Category */,
 				ADC257BC1F8F610500418881 /* LMJDropdownMenu */,
 			);
@@ -626,7 +662,7 @@
 				TargetAttributes = {
 					ADC257841F8F3EBE00418881 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 23CNQ6K9TW;
+						DevelopmentTeam = 9PRAC8XV5J;
 						ProvisioningStyle = Automatic;
 					};
 					ADC2579D1F8F3EBF00418881 = {
@@ -773,12 +809,15 @@
 				86D987A01FE0DB06002EA848 /* I2CSettingView.m in Sources */,
 				86D987751FE0D892002EA848 /* PostureViewController.m in Sources */,
 				86D987571FDFDEDC002EA848 /* ComponentHelper.m in Sources */,
+				86D987C11FE218E7002EA848 /* PVSTGPSLocation.m in Sources */,
 				86D987A41FE0DB06002EA848 /* ReadSpiDataParamView.m in Sources */,
 				86D9879A1FE0DB06002EA848 /* CanFilterSettingView.m in Sources */,
 				86D987A61FE0DB06002EA848 /* SendCanDataParamView.m in Sources */,
 				86D987AA1FE0DB06002EA848 /* SpiSettingView.m in Sources */,
 				86D9876E1FDFE4F0002EA848 /* PVVideoStreamView.m in Sources */,
+				86D987C91FE21A3B002EA848 /* MBProgressHUD.m in Sources */,
 				86D987A21FE0DB06002EA848 /* ReadI2cDataParamView.m in Sources */,
+				86D987C21FE218E7002EA848 /* PVSTGPSLocationPicker.m in Sources */,
 				868056401FC7F77800E1CDC4 /* MainViewController.m in Sources */,
 				86D987551FDFDEDC002EA848 /* CameraSettingValueVC.m in Sources */,
 				ADC2578D1F8F3EBE00418881 /* AppDelegate.m in Sources */,
@@ -786,6 +825,7 @@
 				86D987B11FE124FB002EA848 /* PVSTAlertView.m in Sources */,
 				86D987BB1FE149C5002EA848 /* SailingViewController.m in Sources */,
 				86632CBB1FD2A1DD0077CCD8 /* FlightViewController.m in Sources */,
+				86D987C81FE21A3B002EA848 /* MBProgressHUD+DetailLabelAlignment.m in Sources */,
 				86D9879C1FE0DB06002EA848 /* CanSettingView.m in Sources */,
 				86D987541FDFDEDC002EA848 /* CameraSettingParameterVC.m in Sources */,
 				ADC2578A1F8F3EBE00418881 /* main.m in Sources */,
@@ -941,7 +981,7 @@
 			baseConfigurationReference = 62FBD8C81F5949C340CB6738 /* Pods-PVSDK_Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 23CNQ6K9TW;
+				DEVELOPMENT_TEAM = 9PRAC8XV5J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -957,7 +997,7 @@
 				GCC_PREFIX_HEADER = PVSDK_Demo/PrefixHeader.pch;
 				INFOPLIST_FILE = PVSDK_Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.PowerVision.GCS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gsnice.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -967,7 +1007,7 @@
 			baseConfigurationReference = AFC0D37D64375F3BAB129B63 /* Pods-PVSDK_Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 23CNQ6K9TW;
+				DEVELOPMENT_TEAM = 9PRAC8XV5J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -983,7 +1023,7 @@
 				GCC_PREFIX_HEADER = PVSDK_Demo/PrefixHeader.pch;
 				INFOPLIST_FILE = PVSDK_Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.PowerVision.GCS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gsnice.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -5,7 +5,7 @@
 //  Copyright © 2017 PowerVision. All rights reserved.
 //
 
-#define DEBUG_METHOD 0
+#define DEBUG_METHOD 1
 
 #import "MainViewController.h"
 #import "ComponentHelper.h"

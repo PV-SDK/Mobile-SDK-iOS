@@ -1,6 +1,6 @@
 //
 //  PVSTAlertView.h
-//  PVSDK_Demo
+//  PVSDK
 //
 //  Copyright © 2017 PowerVision. All rights reserved.
 //
@@ -16,15 +16,15 @@ typedef void (^PVSTAlertInputViewActionBlock)(NSArray<UITextField*>* _Nullable t
 
 @interface PVSTAlertView : NSObject
 
-+(instancetype _Nullable) showAlertViewWithMessage:(NSString* _Nullable)message titles:(NSArray<NSString*> * _Nullable)titles action:(PVSTAlertViewActionBlock _Nullable)actionBlock;
++(instancetype _Nullable)showAlertViewWithMessage:(NSString* _Nullable)message titles:(NSArray<NSString*> * _Nullable)titles action:(PVSTAlertViewActionBlock _Nullable)actionBlock;
 
-+(instancetype _Nullable) showAlertViewWithMessage:(NSString* _Nullable)message titles:(NSArray<NSString*> * _Nullable)titles textFields:(NSArray<NSString*>* _Nullable)textFields action:(PVSTAlertInputViewActionBlock _Nullable)actionBlock;
++(instancetype _Nullable)showAlertViewWithMessage:(NSString* _Nullable)message titles:(NSArray<NSString*> * _Nullable)titles textFields:(NSArray<NSString*>* _Nullable)textFields action:(PVSTAlertInputViewActionBlock _Nullable)actionBlock;
 
-+(instancetype _Nullable) showAlertViewWithMessage:(NSString* _Nullable)message titles:(NSArray<NSString*> * _Nullable)titles action:(PVSTAlertViewActionBlock _Nullable)actionBlock presentedViewController:(UIViewController *)viewController;
++(instancetype _Nullable)showAlertViewWithMessage:(NSString* _Nullable)message titles:(NSArray<NSString*> * _Nullable)titles action:(PVSTAlertViewActionBlock _Nullable)actionBlock presentedViewController:(UIViewController *)viewController;
 
--(void) dismissAlertView;
+-(void)dismissAlertView;
 
--(void) unpdateMessage:(nullable NSString *)message;
+-(void)updateMessage:(nullable NSString *)message;
 
 @end
 

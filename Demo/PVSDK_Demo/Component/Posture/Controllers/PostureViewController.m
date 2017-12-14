@@ -29,7 +29,9 @@ UITableViewDelegate,UITableViewDataSource
 }
 
 - (void)initDataSource{
-    self.items = @[@"X速度",@"Y速度",@"Z速度",@"加速度",@"俯仰",@"横滚",@"航向角度",@"角速度",@"飞机对地高度",@"海拔高高度"];
+    //  上升速度
+    self.items = @[@"X速度",@"Y速度",@"Z速度",@"加速度",@"俯仰",@"横滚",@"航向角度",@"角速度",@"飞机对地高度",@"海拔高度"];
+    self.values = @[@"需要确定",@"需要确定",@"需要确定",@"需要确定",@"pitchSpeed",@"rollSpeed",@"yawSpeed",@"需要确定",@"altitude",@"groundHeight"];
 }
 
 #pragma mark - UITableViewDelegate,UITableViewDataSource
@@ -44,7 +46,7 @@ UITableViewDelegate,UITableViewDataSource
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.text = _items[indexPath.row];
-    cell.detailTextLabel.text = @"DetailTextLabel";
+    cell.detailTextLabel.text = _values[indexPath.row];
     return cell;
 }
 - (void)didReceiveMemoryWarning {
