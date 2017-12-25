@@ -16,7 +16,7 @@ UITableViewDelegate,UITableViewDataSource
 @property (weak, nonatomic) IBOutlet UITableView *listView;
 @property (nonatomic, strong) PVBattery *batteryManager;
 
-@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, copy) NSArray *items;
 @property (nonatomic, strong) NSMutableArray *values;
 
 @end
@@ -32,19 +32,19 @@ UITableViewDelegate,UITableViewDataSource
 }
 
 - (void)initData{
-    self.items = @[@"第一节电芯电压",@"第二节电芯电压",@"第三节电芯电压",@"第四节电芯电压",@"循环次数",@"电池总容量",@"电池温度",@"电池当前剩余电量"];
+    self.items = @[@"Voltage of the first core electric",@"Voltage of the second core electric",@"Voltage of the third core electric",@"Voltage of the fourth core electric",@"Cycle index",@"Total battery capacity",@"Temperature",@"Battery Remaining Capacity"];
     self.values = [@[@"",@"",@"",@"",@"",@"",@"",@""] mutableCopy];
 }
 - (void)configManager{
     self.batteryManager = [ComponentHelper fetchBattery];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        //  获取电池信息
+        //  Get Battery Information.
         [self getBatteryInfo];
     });
 }
 
-//TODO: [Command] 获取电池信息
+//TODO: [Command] Get Battery Information
 - (void)getBatteryInfo
 {
     [self.batteryManager getSmartBatteryStatusWithCompletion:^(PVBatteryStatus batteryStatus, NSError *error) {

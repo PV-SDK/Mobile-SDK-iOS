@@ -12,8 +12,8 @@
 UITableViewDelegate,UITableViewDataSource
 >
 @property (weak, nonatomic) IBOutlet UITableView *listView;
-@property (nonatomic, strong) PVRemoteController *remoteController;
-@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) PVFlightRemote *flightRemote;
+@property (nonatomic, copy) NSArray *items;
 
 @end
 
@@ -30,14 +30,14 @@ UITableViewDelegate,UITableViewDataSource
     self.items = @[@"美国手",@"日本手"];
 }
 - (void)configManager{
-    self.remoteController = [ComponentHelper fetchRemoteController];
+    self.flightRemote = [ComponentHelper fetchFlightRemote];
 }
 
 //  TODO: [Command] 设置遥控器模式
-- (void)setRCModeWithRemoteMode:(PVRCMode)mode
+- (void)setEyeRemoteModeWithRemoteMode:(PVFlightRemoteMode)mode
 {
     WEAKSELF;
-    [self.remoteController setRCMode:mode withCompletion:^(NSError * _Nullable error) {
+    [self.flightRemote setRemoteMode:mode withCompletion:^(NSError * _Nullable error) {
         STRONGSELF;
         if (error == nil) {
             [strongSelf.navigationController popViewControllerAnimated:YES];
@@ -63,9 +63,9 @@ UITableViewDelegate,UITableViewDataSource
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //  设置遥控器模式
     if (indexPath.row == 0) {
-        [self setRCModeWithRemoteMode:PVRCModeUSA];
+        [self setEyeRemoteModeWithRemoteMode:PVFlightRemoteModeUSA];
     }else{
-        [self setRCModeWithRemoteMode:PVRCModeJapan];
+        [self setEyeRemoteModeWithRemoteMode:PVFlightRemoteModeJapan];
     }
 }
 

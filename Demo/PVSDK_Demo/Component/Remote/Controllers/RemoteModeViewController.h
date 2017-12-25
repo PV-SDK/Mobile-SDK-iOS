@@ -10,6 +10,6 @@
 
 @interface RemoteModeViewController : UIViewController
 
-@property (nonatomic, assign) PVRCMode remoteMode;
+@property (nonatomic, assign) PVFlightRemoteMode flightRemoteMode;
 
 @end

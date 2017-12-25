@@ -12,7 +12,7 @@
 <
 UITableViewDelegate,UITableViewDataSource
 >
-@property (nonatomic, strong) PVCamera *cameraManager;
+@property (nonatomic, strong) PVEyeCamera *eyeCameraManager;
 @property (nonatomic, copy) NSArray *values;
 
 @end
@@ -23,7 +23,7 @@ UITableViewDelegate,UITableViewDataSource
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.cameraManager = [ComponentHelper fetchCamera];
+    self.eyeCameraManager = [ComponentHelper fetchEyeCamera];
 }
 
 -(void)setParameterType:(CameraSettingParameterType)parameterType{
@@ -258,7 +258,7 @@ UITableViewDelegate,UITableViewDataSource
             //MARK: 光圈设置【ISO】
         case CameraSettingParameterType_ISO:
         {
-            [self.cameraManager setEyeISO:index + 51 withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraISO:index + 51 withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -268,7 +268,7 @@ UITableViewDelegate,UITableViewDataSource
             //MARK: 光圈设置【光圈大小】
         case CameraSettingParameterType_ApertureSize:
         {
-            [self.cameraManager setEyePVCameraAperture:index + 51 withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraAperture:index + 51 withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -280,7 +280,7 @@ UITableViewDelegate,UITableViewDataSource
         {
             float evValue = [[self.values objectAtIndex:index] floatValue];
             evValue = evValue * 32;
-            [self.cameraManager setEyeExposure:evValue withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraExposure:evValue withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -290,7 +290,7 @@ UITableViewDelegate,UITableViewDataSource
             //MARK: 光圈设置【拍照快门速度】
         case CameraSettingParameterType_PZShutterSpeed:
         {
-            [self.cameraManager setEyeCameraPhotoShutterSpeed:index + 51 withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraPhotoShutterSpeed:index + 51 withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -300,7 +300,7 @@ UITableViewDelegate,UITableViewDataSource
             //MARK: 光圈设置【摄像快门速度】
         case CameraSettingParameterType_SXShutterSpeed:
         {
-            [self.cameraManager setEyeCameraVideoShutterSpeed:index + 51 withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraVideoShutterSpeed:index + 51 withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -310,7 +310,7 @@ UITableViewDelegate,UITableViewDataSource
             //MARK: 图像设置【相机模式】当index=3设置为单拍  否则是连拍
         case CameraSettingParameterType_CameraMode:
         {
-            [self.cameraManager setEyeCameraMode:index + 51 withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraMode:index + 51 withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -320,7 +320,7 @@ UITableViewDelegate,UITableViewDataSource
             //MARK: 图像设置【连拍速度】
         case CameraSettingParameterType_ContinuousShootSpeed:
         {
-            [self.cameraManager setEyeCameraContinuousShootSpeed:index + 51 withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraContinuousShootSpeed:index + 51 withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -330,7 +330,7 @@ UITableViewDelegate,UITableViewDataSource
             //MARK: 图像设置【定时连拍】
         case CameraSettingParameterType_LapseTime:
         {
-            [self.cameraManager setTakePhotoDelyTime:[self.values[index] integerValue] withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraTakePhotoDelyTime:[self.values[index] integerValue] withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -340,7 +340,7 @@ UITableViewDelegate,UITableViewDataSource
             //MARK: 图像设置【照片大小】
         case CameraSettingParameterType_PhotoSize:
         {
-            [self.cameraManager setEyeCameraPhotoSize:index + 51 withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraPhotoSize:index + 51 withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -350,7 +350,7 @@ UITableViewDelegate,UITableViewDataSource
             //MARK: 图像设置【照片质量】
         case CameraSettingParameterType_PictureQuality:
         {
-            [self.cameraManager setEyeCameraPhotoQuality:index + 51 withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraPhotoQuality:index + 51 withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -360,7 +360,7 @@ UITableViewDelegate,UITableViewDataSource
             //MARK: 图像设置【视频分辨率】
         case CameraSettingParameterType_VideoResolution:
         {
-            [self.cameraManager setEyeCameraVideoSize:index + 51 withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraVideoSize:index + 51 withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -370,7 +370,7 @@ UITableViewDelegate,UITableViewDataSource
             //MARK: 通用设置【白平衡模式】
         case CameraSettingParameterType_WhiteBalanceMode:
         {
-            [self.cameraManager setEyeWhiteBalanceMode:index + 51 withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraWhiteBalanceMode:index + 51 withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -380,7 +380,7 @@ UITableViewDelegate,UITableViewDataSource
             //MARK: 通用设置【白平衡】
         case CameraSettingParameterType_WhiteBalanceValue:
         {
-            [self.cameraManager setEyeWhiteBalance:[self.values[index] integerValue] withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraWhiteBalance:[self.values[index] integerValue] withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -390,7 +390,7 @@ UITableViewDelegate,UITableViewDataSource
             //MARK: 通用设置【图像亮度】
         case CameraSettingParameterType_ImageBrightness:
         {
-            [self.cameraManager setImageBrightness:[self.values[index] integerValue] withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraImageBrightness:[self.values[index] integerValue] withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -400,7 +400,7 @@ UITableViewDelegate,UITableViewDataSource
             //MARK: 通用设置【图像饱和度】
         case CameraSettingParameterType_ImageSaturation:
         {
-            [self.cameraManager setImageSaturation:[self.values[index] integerValue] withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraImageSaturation:[self.values[index] integerValue] withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -410,7 +410,7 @@ UITableViewDelegate,UITableViewDataSource
             //MARK: 通用设置【图像对比度】
         case CameraSettingParameterType_ImageContrast:
         {
-            [self.cameraManager setImageContrast:[self.values[index] integerValue] withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraImageContrast:[self.values[index] integerValue] withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -421,7 +421,7 @@ UITableViewDelegate,UITableViewDataSource
         case CameraSettingParameterType_MeteringMode:
         {
             //测光模式
-            [self.cameraManager setEyeMeteringMode:index + 51 withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraMeteringMode:index + 51 withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -432,7 +432,7 @@ UITableViewDelegate,UITableViewDataSource
         case CameraSettingParameterType_AFMode:
         {
             //AF模式
-            [self.cameraManager setEyeCameraVideoAF:index + 51 withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraVideoAF:index + 51 withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -443,7 +443,7 @@ UITableViewDelegate,UITableViewDataSource
         case CameraSettingParameterType_OSDSwitch:
         {
             //OSD开关
-            [self.cameraManager setEyeOSDSwitchOpenState:index + 51 WithCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraOSDSwitchOpenState:index + 51 WithCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }
@@ -455,7 +455,7 @@ UITableViewDelegate,UITableViewDataSource
         case CameraSettingParameterType_ImageSharpness:
         {
             //图像锐度
-            [self.cameraManager setImageSharpness:index withCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager setEyeCameraImageSharpness:index withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }

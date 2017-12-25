@@ -13,7 +13,7 @@
     NSInteger selectIndex;
 }
 
-@property (nonatomic, strong) NSArray *titles;
+@property (nonatomic, copy) NSArray *titles;
 
 @end
 

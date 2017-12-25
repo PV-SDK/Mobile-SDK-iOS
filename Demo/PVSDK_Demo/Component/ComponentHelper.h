@@ -8,20 +8,26 @@
 #import <Foundation/Foundation.h>
 #import <PVSDK/PVSDK.h>
 
-@class PVCamera;
+@class PVSDKManager;
+@class PVFlightHelper;
+@class PVEyeCamera;
 @class PVBattery;
 @class PVGimabal;
-@class PVFlightController;
-@class PVRemoteController;
-@class PVMountController;
+@class PVFlightRemote;
+@class PVMount;
+@class PVLocation;
+@class PVNavigation;
 
 @interface ComponentHelper : NSObject
 
-+(nullable PVCamera*) fetchCamera;
-+(nullable PVBattery*) fetchBattery;
-+(nullable PVGimabal*) fetchGimabal;
-+(nullable PVFlightController*) fetchFlightController;
-+(nullable PVRemoteController*) fetchRemoteController;
-+(nullable PVMountController*) fetchMountController;
++(nullable PVSDKManager *)fetchSDKManager;
++(nullable PVFlightHelper *)fetchFlightHelper;
++(nullable PVEyeCamera *)fetchEyeCamera;
++(nullable PVBattery *)fetchBattery;
++(nullable PVGimabal *)fetchGimabal;
++(nullable PVFlightRemote *)fetchFlightRemote;
++(nullable PVMount *)fetchMount;
++(nullable PVLocation *)fetchLocation;
++(nullable PVNavigation *)fetchNavigation;
 
 @end

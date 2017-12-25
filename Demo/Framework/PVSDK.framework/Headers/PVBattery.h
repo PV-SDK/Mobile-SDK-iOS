@@ -2,7 +2,6 @@
 //  PVBattery.h
 //  PVSDK
 //
-//  Created by Layne on 16/7/15.
 //  Copyright © 2016 PowerVision. All rights reserved.
 //
 
@@ -10,23 +9,14 @@
 
 typedef struct
 {
-    //The voltage of the first cell
-    float firstCellVol;
-    //The voltage of the second cell
-    float sencondCellVol;
-    //The voltage of the third cell
-    float thirdCellVol;
-    //The voltage of the fourth cell
-    float forthCellVol;
-    //Cycle index
-    int cycleTimes;
-    //Total battery capacity
-    float totalCapacity;
-    //Cell temperature
-    float temperature;
-    //Dump energy
-    int battery_remaining;
-    
+    float firstCellVol;     ///< The voltage of the first cell
+    float sencondCellVol;   ///< The voltage of the second cell
+    float thirdCellVol;     ///< The voltage of the third cell
+    float forthCellVol;     ///< The voltage of the fourth cell
+    int cycleTimes;         ///< Cycle index
+    float totalCapacity;    ///< Total battery capacity
+    float temperature;      ///< Cell temperature
+    int battery_remaining;  ///< Dump energy
     int antennaIndex;
 }PVBatteryStatus;
 
@@ -38,4 +28,5 @@ typedef struct
  *  @param block results of status information
  */
 - (void)getSmartBatteryStatusWithCompletion:(void (^)(PVBatteryStatus batteryStatus,NSError *error))block;
+
 @end

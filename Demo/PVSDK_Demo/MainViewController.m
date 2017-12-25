@@ -20,7 +20,7 @@ typedef enum : NSUInteger {
 
 @interface MainViewController ()
 <
-PVFlightControllerDelegate
+PVSDKManagerDelegate
 >
 {
     NSArray *titleArray;
@@ -30,7 +30,7 @@ PVFlightControllerDelegate
 
 @property (nonatomic, assign) PowerEyeConnectState connectState;
 
-@property (nonatomic, strong) PVFlightController *flightController;
+@property (nonatomic, strong) PVSDKManager *sdkManager;
 
 @end
 
@@ -39,56 +39,62 @@ PVFlightControllerDelegate
 - (IBAction)didClickToConnectThePowerEye:(UIButton *)sender {
     sender.userInteractionEnabled = NO;
     if (self.connectState == PowerEyeConnectStateDisConnected) {
-        [self.flightController startConnectFlight];
+        [self.sdkManager startConnectToProduct];
     }else if (self.connectState == PowerEyeConnectStateConnected) {
-        [self.flightController stopConnectFlight];
+        [self.sdkManager stopConnectToProduct];
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //  Configure NavigationBar
+    [self configNavigationBar];
 }
 
-#pragma mark - PVFlightControllerDelegate
-- (void)flightController:(PVFlightController *)fc didUpdateFlightState:(PVFlightControllerState *)state stateType:(PVStateUpdate)stateUpdate
-{
-    switch (stateUpdate) {
-        case PVFlightConnectStateUpdate:
-            [self updateConnectStatus:state.flightConnectState];
-            break;
-            
-        default:
-            break;
-    }
+- (void)configNavigationBar{
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
 }
+
+#pragma mark - PVSDKManagerDelegate
+-(void)pv_sdkManager:(PVSDKManager *)manager didUpdateConnectStateWithHelper:(PVProductHelper *)helper{
+    [self updateConnectStatus:helper.connectState];
+}
+
+- (void)pv_sdkManager:(PVSDKManager *)manager didUpdateFlightModeWithHelper:(PVFlightHelper *)helper{
+    NSLog(@"Flight Mode:%lu",(unsigned long)helper.flightMode);
+}
+
 #pragma mark - Update Connect State
-- (void)updateConnectStatus:(PVFlightConnectState)state
+- (void)updateConnectStatus:(PVConnectState)state
 {
-    if (state == PVFlightConnectStateConnected) {
+    if (state == PVConnectState_Connection_Connected) {
         self.connectState = PowerEyeConnectStateConnected;
         [self.connectThePowerEyeButton setTitle:@"Disconnect The PowerEye" forState:UIControlStateNormal];
         [self performSegueWithIdentifier:@"ShowFlightViewController" sender:self];
     } else {
         self.connectState = PowerEyeConnectStateDisConnected;
         [self.connectThePowerEyeButton setTitle:@"Connect The PowerEye" forState:UIControlStateNormal];
-        if ([[self.navigationController.viewControllers lastObject] isKindOfClass:[FlightViewController class]]) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationToPopRootViewController" object:nil];
-            ShowResult(@"Notification：PowerEye is disconnect!");
-        }
+        
         if (DEBUG_METHOD) {
             [self performSegueWithIdentifier:@"ShowFlightViewController" sender:self];
+        }else{
+//            if ([[self.navigationController.viewControllers lastObject] isKindOfClass:[MainViewController class]]) {
+//                [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationToPopRootViewController" object:nil];
+//                return;
+//            }
         }
     }
     self.connectThePowerEyeButton.userInteractionEnabled = YES;
 }
 
 #pragma mark - Lazying...
--(PVFlightController *)flightController{
-    if (_flightController == nil) {
-        _flightController = [ComponentHelper fetchFlightController];
-        _flightController.delegate = self;
+-(PVSDKManager *)sdkManager{
+    if (_sdkManager == nil) {
+        _sdkManager = [ComponentHelper fetchSDKManager];
+        _sdkManager.delegate = self;
     }
-    return _flightController;
+    return _sdkManager;
 }
 
 - (void)didReceiveMemoryWarning {

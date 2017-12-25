@@ -9,23 +9,32 @@
 
 @implementation ComponentHelper
 
-+(nullable PVCamera*) fetchCamera{
-    return [PVCamera new];
++(nullable PVSDKManager *)fetchSDKManager{
+    return [PVSDKManager shareSDKManager];
 }
-+(nullable PVBattery*) fetchBattery{
++(nullable PVFlightHelper *)fetchFlightHelper{
+    return [PVFlightHelper new];
+}
++(nullable PVEyeCamera *)fetchEyeCamera{
+    return [PVEyeCamera new];
+}
++(nullable PVBattery *)fetchBattery{
     return [PVBattery new];
 }
-+(nullable PVGimabal*) fetchGimabal{
++(nullable PVGimabal *)fetchGimabal{
     return [PVGimabal new];
 }
-+(nullable PVFlightController*) fetchFlightController{
-    return [PVFlightController new];
++(nullable PVFlightRemote *)fetchFlightRemote{
+    return [PVFlightRemote new];
 }
-+(nullable PVRemoteController*) fetchRemoteController{
-    return [PVRemoteController new];
++(nullable PVMount *)fetchMount{
+    return [PVMount new];
 }
-+(nullable PVMountController*) fetchMountController{
-    return [PVMountController new];
++(nullable PVLocation *)fetchLocation{
+    return [PVLocation new];
+}
++(nullable PVNavigation *)fetchNavigation{
+    return [PVNavigation new];
 }
 
 @end

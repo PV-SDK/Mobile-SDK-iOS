@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		865C20001FEA5E39005C7AA8 /* VFLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 865C1FFE1FEA5E39005C7AA8 /* VFLibrary.framework */; };
+		865C20041FEB847A005C7AA8 /* WayPointControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 865C20031FEB847A005C7AA8 /* WayPointControlViewController.m */; };
+		865C201F1FED08BB005C7AA8 /* PVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 865C201E1FED08BB005C7AA8 /* PVSDK.framework */; };
+		865C20261FF0D953005C7AA8 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 865C20221FF0D953005C7AA8 /* UIView+Size.m */; };
+		865C20271FF0D953005C7AA8 /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 865C20251FF0D953005C7AA8 /* UIViewController+BackButtonHandler.m */; };
 		86632CBB1FD2A1DD0077CCD8 /* FlightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86632CB81FD2A1DD0077CCD8 /* FlightViewController.m */; };
-		86632CC51FDB7E5C0077CCD8 /* PVSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86632CC31FDB7E5C0077CCD8 /* PVSDK.framework */; };
-		86632CC61FDB7E5C0077CCD8 /* VFLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86632CC41FDB7E5C0077CCD8 /* VFLibrary.framework */; };
 		868056401FC7F77800E1CDC4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8680563E1FC7F77800E1CDC4 /* MainViewController.m */; };
 		8680565F1FC8666E00E1CDC4 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8680565D1FC7F86800E1CDC4 /* VideoToolbox.framework */; };
 		86D987531FDFDEDC002EA848 /* BatteryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987421FDFDEDC002EA848 /* BatteryViewController.m */; };
@@ -20,7 +23,6 @@
 		86D987581FDFDEDC002EA848 /* RemoteModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987501FDFDEDC002EA848 /* RemoteModeViewController.m */; };
 		86D987591FDFDEDC002EA848 /* RemoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987521FDFDEDC002EA848 /* RemoteViewController.m */; };
 		86D9876E1FDFE4F0002EA848 /* PVVideoStreamView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D9876D1FDFE4F0002EA848 /* PVVideoStreamView.m */; };
-		86D987751FE0D892002EA848 /* PostureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987741FE0D892002EA848 /* PostureViewController.m */; };
 		86D987991FE0DB06002EA848 /* MountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987791FE0DB06002EA848 /* MountViewController.m */; };
 		86D9879A1FE0DB06002EA848 /* CanFilterSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D9877C1FE0DB06002EA848 /* CanFilterSettingView.m */; };
 		86D9879B1FE0DB06002EA848 /* CanFilterSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D9877D1FE0DB06002EA848 /* CanFilterSettingView.xib */; };
@@ -43,7 +45,7 @@
 		86D987AC1FE0DB06002EA848 /* UartSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987971FE0DB06002EA848 /* UartSettingView.m */; };
 		86D987AD1FE0DB06002EA848 /* UartSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D987981FE0DB06002EA848 /* UartSettingView.xib */; };
 		86D987B11FE124FB002EA848 /* PVSTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987B01FE124FB002EA848 /* PVSTAlertView.m */; };
-		86D987BB1FE149C5002EA848 /* SailingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987BA1FE149C5002EA848 /* SailingViewController.m */; };
+		86D987BB1FE149C5002EA848 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987BA1FE149C5002EA848 /* NavigationViewController.m */; };
 		86D987C11FE218E7002EA848 /* PVSTGPSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987BE1FE218E7002EA848 /* PVSTGPSLocation.m */; };
 		86D987C21FE218E7002EA848 /* PVSTGPSLocationPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987C01FE218E7002EA848 /* PVSTGPSLocationPicker.m */; };
 		86D987C81FE21A3B002EA848 /* MBProgressHUD+DetailLabelAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D987C51FE21A3B002EA848 /* MBProgressHUD+DetailLabelAlignment.m */; };
@@ -60,7 +62,6 @@
 		ADC257C11F8F610500418881 /* LMJDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC257BF1F8F610500418881 /* LMJDropdownMenu.m */; };
 		ADC257C31F8F62D000418881 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = ADC257C21F8F62D000418881 /* Podfile */; };
 		ADC257D21F8F82A700418881 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC257D11F8F82A700418881 /* libc++.tbd */; };
-		ADC258A61F94669C00418881 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC258A51F94669C00418881 /* UIView+Size.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,10 +83,16 @@
 
 /* Begin PBXFileReference section */
 		62FBD8C81F5949C340CB6738 /* Pods-PVSDK_Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PVSDK_Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PVSDK_Demo/Pods-PVSDK_Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		865C1FFE1FEA5E39005C7AA8 /* VFLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VFLibrary.framework; path = Framework/VFLibrary.framework; sourceTree = "<group>"; };
+		865C20021FEB847A005C7AA8 /* WayPointControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WayPointControlViewController.h; sourceTree = "<group>"; };
+		865C20031FEB847A005C7AA8 /* WayPointControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WayPointControlViewController.m; sourceTree = "<group>"; };
+		865C201E1FED08BB005C7AA8 /* PVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PVSDK.framework; path = Framework/PVSDK.framework; sourceTree = "<group>"; };
+		865C20211FF0D953005C7AA8 /* UIView+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Size.h"; sourceTree = "<group>"; };
+		865C20221FF0D953005C7AA8 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
+		865C20241FF0D953005C7AA8 /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
+		865C20251FF0D953005C7AA8 /* UIViewController+BackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonHandler.m"; sourceTree = "<group>"; };
 		86632CB71FD2A1DD0077CCD8 /* FlightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightViewController.h; sourceTree = "<group>"; };
 		86632CB81FD2A1DD0077CCD8 /* FlightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightViewController.m; sourceTree = "<group>"; };
-		86632CC31FDB7E5C0077CCD8 /* PVSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PVSDK.framework; path = Framework/PVSDK.framework; sourceTree = "<group>"; };
-		86632CC41FDB7E5C0077CCD8 /* VFLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VFLibrary.framework; path = Framework/VFLibrary.framework; sourceTree = "<group>"; };
 		8680563D1FC7F77800E1CDC4 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		8680563E1FC7F77800E1CDC4 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		868056571FC7F82300E1CDC4 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
@@ -110,8 +117,6 @@
 		86D987521FDFDEDC002EA848 /* RemoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteViewController.m; sourceTree = "<group>"; };
 		86D9876C1FDFE4F0002EA848 /* PVVideoStreamView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVVideoStreamView.h; sourceTree = "<group>"; };
 		86D9876D1FDFE4F0002EA848 /* PVVideoStreamView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVVideoStreamView.m; sourceTree = "<group>"; };
-		86D987731FE0D892002EA848 /* PostureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostureViewController.h; sourceTree = "<group>"; };
-		86D987741FE0D892002EA848 /* PostureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostureViewController.m; sourceTree = "<group>"; };
 		86D987781FE0DB06002EA848 /* MountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MountViewController.h; sourceTree = "<group>"; };
 		86D987791FE0DB06002EA848 /* MountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MountViewController.m; sourceTree = "<group>"; };
 		86D9877B1FE0DB06002EA848 /* CanFilterSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CanFilterSettingView.h; sourceTree = "<group>"; };
@@ -148,8 +153,8 @@
 		86D987B01FE124FB002EA848 /* PVSTAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSTAlertView.m; sourceTree = "<group>"; };
 		86D987B31FE125FC002EA848 /* PrefixHeaderMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeaderMacro.h; sourceTree = "<group>"; };
 		86D987B41FE12648002EA848 /* PrefixHeaderImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeaderImport.h; sourceTree = "<group>"; };
-		86D987B91FE149C5002EA848 /* SailingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SailingViewController.h; sourceTree = "<group>"; };
-		86D987BA1FE149C5002EA848 /* SailingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SailingViewController.m; sourceTree = "<group>"; };
+		86D987B91FE149C5002EA848 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		86D987BA1FE149C5002EA848 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		86D987BD1FE218E7002EA848 /* PVSTGPSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSTGPSLocation.h; sourceTree = "<group>"; };
 		86D987BE1FE218E7002EA848 /* PVSTGPSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSTGPSLocation.m; sourceTree = "<group>"; };
 		86D987BF1FE218E7002EA848 /* PVSTGPSLocationPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSTGPSLocationPicker.h; sourceTree = "<group>"; };
@@ -177,8 +182,6 @@
 		ADC257BF1F8F610500418881 /* LMJDropdownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJDropdownMenu.m; sourceTree = "<group>"; };
 		ADC257C21F8F62D000418881 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ADC257D11F8F82A700418881 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		ADC258A41F94669C00418881 /* UIView+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Size.h"; sourceTree = "<group>"; };
-		ADC258A51F94669C00418881 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
 		AFC0D37D64375F3BAB129B63 /* Pods-PVSDK_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PVSDK_Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PVSDK_Demo/Pods-PVSDK_Demo.release.xcconfig"; sourceTree = "<group>"; };
 		D61FD7D405CF23A5560576BE /* libPods-PVSDK_Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PVSDK_Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -188,11 +191,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				865C201F1FED08BB005C7AA8 /* PVSDK.framework in Frameworks */,
 				8680565F1FC8666E00E1CDC4 /* VideoToolbox.framework in Frameworks */,
-				86632CC61FDB7E5C0077CCD8 /* VFLibrary.framework in Frameworks */,
+				865C20001FEA5E39005C7AA8 /* VFLibrary.framework in Frameworks */,
 				ADC257D21F8F82A700418881 /* libc++.tbd in Frameworks */,
 				8DC72A3E39B8110A7B24B250 /* libPods-PVSDK_Demo.a in Frameworks */,
-				86632CC51FDB7E5C0077CCD8 /* PVSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,8 +228,8 @@
 		75D83CAA1EE3D167C4B0A7E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				86632CC31FDB7E5C0077CCD8 /* PVSDK.framework */,
-				86632CC41FDB7E5C0077CCD8 /* VFLibrary.framework */,
+				865C201E1FED08BB005C7AA8 /* PVSDK.framework */,
+				865C1FFE1FEA5E39005C7AA8 /* VFLibrary.framework */,
 				868056631FC8672D00E1CDC4 /* libz.tbd */,
 				8680565D1FC7F86800E1CDC4 /* VideoToolbox.framework */,
 				8680565B1FC7F83D00E1CDC4 /* libiconv.tbd */,
@@ -236,6 +239,33 @@
 				D61FD7D405CF23A5560576BE /* libPods-PVSDK_Demo.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		865C20011FEB8469005C7AA8 /* WayPointControlViewController */ = {
+			isa = PBXGroup;
+			children = (
+				865C20021FEB847A005C7AA8 /* WayPointControlViewController.h */,
+				865C20031FEB847A005C7AA8 /* WayPointControlViewController.m */,
+			);
+			path = WayPointControlViewController;
+			sourceTree = "<group>";
+		};
+		865C20201FF0D953005C7AA8 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				865C20211FF0D953005C7AA8 /* UIView+Size.h */,
+				865C20221FF0D953005C7AA8 /* UIView+Size.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		865C20231FF0D953005C7AA8 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				865C20241FF0D953005C7AA8 /* UIViewController+BackButtonHandler.h */,
+				865C20251FF0D953005C7AA8 /* UIViewController+BackButtonHandler.m */,
+			);
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		86632CB51FD2A1DD0077CCD8 /* FlightViewController */ = {
@@ -273,8 +303,7 @@
 				86D9873F1FDFDEDC002EA848 /* Battery */,
 				86D987431FDFDEDC002EA848 /* Camera */,
 				86D9874D1FDFDEDC002EA848 /* Remote */,
-				86D987711FE0D872002EA848 /* Posture */,
-				86D987B71FE131C8002EA848 /* Sailing */,
+				86D987B71FE131C8002EA848 /* Navigation */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -336,13 +365,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		86D9875E1FDFE052002EA848 /* PVSDK */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PVSDK;
-			sourceTree = "<group>";
-		};
 		86D9876B1FDFE4F0002EA848 /* VideoStream */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,23 +390,6 @@
 				86D987B01FE124FB002EA848 /* PVSTAlertView.m */,
 			);
 			path = PVSTAlertView;
-			sourceTree = "<group>";
-		};
-		86D987711FE0D872002EA848 /* Posture */ = {
-			isa = PBXGroup;
-			children = (
-				86D987721FE0D872002EA848 /* Controllers */,
-			);
-			path = Posture;
-			sourceTree = "<group>";
-		};
-		86D987721FE0D872002EA848 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				86D987731FE0D892002EA848 /* PostureViewController.h */,
-				86D987741FE0D892002EA848 /* PostureViewController.m */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		86D987761FE0DB06002EA848 /* Mount */ = {
@@ -451,19 +456,21 @@
 			path = PrefixHeader;
 			sourceTree = "<group>";
 		};
-		86D987B71FE131C8002EA848 /* Sailing */ = {
+		86D987B71FE131C8002EA848 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
 				86D987B81FE131C8002EA848 /* Controllers */,
 			);
+			name = Navigation;
 			path = Sailing;
 			sourceTree = "<group>";
 		};
 		86D987B81FE131C8002EA848 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				86D987B91FE149C5002EA848 /* SailingViewController.h */,
-				86D987BA1FE149C5002EA848 /* SailingViewController.m */,
+				86D987B91FE149C5002EA848 /* NavigationViewController.h */,
+				86D987BA1FE149C5002EA848 /* NavigationViewController.m */,
+				865C20011FEB8469005C7AA8 /* WayPointControlViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -516,7 +523,6 @@
 		ADC257871F8F3EBE00418881 /* PVSDK_Demo */ = {
 			isa = PBXGroup;
 			children = (
-				86D9875E1FDFE052002EA848 /* PVSDK */,
 				ADC2578B1F8F3EBE00418881 /* AppDelegate.h */,
 				ADC2578C1F8F3EBE00418881 /* AppDelegate.m */,
 				8680563D1FC7F77800E1CDC4 /* MainViewController.h */,
@@ -585,8 +591,8 @@
 		ADC258A31F94669C00418881 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				ADC258A41F94669C00418881 /* UIView+Size.h */,
-				ADC258A51F94669C00418881 /* UIView+Size.m */,
+				865C20201FF0D953005C7AA8 /* UIView */,
+				865C20231FF0D953005C7AA8 /* UIViewController */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -807,7 +813,7 @@
 				86D987561FDFDEDC002EA848 /* CameraSettingVC.m in Sources */,
 				ADC257C11F8F610500418881 /* LMJDropdownMenu.m in Sources */,
 				86D987A01FE0DB06002EA848 /* I2CSettingView.m in Sources */,
-				86D987751FE0D892002EA848 /* PostureViewController.m in Sources */,
+				865C20261FF0D953005C7AA8 /* UIView+Size.m in Sources */,
 				86D987571FDFDEDC002EA848 /* ComponentHelper.m in Sources */,
 				86D987C11FE218E7002EA848 /* PVSTGPSLocation.m in Sources */,
 				86D987A41FE0DB06002EA848 /* ReadSpiDataParamView.m in Sources */,
@@ -819,11 +825,12 @@
 				86D987A21FE0DB06002EA848 /* ReadI2cDataParamView.m in Sources */,
 				86D987C21FE218E7002EA848 /* PVSTGPSLocationPicker.m in Sources */,
 				868056401FC7F77800E1CDC4 /* MainViewController.m in Sources */,
+				865C20271FF0D953005C7AA8 /* UIViewController+BackButtonHandler.m in Sources */,
 				86D987551FDFDEDC002EA848 /* CameraSettingValueVC.m in Sources */,
 				ADC2578D1F8F3EBE00418881 /* AppDelegate.m in Sources */,
-				ADC258A61F94669C00418881 /* UIView+Size.m in Sources */,
+				865C20041FEB847A005C7AA8 /* WayPointControlViewController.m in Sources */,
 				86D987B11FE124FB002EA848 /* PVSTAlertView.m in Sources */,
-				86D987BB1FE149C5002EA848 /* SailingViewController.m in Sources */,
+				86D987BB1FE149C5002EA848 /* NavigationViewController.m in Sources */,
 				86632CBB1FD2A1DD0077CCD8 /* FlightViewController.m in Sources */,
 				86D987C81FE21A3B002EA848 /* MBProgressHUD+DetailLabelAlignment.m in Sources */,
 				86D9879C1FE0DB06002EA848 /* CanSettingView.m in Sources */,
@@ -993,6 +1000,7 @@
 					"$(PROJECT_DIR)/PVSDK_Demo/PVSDK",
 					"$(PROJECT_DIR)/PVSDK_Demo/PVSDK/PVSDK_VideoStream",
 					"$(PROJECT_DIR)/Framework",
+					"$(PROJECT_DIR)/PVSDKFramework",
 				);
 				GCC_PREFIX_HEADER = PVSDK_Demo/PrefixHeader.pch;
 				INFOPLIST_FILE = PVSDK_Demo/Info.plist;
@@ -1019,6 +1027,7 @@
 					"$(PROJECT_DIR)/PVSDK_Demo/PVSDK",
 					"$(PROJECT_DIR)/PVSDK_Demo/PVSDK/PVSDK_VideoStream",
 					"$(PROJECT_DIR)/Framework",
+					"$(PROJECT_DIR)/PVSDKFramework",
 				);
 				GCC_PREFIX_HEADER = PVSDK_Demo/PrefixHeader.pch;
 				INFOPLIST_FILE = PVSDK_Demo/Info.plist;

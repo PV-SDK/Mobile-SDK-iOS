@@ -10,47 +10,59 @@
 		</data>
 		<key>Headers/PVBattery.h</key>
 		<data>
-		CWHgIhZPp8sM7mxt+llxahPN3AI=
-		</data>
-		<key>Headers/PVCamera.h</key>
-		<data>
-		jp+1ofINOLqPFJD7+kZPPLr6nhg=
-		</data>
-		<key>Headers/PVCameraCallback.h</key>
-		<data>
-		0uGzUW6rBlHo28shXP8j0ib+IFM=
+		0kTjFPR2iaw6+CE7/vwXPC6Bk3o=
 		</data>
 		<key>Headers/PVCameraSDCardState.h</key>
 		<data>
-		R3ZuBqkvmMBJSq4XJd/i4I6t33g=
+		BY9TGDfHYKM/DdhrK0g1NdeNJCQ=
 		</data>
-		<key>Headers/PVCameraSettingsDef.h</key>
+		<key>Headers/PVEyeCamera.h</key>
 		<data>
-		jP+scLgI3l8F5RZhY2xMzgm698o=
+		0+0g1UGLQe3E/sZ0rRAbQer+7bc=
 		</data>
-		<key>Headers/PVFlightController.h</key>
+		<key>Headers/PVEyeCameraSettingsDef.h</key>
 		<data>
-		uxMn4UXVvytS3dib7t7Zk5ZsDd8=
+		YXv8nj21rUKEfS01Qrd+034Jx/k=
 		</data>
-		<key>Headers/PVFlightControllerState.h</key>
+		<key>Headers/PVFlightHelper.h</key>
 		<data>
-		h9m9H98VwI6vLoSOTD2Spuxo++c=
+		uuTomlLOJIJJioAZePVOfeFDSL4=
+		</data>
+		<key>Headers/PVFlightRemote.h</key>
+		<data>
+		PmY6ikiX7vHpbarMlkuEM7OZSAw=
 		</data>
 		<key>Headers/PVGimabal.h</key>
 		<data>
-		y+sqU9g4o9vZjXNM6SlV2cF4lyo=
+		eqs0XwNzEIeXKSK6CCpLeE9V868=
 		</data>
-		<key>Headers/PVMountController.h</key>
+		<key>Headers/PVLocation.h</key>
 		<data>
-		x1QVqkioJM+ECH7kaggc4TMIU7E=
+		cE/mwhvOhN9hVQD2kIjNKaMHgkw=
 		</data>
-		<key>Headers/PVRemoteController.h</key>
+		<key>Headers/PVMount.h</key>
 		<data>
-		EF7HUOFzv/0opU+JRJzJbIlxKpw=
+		OogzZ/9QqUOWtZY9EwTrB1pJqAo=
+		</data>
+		<key>Headers/PVNavigation.h</key>
+		<data>
+		fRsAG+RRqEOBHprT0Fggz6fSZdI=
+		</data>
+		<key>Headers/PVProductHelper.h</key>
+		<data>
+		Ywx4pBDxgXMyBIG9hqv9mSnTCuE=
 		</data>
 		<key>Headers/PVSDK.h</key>
 		<data>
-		yYbCoi50UKBQe35aHUXBNxYDBjA=
+		L9yM5/BF+LL5n8w/p45J6vb99BA=
+		</data>
+		<key>Headers/PVSDKManager.h</key>
+		<data>
+		/WDUUd5rDGyuQC9ojoqmdRUN/yQ=
+		</data>
+		<key>Headers/PVWayPointModel.h</key>
+		<data>
+		1Ohyp3tQBpYY6SJPISUvrGe1b7E=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -78,121 +90,154 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			CWHgIhZPp8sM7mxt+llxahPN3AI=
+			0kTjFPR2iaw6+CE7/vwXPC6Bk3o=
 			</data>
 			<key>hash2</key>
 			<data>
-			i9N228ZUdwY4BwMaOQ6n9LHxgBMA5l6sLbfiA1hJ7Cg=
-			</data>
-		</dict>
-		<key>Headers/PVCamera.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			jp+1ofINOLqPFJD7+kZPPLr6nhg=
-			</data>
-			<key>hash2</key>
-			<data>
-			utEKtN91eC5r1t1d+rn4z0/Jw1yxh8sFqIQP4xE4oPI=
-			</data>
-		</dict>
-		<key>Headers/PVCameraCallback.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			0uGzUW6rBlHo28shXP8j0ib+IFM=
-			</data>
-			<key>hash2</key>
-			<data>
-			88ZhVc2naDuTRuaqY218guw/GD6AR3ooalR8g7Y6p/g=
+			zgBVrnfbq+h1AdVXkgiT9VlS48yUu1lIgsAxrMS4PwY=
 			</data>
 		</dict>
 		<key>Headers/PVCameraSDCardState.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			R3ZuBqkvmMBJSq4XJd/i4I6t33g=
+			BY9TGDfHYKM/DdhrK0g1NdeNJCQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			DgsmkkGZFheNurt/M0yY+aqV8St4yhRk7JQNAI7rg10=
+			/fMsTIqSNRDU0HtVfTZcH5tUYdEnemAf7ZJm61p1BB0=
 			</data>
 		</dict>
-		<key>Headers/PVCameraSettingsDef.h</key>
+		<key>Headers/PVEyeCamera.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jP+scLgI3l8F5RZhY2xMzgm698o=
+			0+0g1UGLQe3E/sZ0rRAbQer+7bc=
 			</data>
 			<key>hash2</key>
 			<data>
-			ffe+Xe5YRpeKI7pna44yeiqpY2Dwf9HVveO88pYXvfY=
+			4Sq+SM4BGsBATCGxW43VEATQR20Lee2Xu8kNg4lS0H0=
 			</data>
 		</dict>
-		<key>Headers/PVFlightController.h</key>
+		<key>Headers/PVEyeCameraSettingsDef.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			uxMn4UXVvytS3dib7t7Zk5ZsDd8=
+			YXv8nj21rUKEfS01Qrd+034Jx/k=
 			</data>
 			<key>hash2</key>
 			<data>
-			WYjxUyDFWBJaESEOlTr+VVPCoMIWf3GuZsS7arLwnbE=
+			13Vt+RopBZxosdK32OjgL4kZ/dM/pBfptZ1FUtWaJK8=
 			</data>
 		</dict>
-		<key>Headers/PVFlightControllerState.h</key>
+		<key>Headers/PVFlightHelper.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			h9m9H98VwI6vLoSOTD2Spuxo++c=
+			uuTomlLOJIJJioAZePVOfeFDSL4=
 			</data>
 			<key>hash2</key>
 			<data>
-			8THyNgeWUvbKr++E1Imw0gMCuAxHDkRK8ojHnF0vs2o=
+			JgVXX5FIEvbP6vt+1oVJCYYfbz12Z8iMxPk/nLHTtws=
+			</data>
+		</dict>
+		<key>Headers/PVFlightRemote.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			PmY6ikiX7vHpbarMlkuEM7OZSAw=
+			</data>
+			<key>hash2</key>
+			<data>
+			zV7YW8JWwegmtLX76wB1SRstN2qsozwxfrZNJOs33jY=
 			</data>
 		</dict>
 		<key>Headers/PVGimabal.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			y+sqU9g4o9vZjXNM6SlV2cF4lyo=
+			eqs0XwNzEIeXKSK6CCpLeE9V868=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZEMNIp7o8HpzDiKHYcFmWxEPMF+EBXvnvHGh1SZT40Q=
+			tKKnyKc512+n1y5Vj2d14C9q/lzlPCrKd9s5qeCmztg=
 			</data>
 		</dict>
-		<key>Headers/PVMountController.h</key>
+		<key>Headers/PVLocation.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			x1QVqkioJM+ECH7kaggc4TMIU7E=
+			cE/mwhvOhN9hVQD2kIjNKaMHgkw=
 			</data>
 			<key>hash2</key>
 			<data>
-			0LHQPiDwkrvymdTFs272ABcpG8/k0MF+dowJ/B27hUw=
+			uzWfuBQve1MaxgPEpBte3r5NlOzAwzR30QubcDX3r4g=
 			</data>
 		</dict>
-		<key>Headers/PVRemoteController.h</key>
+		<key>Headers/PVMount.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			EF7HUOFzv/0opU+JRJzJbIlxKpw=
+			OogzZ/9QqUOWtZY9EwTrB1pJqAo=
 			</data>
 			<key>hash2</key>
 			<data>
-			S45NYlewC9delJcP26BG39otZtMgG0c9KBYTlQ8qYtY=
+			+YkA0WKT4kboRms8W7lYrXPysy+qwDQEXgf94I1b31I=
+			</data>
+		</dict>
+		<key>Headers/PVNavigation.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			fRsAG+RRqEOBHprT0Fggz6fSZdI=
+			</data>
+			<key>hash2</key>
+			<data>
+			a8xkj81MhFNUhG1jJvjuPbb3G8aLJA83HrChiUoq6+4=
+			</data>
+		</dict>
+		<key>Headers/PVProductHelper.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Ywx4pBDxgXMyBIG9hqv9mSnTCuE=
+			</data>
+			<key>hash2</key>
+			<data>
+			7DleaHTbaR5izDSIMJgoYxnq9nwaDSGLmLzSiwp9HOI=
 			</data>
 		</dict>
 		<key>Headers/PVSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			yYbCoi50UKBQe35aHUXBNxYDBjA=
+			L9yM5/BF+LL5n8w/p45J6vb99BA=
 			</data>
 			<key>hash2</key>
 			<data>
-			nmHeRGlUvhgQpArzojR05r2rZ6RaBcHtLqShSwVEEww=
+			YD58r6BEdyo6lGZfE0sj2TGw4uUunLZURzu4jLFcYd0=
+			</data>
+		</dict>
+		<key>Headers/PVSDKManager.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/WDUUd5rDGyuQC9ojoqmdRUN/yQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			LbQGkcdzMtxTmJnu8rzsR2q8HOjnwSpndwCuUkUb8u4=
+			</data>
+		</dict>
+		<key>Headers/PVWayPointModel.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			1Ohyp3tQBpYY6SJPISUvrGe1b7E=
+			</data>
+			<key>hash2</key>
+			<data>
+			M9E0yXVJuata4RCpZA1Px2mXrCcaMOC/UlzDmt1S9KU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

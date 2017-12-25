@@ -23,11 +23,12 @@ UITableViewDelegate,UITableViewDataSource
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *listView;
-@property (nonatomic, strong) NSArray *parameters;
-@property (nonatomic, strong) NSArray *values;
+
+@property (nonatomic, copy) NSArray *parameters;
+@property (nonatomic, copy) NSArray *values;
 @property (nonatomic, strong) NSMutableArray *currentValues;
 
-@property (nonatomic, strong) PVCamera *cameraManager;
+@property (nonatomic, strong) PVEyeCamera *eyeCameraManager;
 
 @end
 
@@ -47,20 +48,20 @@ UITableViewDelegate,UITableViewDataSource
     parameterType = type;
     cameraState = state;
     
-    self.cameraManager = [ComponentHelper fetchCamera];
+    self.eyeCameraManager = [ComponentHelper fetchEyeCamera];
     
     [self configDataWithCameraType:type];
 }
 
 - (void)configDataWithCameraType:(CameraSettingType)type{
-    [self.cameraManager getAllCameraSettingWithCompletion:nil];
+    [self.eyeCameraManager getEyeCameraAllSettingWithCompletion:nil];
     WEAKSELF;
     if (type == CameraSettingTypeAperture) {
         self.parameters = @[@"ISO", @"Aperture size", @"EV", @"The photo shutter speed", @"Record shutter speed"];
         self.currentValues = [NSMutableArray arrayWithArray:@[@"",@"",@"",@"",@""]];
         
         //  Get PowerEye camera iso setting.
-        [self.cameraManager getEyeISOWithCompletion:^(PVEyeCameraISO iso, NSError * _Nullable error) {
+        [self.eyeCameraManager getEyeCameraISOWithCompletion:^(PVEyeCameraISO iso, NSError * _Nullable error) {
             STRONGSELF;
             if (error == nil) {
                 [strongSelf.currentValues replaceObjectAtIndex:0 withObject:[self getCurrentValueWithType:type Row:0 Index:iso - 51]];
@@ -69,7 +70,7 @@ UITableViewDelegate,UITableViewDataSource
         }];
         
         //  Get PowerEye camera aperture size setting.
-        [self.cameraManager getEyePVCameraApertureWithCompletion:^(PVCameraAperture aperture, NSError * _Nullable error) {
+        [self.eyeCameraManager getEyeCameraApertureWithCompletion:^(PVEyeCameraAperture aperture, NSError * _Nullable error) {
             STRONGSELF;
             if (error == nil) {
                 [strongSelf.currentValues replaceObjectAtIndex:1 withObject:[self getCurrentValueWithType:type Row:1 Index:aperture - 51]];
@@ -78,7 +79,7 @@ UITableViewDelegate,UITableViewDataSource
         }];
         
         //  Get PowerEye camera exposure setting.
-        [self.cameraManager getEyeExposureWithCompletion:^(NSInteger exposure, NSError * _Nullable error) {
+        [self.eyeCameraManager getEyeCameraExposureWithCompletion:^(NSInteger exposure, NSError * _Nullable error) {
             STRONGSELF;
             if (error == nil) {
                 if (exposure > 96) {
@@ -93,7 +94,7 @@ UITableViewDelegate,UITableViewDataSource
         }];
         
         //  Get PowerEye camera photo shutter speed setting.
-        [self.cameraManager getEyeCameraPhotoShutterSpeedWithCompletion:^(PVCameraPhotoShutterSpeed shutterSpeed, NSError * _Nullable error) {
+        [self.eyeCameraManager getEyeCameraPhotoShutterSpeedWithCompletion:^(PVEyeCameraPhotoShutterSpeed shutterSpeed, NSError * _Nullable error) {
             STRONGSELF;
             if (error == nil) {
                 [strongSelf.currentValues replaceObjectAtIndex:3 withObject:[self getCurrentValueWithType:type Row:3 Index:shutterSpeed - 51]];
@@ -102,7 +103,7 @@ UITableViewDelegate,UITableViewDataSource
         }];
         
         //  Get PowerEye camera video shutter speed setting.
-        [self.cameraManager getEyeCameraVideoShutterSpeedWithCompletion:^(PVCameraVideoShutterSpeed videoShutterSpeed, NSError * _Nullable error) {
+        [self.eyeCameraManager getEyeCameraVideoShutterSpeedWithCompletion:^(PVEyeCameraVideoShutterSpeed videoShutterSpeed, NSError * _Nullable error) {
             STRONGSELF;
             if (error == nil) {
                 [strongSelf.currentValues replaceObjectAtIndex:4 withObject:[self getCurrentValueWithType:type Row:4 Index:videoShutterSpeed - 51]];
@@ -115,7 +116,7 @@ UITableViewDelegate,UITableViewDataSource
             self.currentValues = [NSMutableArray arrayWithArray:@[@"",@"",@"",@"",@""]];
             
             //  Get PowerEye camera mode setting.
-            [self.cameraManager getEyeCameraModeWithCompletion:^(PVEyeCameraMode cameraMode, NSError * _Nullable error) {
+            [self.eyeCameraManager getEyeCameraModeWithCompletion:^(PVEyeCameraMode cameraMode, NSError * _Nullable error) {
                 STRONGSELF;
                 if (error == nil) {
                     [strongSelf.currentValues replaceObjectAtIndex:0 withObject:[self getCurrentValueWithType:type Row:0 Index:cameraMode - 51]];
@@ -124,7 +125,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
             
             //  Get PowerEye camera continuous shoot speed setting.
-            [self.cameraManager getEyeCameraContinuousShootSpeedWithCompletion:^(PVEyeCameraContinuousShootSpeed shootSpeed, NSError * _Nullable error) {
+            [self.eyeCameraManager getEyeCameraContinuousShootSpeedWithCompletion:^(PVEyeCameraContinuousShootSpeed shootSpeed, NSError * _Nullable error) {
                 STRONGSELF;
                 if (error == nil) {
                     if ([strongSelf.currentValues[0] isEqualToString:@"Single"]) {
@@ -140,7 +141,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
             
             //  Get PowerEye camera take photo dely time setting.
-            [self.cameraManager getTakePhotoDelyTimeWithCompletion:^(NSInteger time, NSError * _Nullable error) {
+            [self.eyeCameraManager getEyeCameraTakePhotoDelyTimeWithCompletion:^(NSInteger time, NSError * _Nullable error) {
                 STRONGSELF;
                 if (error == nil) {
                     if (time < 1) {
@@ -155,7 +156,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
             
             //  Get PowerEye camera photo size setting.
-            [self.cameraManager getEyeCameraPhotoSizeWithCompletion:^(PVCameraPhotoSize photoSize, NSError * _Nullable error) {
+            [self.eyeCameraManager getEyeCameraPhotoSizeWithCompletion:^(PVEyeCameraPhotoSize photoSize, NSError * _Nullable error) {
                 if (error == nil) {
                     STRONGSELF;
                     [strongSelf.currentValues replaceObjectAtIndex:3 withObject:[self getCurrentValueWithType:type Row:3 Index:photoSize - 51]];
@@ -164,7 +165,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
             
             //  Get PowerEye camera photo qulity setting.
-            [self.cameraManager getEyeCameraPhotoQualityWithCompletion:^(PVEyeCameraPhotoQuality photoQuality, NSError * _Nullable error) {
+            [self.eyeCameraManager getEyeCameraPhotoQualityWithCompletion:^(PVEyeCameraPhotoQuality photoQuality, NSError * _Nullable error) {
                 STRONGSELF;
                 if (error == nil) {
                     [strongSelf.currentValues replaceObjectAtIndex:4 withObject:[self getCurrentValueWithType:type Row:4 Index:photoQuality - 51]];
@@ -176,7 +177,7 @@ UITableViewDelegate,UITableViewDataSource
             self.currentValues = [NSMutableArray arrayWithArray:@[@""]];
             
             //  Get PowerEye camera video size setting.
-            [self.cameraManager getEyeCameraVideoSizeWithCompletion:^(PVCameraVideoSize videoSize, NSError * _Nullable error) {
+            [self.eyeCameraManager getEyeCameraVideoSizeWithCompletion:^(PVEyeCameraVideoSize videoSize, NSError * _Nullable error) {
                 STRONGSELF;
                 if (error == nil) {
                     [strongSelf.currentValues replaceObjectAtIndex:0 withObject:[self getCurrentValueWithType:type Row:0 Index:videoSize - 51]];
@@ -189,7 +190,7 @@ UITableViewDelegate,UITableViewDataSource
         self.currentValues = [NSMutableArray arrayWithArray:@[@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@""]];
         
         //  Get PowerEye white balance mode setting.
-        [self.cameraManager getEyeWhiteBalanceModeWithCompletion:^(PVEyeCameraWhiteBalanceMode whiteBalanceMode, NSError * _Nullable error) {
+        [self.eyeCameraManager getEyeCameraWhiteBalanceModeWithCompletion:^(PVEyeCameraWhiteBalanceMode whiteBalanceMode, NSError * _Nullable error) {
             STRONGSELF;
             if (error == nil) {
                 [strongSelf.currentValues replaceObjectAtIndex:0 withObject:[self getCurrentValueWithType:type Row:0 Index:whiteBalanceMode - 51]];
@@ -205,7 +206,7 @@ UITableViewDelegate,UITableViewDataSource
         }];
         
         //  Get PowerEye white balance values setting.
-        [self.cameraManager getEyeWhiteBalanceWithCompletion:^(NSInteger whiteBalance, NSError * _Nullable error) {
+        [self.eyeCameraManager getEyeCameraWhiteBalanceWithCompletion:^(NSInteger whiteBalance, NSError * _Nullable error) {
             STRONGSELF;
             if (error == nil) {
                 if (whiteBalance < -100) {
@@ -226,7 +227,7 @@ UITableViewDelegate,UITableViewDataSource
         }];
         
         //  Get PowerEye image brightness setting.
-        [self.cameraManager getImageBrightnessWithCompletion:^(NSInteger brightness, NSError * _Nullable error) {
+        [self.eyeCameraManager getEyeCameraImageBrightnessWithCompletion:^(NSInteger brightness, NSError * _Nullable error) {
             STRONGSELF;
             if (error == nil) {
                 [strongSelf.currentValues replaceObjectAtIndex:2 withObject:[NSString stringWithFormat:@"%ld",(long)brightness]];
@@ -235,7 +236,7 @@ UITableViewDelegate,UITableViewDataSource
         }];
         
         //  Get PowerEye image saturation setting.
-        [self.cameraManager getImageSaturationWithCompletion:^(NSInteger saturation, NSError * _Nullable error) {
+        [self.eyeCameraManager getEyeCameraImageSaturationWithCompletion:^(NSInteger saturation, NSError * _Nullable error) {
             STRONGSELF;
             if (error == nil) {
                 [strongSelf.currentValues replaceObjectAtIndex:3 withObject:[NSString stringWithFormat:@"%ld",(long)saturation]];
@@ -244,7 +245,7 @@ UITableViewDelegate,UITableViewDataSource
         }];
         
         //  Get PowerEye image contrast setting.
-        [self.cameraManager getImageContrastWithCompletion:^(NSInteger contrast, NSError * _Nullable error) {
+        [self.eyeCameraManager getEyeCameraImageContrastWithCompletion:^(NSInteger contrast, NSError * _Nullable error) {
             STRONGSELF;
             if (error == nil) {
                 [strongSelf.currentValues replaceObjectAtIndex:4 withObject:[NSString stringWithFormat:@"%ld",(long)contrast]];
@@ -253,7 +254,7 @@ UITableViewDelegate,UITableViewDataSource
         }];
         
         //  Get PowerEye metering mode setting.
-        [self.cameraManager getEyeMeteringModeWithCompletion:^(PVEyeCameraMeteringMode meteringMode, NSError * _Nullable error) {
+        [self.eyeCameraManager getEyeCameraMeteringModeWithCompletion:^(PVEyeCameraMeteringMode meteringMode, NSError * _Nullable error) {
             STRONGSELF;
             if (error == nil) {
                 [strongSelf.currentValues replaceObjectAtIndex:5 withObject:[self getCurrentValueWithType:type Row:5 Index:meteringMode - 51]];
@@ -262,7 +263,7 @@ UITableViewDelegate,UITableViewDataSource
         }];
         
         //  Get PowerEye camera video af mode setting.
-        [self.cameraManager getEyeCameraVideoAFWithCompletion:^(PVCameraVideoAF videoAF, NSError * _Nullable error) {
+        [self.eyeCameraManager getEyeCameraVideoAFWithCompletion:^(PVEyeCameraVideoAF videoAF, NSError * _Nullable error) {
             STRONGSELF;
             if (error == nil) {
                 [strongSelf.currentValues replaceObjectAtIndex:6 withObject:[self getCurrentValueWithType:type Row:6 Index:videoAF - 51]];
@@ -271,7 +272,7 @@ UITableViewDelegate,UITableViewDataSource
         }];
         
         //  Get PowerEye OSD switch open status setting.
-        [self.cameraManager getEyeOSDSwitchOpenStatusWithCompletion:^(PVEyeOSDSwitchState state, NSError * _Nullable error) {
+        [self.eyeCameraManager getEyeCameraOSDSwitchOpenStatusWithCompletion:^(PVEyeOSDSwitchState state, NSError * _Nullable error) {
             STRONGSELF;
             if (error == nil) {
                 [strongSelf.currentValues replaceObjectAtIndex:7 withObject:[self getCurrentValueWithType:type Row:7 Index:state - 51]];
@@ -280,7 +281,7 @@ UITableViewDelegate,UITableViewDataSource
         }];
         
         //  Get PowerEye image sharpness setting.
-        [self.cameraManager getImageSharpnessWithCompletion:^(NSInteger sharpness, NSError * _Nullable error) {
+        [self.eyeCameraManager getEyeCameraImageSharpnessWithCompletion:^(NSInteger sharpness, NSError * _Nullable error) {
             STRONGSELF;
             if (error == nil) {
                 NSInteger index = sharpness;
@@ -292,7 +293,7 @@ UITableViewDelegate,UITableViewDataSource
         }];
         
         //  Get PowerEye SD Card remaining capacity setting.
-        [self.cameraManager getEyeSDRemainingCapacityWithComplection:^(NSInteger remainingCapacity, NSError * _Nullable    error) {
+        [self.eyeCameraManager getEyeCameraSDRemainingCapacityWithComplection:^(NSInteger remainingCapacity, NSError * _Nullable    error) {
             STRONGSELF;
             if (error == nil) {
                 if (remainingCapacity == 0) {
@@ -337,7 +338,7 @@ UITableViewDelegate,UITableViewDataSource
         }
         if (indexPath.row == 10) {
             //  Format SD Card
-            [self.cameraManager formatSDWithCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager formatSDWithCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     NSLog(@"Format of SD Card is successful!");
                 }else{
@@ -347,7 +348,7 @@ UITableViewDelegate,UITableViewDataSource
             return;
         }else if (indexPath.row == 11) {
             //  Reset to camera factory
-            [self.cameraManager resetToCameraFactoryWithCompletion:^(NSError * _Nullable error) {
+            [self.eyeCameraManager resetToEyeCameraFactoryWithCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     NSLog(@"Reset to camera factory is successful!");
                 }else{

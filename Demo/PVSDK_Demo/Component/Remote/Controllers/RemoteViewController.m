@@ -16,9 +16,9 @@ UITableViewDelegate,UITableViewDataSource
 >
 
 @property (weak, nonatomic) IBOutlet UITableView *listView;
-@property (nonatomic, strong) PVRemoteController *remoteController;
+@property (nonatomic, strong) PVFlightRemote *flightRemoteManager;
 
-@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, copy) NSArray *items;
 @property (nonatomic, strong) NSMutableArray *values;
 
 @end
@@ -38,7 +38,7 @@ UITableViewDelegate,UITableViewDataSource
     self.values = [@[@""] mutableCopy];
 }
 - (void)configManager{
-    self.remoteController = [ComponentHelper fetchRemoteController];
+    self.flightRemoteManager = [ComponentHelper fetchFlightRemote];
     //    self.remoteController.delegate = self;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -49,7 +49,7 @@ UITableViewDelegate,UITableViewDataSource
 
 #pragma mark - Check the airplant connect status.
 - (BOOL)checkFlightConnected{
-    if ([PVFlightController new].flightConnectState == PVFlightConnectStateConnected || [PVFlightController new].flightConnectState == PVFlightConnectStateHeartTimeoutReply) {
+    if ([PVProductHelper shareHelper].connectState == PVConnectState_Connection_Connected || [PVProductHelper shareHelper].connectState == PVConnectState_Connection_Timeout_Replay) {
         return YES;
     }else{
         return NO;
@@ -60,11 +60,11 @@ UITableViewDelegate,UITableViewDataSource
 - (void)getRemoteMode
 {
     if ([self checkFlightConnected]) {
-        [self.remoteController getRCModeWithComplection:^(PVRCMode rcMode, NSError * _Nullable error) {
+        [self.flightRemoteManager getRemoteModeWithComplection:^(PVFlightRemoteMode remoteMode, NSError * _Nullable error) {
             if (error == nil) {
-                if (rcMode == PVRCModeUSA) {
+                if (remoteMode == PVFlightRemoteModeUSA) {
                     [self.values replaceObjectAtIndex:0 withObject:@"American Hand"];
-                }else if (rcMode == PVRCModeJapan) {
+                }else if (remoteMode == PVFlightRemoteModeJapan) {
                     [self.values replaceObjectAtIndex:0 withObject:@"Japan Hand"];
                 }
                 [self.listView reloadData];
@@ -98,7 +98,7 @@ UITableViewDelegate,UITableViewDataSource
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ShowCameraSettingValueVC"]) {
         RemoteModeViewController *remoteModeVC = [RemoteModeViewController new];
-        remoteModeVC.remoteMode = [self.values[0] integerValue];
+        remoteModeVC.flightRemoteMode = [self.values[0] integerValue];
     }
 }
 
