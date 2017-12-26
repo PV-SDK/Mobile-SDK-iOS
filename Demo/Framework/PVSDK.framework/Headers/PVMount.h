@@ -318,6 +318,8 @@ NS_ASSUME_NONNULL_BEGIN     // Attribute in its rang will getattr nonnull
 
 NS_ASSUME_NONNULL_END
 
++ (PVMount *_Nullable)product;
+
 /**
  Loading mounted equipment.
 

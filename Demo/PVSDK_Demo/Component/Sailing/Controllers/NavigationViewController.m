@@ -85,6 +85,34 @@ PVLocationDelegate
         }
     }
 }
+-(void)pv_navigation:(PVNavigation *)navigation UpdateWayPointNavigationStateWithHelper:(PVFlightHelper *)helper{
+    switch (helper.autoMissionState) {
+        case PVFlightAutoMissionStateRunning:
+        {
+            if ([[self.navigationController.viewControllers lastObject] isKindOfClass:[WayPointControlViewController class]]) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"NOTIFICATION_WayPointViewController_UpdateWayPointNavigationState" object:nil userInfo:@{@"result":@"Running"}];
+            }
+        }
+            break;
+        case PVFlightAutoMissionStateFinish:
+        {
+            if ([[self.navigationController.viewControllers lastObject] isKindOfClass:[WayPointControlViewController class]]) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"NOTIFICATION_WayPointViewController_UpdateWayPointNavigationState" object:nil userInfo:@{@"result":@"Finish"}];
+            }
+        }
+            break;
+        case PVFlightAutoMissionStateNoDo:
+        {
+            if ([[self.navigationController.viewControllers lastObject] isKindOfClass:[WayPointControlViewController class]]) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"NOTIFICATION_WayPointViewController_UpdateWayPointNavigationState" object:nil userInfo:@{@"result":@"NoDo"}];
+            }
+        }
+            break;
+        default:
+            break;
+    }
+    NSLog(@"%ld",(long)helper.autoMissionState);
+}
 -(void)pv_navigation:(PVNavigation *)navigation UpdateWayPointCurrentPoint:(int)currentPoint{
     
     if ([[self.navigationController.viewControllers lastObject] isKindOfClass:[WayPointControlViewController class]]) {

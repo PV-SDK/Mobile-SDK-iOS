@@ -38,22 +38,22 @@ typedef NS_ENUM(NSInteger,PVFlightAutoMissionState) {
 typedef NS_ENUM (NSUInteger, PVSDK_Mode_Changed){
     PVSDK_Mode_Changed_Timeout      = -1,   ///< Time out
     PVSDK_Mode_Changed_             = 0,    ///< Change
-    PVSDK_Mode_Changed_MANUAL       = 1,    ///< Manual mode
-    PVSDK_Mode_Changed_ALTCTL       = 2,    ///< Altctl mode
-    PVSDK_Mode_Changed_POSCTL       = 3,    ///< Posctl mode
-    PVSDK_Mode_Changed_AUTOMISSION  = 4,    ///< Auto mission mode
-    PVSDK_Mode_Changed_AUTOTAKEOFF  = 5,    ///< Auto takeoff mode
-    PVSDK_Mode_Changed_AUTOLAND     = 6,    ///< Auto land mode
-    PVSDK_Mode_Changed_AUTORTL      = 7,    ///< Auto rtl mode
-    PVSDK_Mode_Changed_SUPERSIMPLE  = 8,    ///< Super simple mode
-    PVSDK_Mode_Changed_AUTOCIRCLE   = 9,    ///< Auto circle mode
-    PVSDK_Mode_Changed_FOLLOWME     = 10,   ///< Follow me mode
-    PVSDK_Mode_Changed_AUTOLOITER   = 11    ///< Auto loiter mode
+    PVSDK_Mode_Changed_Manual       = 1,    ///< Manual mode
+    PVSDK_Mode_Changed_Altctl       = 2,    ///< Altctl mode
+    PVSDK_Mode_Changed_Posctl       = 3,    ///< Posctl mode
+    PVSDK_Mode_Changed_Automission  = 4,    ///< Auto mission mode
+    PVSDK_Mode_Changed_Autotakeoff  = 5,    ///< Auto takeoff mode
+    PVSDK_Mode_Changed_Autoland     = 6,    ///< Auto land mode
+    PVSDK_Mode_Changed_Autortl      = 7,    ///< Auto rtl mode
+    PVSDK_Mode_Changed_Supersimple  = 8,    ///< Super simple mode
+    PVSDK_Mode_Changed_Autocircle   = 9,    ///< Auto circle mode
+    PVSDK_Mode_Changed_Followme     = 10,   ///< Follow me mode
+    PVSDK_Mode_Changed_Autoloiter   = 11    ///< Auto loiter mode
 };
 
 @interface PVFlightHelper : NSObject
 
-+ (PVFlightHelper *)shareHelper;
++ (PVFlightHelper *)helper;
 
 /**
  *  当前模式

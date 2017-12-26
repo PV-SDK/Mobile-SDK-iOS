@@ -12,7 +12,6 @@
 @interface RemoteViewController ()
 <
 UITableViewDelegate,UITableViewDataSource
-//PVRemoteControllerDelegate
 >
 
 @property (weak, nonatomic) IBOutlet UITableView *listView;
@@ -39,7 +38,6 @@ UITableViewDelegate,UITableViewDataSource
 }
 - (void)configManager{
     self.flightRemoteManager = [ComponentHelper fetchFlightRemote];
-    //    self.remoteController.delegate = self;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         //  Get remote mode
@@ -49,7 +47,7 @@ UITableViewDelegate,UITableViewDataSource
 
 #pragma mark - Check the airplant connect status.
 - (BOOL)checkFlightConnected{
-    if ([PVProductHelper shareHelper].connectState == PVConnectState_Connection_Connected || [PVProductHelper shareHelper].connectState == PVConnectState_Connection_Timeout_Replay) {
+    if ([ComponentHelper fetchProductHelper].connectState == PVConnectState_Connection_Connected || [ComponentHelper fetchProductHelper].connectState == PVConnectState_Connection_Timeout_Replay) {
         return YES;
     }else{
         return NO;

@@ -25,7 +25,7 @@
 
 @property (nonatomic, weak) id <PVSDKManagerDelegate>delegate;
 
-+ (PVSDKManager *)shareSDKManager;
++ (PVSDKManager *)manager;
 
 - (void)startConnectToProduct;
 

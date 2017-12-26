@@ -40,6 +40,6 @@ typedef NS_ENUM(NSUInteger, PVConnectState) {
  */
 @property (nonatomic, assign) PVConnectState connectState;
 
-+ (PVProductHelper *)shareHelper;
++ (PVProductHelper *)helper;
 
 @end

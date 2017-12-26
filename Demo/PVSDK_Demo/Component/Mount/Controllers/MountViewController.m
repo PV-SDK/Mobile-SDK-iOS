@@ -135,7 +135,7 @@ I2cSettingViewDelegate
 //TODO: [Button Method] Send Command Data
 - (IBAction)didClickToSendData:(UIButton *)sender
 {
-    if ([PVProductHelper shareHelper].connectState != PVConnectState_Connection_Connected) {
+    if ([PVProductHelper helper].connectState != PVConnectState_Connection_Connected) {
         [self showTipsAlertWithContent:@"设备未连接"];
         return;
     }
@@ -248,7 +248,7 @@ I2cSettingViewDelegate
 - (IBAction)didClickToSetParam:(UIButton *)sender
 {
     
-    if ([PVProductHelper shareHelper].connectState != PVConnectState_Connection_Connected) {
+    if ([PVProductHelper helper].connectState != PVConnectState_Connection_Connected) {
         [self showTipsAlertWithContent:@"设备未连接"];
         return;
     }
@@ -376,7 +376,7 @@ I2cSettingViewDelegate
         [self.settingView bringSubviewToFront:self.canFilterSettingView];
     }
     
-    if ([PVProductHelper shareHelper].connectState != PVConnectState_Connection_Connected) {
+    if ([PVProductHelper helper].connectState != PVConnectState_Connection_Connected) {
         [self showTipsAlertWithContent:@"设备未连接"];
         return;
     }

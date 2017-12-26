@@ -64,6 +64,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
++ (PVEyeCamera *_Nullable)product;
+
 #pragma mark - Camera Control
 
 /**

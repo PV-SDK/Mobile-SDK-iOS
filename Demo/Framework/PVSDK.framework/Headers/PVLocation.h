@@ -35,4 +35,6 @@
 
 @property (nonatomic, weak) id <PVLocationDelegate>delegate;
 
++ (PVLocation *)product;
+
 @end

@@ -10,31 +10,34 @@
 @implementation ComponentHelper
 
 +(nullable PVSDKManager *)fetchSDKManager{
-    return [PVSDKManager shareSDKManager];
+    return [PVSDKManager manager];
+}
++(nullable PVProductHelper *)fetchProductHelper{
+    return [PVProductHelper helper];
 }
 +(nullable PVFlightHelper *)fetchFlightHelper{
-    return [PVFlightHelper new];
+    return [PVFlightHelper helper];
 }
 +(nullable PVEyeCamera *)fetchEyeCamera{
-    return [PVEyeCamera new];
+    return [PVEyeCamera product];
 }
 +(nullable PVBattery *)fetchBattery{
-    return [PVBattery new];
+    return [PVBattery product];
 }
 +(nullable PVGimabal *)fetchGimabal{
-    return [PVGimabal new];
+    return [PVGimabal product];
 }
 +(nullable PVFlightRemote *)fetchFlightRemote{
-    return [PVFlightRemote new];
+    return [PVFlightRemote product];
 }
 +(nullable PVMount *)fetchMount{
-    return [PVMount new];
+    return [PVMount product];
 }
 +(nullable PVLocation *)fetchLocation{
-    return [PVLocation new];
+    return [PVLocation product];
 }
 +(nullable PVNavigation *)fetchNavigation{
-    return [PVNavigation new];
+    return [PVNavigation product];
 }
 
 @end

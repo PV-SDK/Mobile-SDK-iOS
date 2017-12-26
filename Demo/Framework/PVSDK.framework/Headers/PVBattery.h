@@ -22,6 +22,8 @@ typedef struct
 
 @interface PVBattery : PVBaseComponent
 
++ (PVBattery *)product;
+
 /**
  *  Acquire the information about smart battery status
  *

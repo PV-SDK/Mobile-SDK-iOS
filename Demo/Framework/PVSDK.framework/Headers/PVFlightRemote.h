@@ -65,6 +65,8 @@ typedef NS_ENUM(NSInteger,PVFlightRemoteMode) {
 
 @property (nonatomic, assign) PVFlightRemoteConnectState remoteConnectState;
 
++ (PVFlightRemote *_Nullable)product;
+
 /**
  *
  *

@@ -54,6 +54,8 @@ typedef struct{
 
 @interface PVGimabal : PVBaseComponent
 
++ (PVGimabal *_Nullable)product;
+
 /**
  Get the gimbal firmware version
  

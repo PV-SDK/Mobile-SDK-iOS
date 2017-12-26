@@ -141,7 +141,7 @@ PVEyeCameraDelegate
 //TODO: [Command] Get camera state
 - (void)getCameraState
 {
-    if ([PVProductHelper shareHelper].connectState == PVConnectState_Connection_Connected || [PVProductHelper shareHelper].connectState == PVConnectState_Connection_Timeout_Replay) {
+    if ([ComponentHelper fetchProductHelper].connectState == PVConnectState_Connection_Connected || [ComponentHelper fetchProductHelper].connectState == PVConnectState_Connection_Timeout_Replay) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.eyeCameraManager getEyeCameraCurrentState:^(PVEyeCameraState camerastate, NSError * _Nullable error) {
                 switch (camerastate) {

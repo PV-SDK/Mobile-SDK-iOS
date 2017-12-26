@@ -13,6 +13,12 @@ typedef NS_ENUM(NSUInteger, PVWayPointSendState) {
     PVWayPointSendState_Failed  = 4     ///< 发送失败
 };
 
+typedef NS_ENUM(NSUInteger, PVSDK_Start_Waypoint) {
+    PVSDK_Start_Waypoint_Timeout    = -1,   ///< 超时
+    PVSDK_Start_Waypoint_Start      = 0,    ///< 开始
+    PVSDK_Start_Waypoint_Stop       = 1     ///< 结束,
+};
+
 @class PVNavigation;
 @class PVFlightHelper;
 
@@ -45,6 +51,14 @@ typedef NS_ENUM(NSUInteger, PVWayPointSendState) {
 - (void)pv_navigation:(PVNavigation *)navigation UpdateWayPointReachedPoint:(int)reachedPoint;
 
 /**
+ [PVNavigationDelegate] 更新航点飞行状态
+
+ @param navigation PVNavigation
+ @param state 航点飞行状态
+ */
+- (void)pv_navigation:(PVNavigation *)navigation UpdateWayPointNavigationStateWithHelper:(PVFlightHelper *)helper;
+
+/**
  [PVNavigationDelegate] 执行航点超时
  */
 - (void)pv_navigationUpdateWayPointTimeOut;
@@ -71,7 +85,7 @@ typedef NS_ENUM(NSUInteger, PVWayPointSendState) {
 
 @property (nonatomic, weak) id <PVNavigationDelegate>delegate;
 
-+ (PVNavigation *)shareNavigation;
++ (PVNavigation *)product;
 
 /**
  开始航线飞行

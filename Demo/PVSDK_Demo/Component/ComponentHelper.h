@@ -9,6 +9,7 @@
 #import <PVSDK/PVSDK.h>
 
 @class PVSDKManager;
+@class PVProductHelper;
 @class PVFlightHelper;
 @class PVEyeCamera;
 @class PVBattery;
@@ -21,6 +22,7 @@
 @interface ComponentHelper : NSObject
 
 +(nullable PVSDKManager *)fetchSDKManager;
++(nullable PVProductHelper *)fetchProductHelper;
 +(nullable PVFlightHelper *)fetchFlightHelper;
 +(nullable PVEyeCamera *)fetchEyeCamera;
 +(nullable PVBattery *)fetchBattery;
