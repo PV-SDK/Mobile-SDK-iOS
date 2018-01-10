@@ -2,7 +2,6 @@
 //  PVGimabal.h
 //  PVSDK
 //
-//  Created by Layne on 16/6/24.
 //  Copyright © 2016 PowerVision. All rights reserved.
 //
 
@@ -10,44 +9,23 @@
 
 typedef struct
 {
-    /**
-     *  Gimbal's pitch attitude value.  Swinging in the direction of Y axis
-     */
-    double pitch;
-    /**
-     *  Gimbal's roll attitude value.
-     */
-    double roll;
-    /**
-     *  Gimbal's yaw attitude value.    　Swinging in the direction of  Ｘaxis
-     */
-    double yaw;
+    double pitch;   ///< Gimbal's pitch attitude value.  Swinging in the direction of Y axis
+    double roll;    ///< Gimbal's roll attitude value.
+    double yaw;     ///< Gimbal's yaw attitude value.  Swinging in the direction of Ｘ axis
 } PVGimabalAttitude;
 
-/**
- *  Gimbal axis.
- */
 typedef NS_ENUM (NSInteger, PVGimbalAxis){
-    /**
-     *  Gimbal's yaw axis.heading
-     */
-    PVGimbalAxisYaw,
-    /**
-     *  Gimbal's pitch axis.pitching
-     */
-    PVGimbalAxisPitch,
-    /**
-     *  Gimbal's roll axis.roll
-     */
-    PVGimbalAxisRoll
+    PVGimbalAxisYaw,    ///< Gimbal's yaw axis.heading.
+    PVGimbalAxisPitch,  ///< Gimbal's pitch axis.pitching.
+    PVGimbalAxisRoll    ///< Gimbal's roll axis.roll.
 };
 
 typedef NS_ENUM (NSInteger, PVGimbalMode){
-    PVGimbalModeStart           =0,
-    PVGimbalModeFollow          =1,
-    PVGimbalModeFPV             =2,
-    PVGimabalModeResetCenter    =3,
-    PVGimbalModeEnd             =10
+    PVGimbalModeStart           = 0,
+    PVGimbalModeFollow          = 1,
+    PVGimbalModeFPV             = 2,
+    PVGimabalModeResetCenter    = 3,
+    PVGimbalModeEnd             = 10
 };
 
 typedef NS_ENUM(NSInteger,PVGimbalType) {
@@ -56,7 +34,7 @@ typedef NS_ENUM(NSInteger,PVGimbalType) {
 };
 
 typedef NS_ENUM(NSInteger,PVGimbalStatus) {
-    PVGimbalStatusOK            =1,
+    PVGimbalStatusOK            = 1,
     PVGimbalStatusUnconnect,
     PVGimbalStatusError,
 };
@@ -74,29 +52,30 @@ typedef struct{
     int stab_yaw;       ///< (1 = yes, 0 = no)
 } PVGimbalControlInfo;
 
-
 @interface PVGimabal : PVBaseComponent
+
++ (instancetype _Nullable )product;
 
 /**
  Get the gimbal firmware version
  
  @param block callback results
  */
-- (void)getGimbalVersionWithComplection:(void (^_Nonnull)(int version,NSError *_Nullable error))block;
+- (void)getGimbalVersionWithComplection:(void (^_Nonnull)(int version, NSError *_Nullable error))block;
 
 /**
  Get the gimbal model
  
  @param block callback results
  */
-- (void)getGimbalTypeWithComplection:(void (^_Nonnull)(PVGimbalType gimbalType,NSError *_Nullable error))block;
+- (void)getGimbalTypeWithComplection:(void (^_Nonnull)(PVGimbalType gimbalType, NSError *_Nullable error))block;
 
 /**
  Get the status of gimbal
  
  @param block callback results
  */
-- (void)getGimbalStatusWithComplection:(void (^_Nonnull)(PVGimbalStatus gimbalStatus,NSError *_Nullable error))block;
+- (void)getGimbalStatusWithComplection:(void (^_Nonnull)(PVGimbalStatus gimbalStatus, NSError *_Nullable error))block;
 
 /**
  You need to set the PVGimbalControlInfo in the mount_mode to 0 before updating the gimbal pose,

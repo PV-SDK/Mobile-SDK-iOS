@@ -2,7 +2,6 @@
 //  PVCameraSDCardState.h
 //  PVSDK
 //
-//  Created by Layne on 16/6/26.
 //  Copyright © 2016 PowerVision. All rights reserved.
 //
 
@@ -50,5 +49,6 @@
  */
 @property(nonatomic,assign) int remainingCapacity;
 
++ (PVCameraSDCardState *)shareCameraSDCardState;
 
 @end

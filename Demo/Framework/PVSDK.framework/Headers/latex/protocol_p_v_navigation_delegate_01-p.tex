@@ -1,0 +1,112 @@
+\hypertarget{protocol_p_v_navigation_delegate_01-p}{}\section{$<$P\+V\+Navigation\+Delegate $>$ Protocol Reference}
+\label{protocol_p_v_navigation_delegate_01-p}\index{$<$\+P\+V\+Navigation\+Delegate $>$@{$<$\+P\+V\+Navigation\+Delegate $>$}}
+Inheritance diagram for $<$P\+V\+Navigation\+Delegate $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{protocol_p_v_navigation_delegate_01-p}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{protocol_p_v_navigation_delegate_01-p_a10e0f7b763f0f32e039a26f80bce4e40}{pv\+\_\+navigation\+:\+Send\+Way\+Point\+State\+:}
+\item 
+(void) -\/ \hyperlink{protocol_p_v_navigation_delegate_01-p_abe74bece410ee525d1fe5e72bcdd7510}{pv\+\_\+navigation\+:\+Update\+Way\+Point\+Current\+Point\+:}
+\item 
+(void) -\/ \hyperlink{protocol_p_v_navigation_delegate_01-p_a683e523acf5f6b15c8915e7b84be7429}{pv\+\_\+navigation\+:\+Update\+Way\+Point\+Reached\+Point\+:}
+\item 
+(void) -\/ \hyperlink{protocol_p_v_navigation_delegate_01-p_af1bd3b2e116b675579e725590ba3f5bf}{pv\+\_\+navigation\+Update\+Way\+Point\+Time\+Out}
+\item 
+(void) -\/ \hyperlink{protocol_p_v_navigation_delegate_01-p_a973186504332c1704f0d37dacca1aec4}{pv\+\_\+navigation\+:\+Change\+Last\+Mode\+Result\+:}
+\item 
+(void) -\/ \hyperlink{protocol_p_v_navigation_delegate_01-p_a323096e5f1065a025d40fb87f1685490}{pv\+\_\+navigation\+:\+Update\+Flight\+Attitude\+With\+Helper\+:}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\mbox{\Hypertarget{protocol_p_v_navigation_delegate_01-p_a973186504332c1704f0d37dacca1aec4}\label{protocol_p_v_navigation_delegate_01-p_a973186504332c1704f0d37dacca1aec4}} 
+\index{P\+V\+Navigation\+Delegate -\/p@{P\+V\+Navigation\+Delegate -\/p}!pv\+\_\+navigation\+:\+Change\+Last\+Mode\+Result\+:@{pv\+\_\+navigation\+:\+Change\+Last\+Mode\+Result\+:}}
+\index{pv\+\_\+navigation\+:\+Change\+Last\+Mode\+Result\+:@{pv\+\_\+navigation\+:\+Change\+Last\+Mode\+Result\+:}!P\+V\+Navigation\+Delegate -\/p@{P\+V\+Navigation\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{pv\+\_\+navigation\+:\+Change\+Last\+Mode\+Result\+:()}{pv\_navigation:ChangeLastModeResult:()}}
+{\footnotesize\ttfamily -\/ (void P\+V\+Navigation\+Delegate) pv\+\_\+navigation\+: \begin{DoxyParamCaption}\item[{(\hyperlink{interface_p_v_navigation}{P\+V\+Navigation} $\ast$)}]{navigation }\item[{ChangeLastModeResult:(B\+O\+OL)}]{result }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+\mbox{[}P\+V\+Navigation\+Delegate\mbox{]} Return to the last mode delegate
+
+
+\begin{DoxyParams}{Parameters}
+{\em navigation} & \hyperlink{interface_p_v_navigation}{P\+V\+Navigation} \\
+\hline
+{\em result} & Y\+ES\+: Success, NO\+: Failed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{protocol_p_v_navigation_delegate_01-p_a10e0f7b763f0f32e039a26f80bce4e40}\label{protocol_p_v_navigation_delegate_01-p_a10e0f7b763f0f32e039a26f80bce4e40}} 
+\index{P\+V\+Navigation\+Delegate -\/p@{P\+V\+Navigation\+Delegate -\/p}!pv\+\_\+navigation\+:\+Send\+Way\+Point\+State\+:@{pv\+\_\+navigation\+:\+Send\+Way\+Point\+State\+:}}
+\index{pv\+\_\+navigation\+:\+Send\+Way\+Point\+State\+:@{pv\+\_\+navigation\+:\+Send\+Way\+Point\+State\+:}!P\+V\+Navigation\+Delegate -\/p@{P\+V\+Navigation\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{pv\+\_\+navigation\+:\+Send\+Way\+Point\+State\+:()}{pv\_navigation:SendWayPointState:()}}
+{\footnotesize\ttfamily -\/ (void P\+V\+Navigation\+Delegate) pv\+\_\+navigation\+: \begin{DoxyParamCaption}\item[{(\hyperlink{interface_p_v_navigation}{P\+V\+Navigation} $\ast$)}]{navigation }\item[{SendWayPointState:(P\+V\+Way\+Point\+Send\+State)}]{send\+State }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+\mbox{[}P\+V\+Navigation\+Delegate\mbox{]} Send the waypoint delegate
+
+
+\begin{DoxyParams}{Parameters}
+{\em navigation} & \hyperlink{interface_p_v_navigation}{P\+V\+Navigation} \\
+\hline
+{\em send\+State} & P\+V\+Way\+Point\+Send\+State \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{protocol_p_v_navigation_delegate_01-p_a323096e5f1065a025d40fb87f1685490}\label{protocol_p_v_navigation_delegate_01-p_a323096e5f1065a025d40fb87f1685490}} 
+\index{P\+V\+Navigation\+Delegate -\/p@{P\+V\+Navigation\+Delegate -\/p}!pv\+\_\+navigation\+:\+Update\+Flight\+Attitude\+With\+Helper\+:@{pv\+\_\+navigation\+:\+Update\+Flight\+Attitude\+With\+Helper\+:}}
+\index{pv\+\_\+navigation\+:\+Update\+Flight\+Attitude\+With\+Helper\+:@{pv\+\_\+navigation\+:\+Update\+Flight\+Attitude\+With\+Helper\+:}!P\+V\+Navigation\+Delegate -\/p@{P\+V\+Navigation\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{pv\+\_\+navigation\+:\+Update\+Flight\+Attitude\+With\+Helper\+:()}{pv\_navigation:UpdateFlightAttitudeWithHelper:()}}
+{\footnotesize\ttfamily -\/ (void P\+V\+Navigation\+Delegate) pv\+\_\+navigation\+: \begin{DoxyParamCaption}\item[{(\hyperlink{interface_p_v_navigation}{P\+V\+Navigation} $\ast$)}]{navigation }\item[{UpdateFlightAttitudeWithHelper:(\hyperlink{interface_p_v_flight_helper}{P\+V\+Flight\+Helper} $\ast$)}]{helper }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+\mbox{[}P\+V\+Navigation\+Delegate\mbox{]} Update attitude delegte
+
+
+\begin{DoxyParams}{Parameters}
+{\em navigation} & \hyperlink{interface_p_v_navigation}{P\+V\+Navigation} \\
+\hline
+{\em helper} & \hyperlink{interface_p_v_flight_helper}{P\+V\+Flight\+Helper} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{protocol_p_v_navigation_delegate_01-p_abe74bece410ee525d1fe5e72bcdd7510}\label{protocol_p_v_navigation_delegate_01-p_abe74bece410ee525d1fe5e72bcdd7510}} 
+\index{P\+V\+Navigation\+Delegate -\/p@{P\+V\+Navigation\+Delegate -\/p}!pv\+\_\+navigation\+:\+Update\+Way\+Point\+Current\+Point\+:@{pv\+\_\+navigation\+:\+Update\+Way\+Point\+Current\+Point\+:}}
+\index{pv\+\_\+navigation\+:\+Update\+Way\+Point\+Current\+Point\+:@{pv\+\_\+navigation\+:\+Update\+Way\+Point\+Current\+Point\+:}!P\+V\+Navigation\+Delegate -\/p@{P\+V\+Navigation\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{pv\+\_\+navigation\+:\+Update\+Way\+Point\+Current\+Point\+:()}{pv\_navigation:UpdateWayPointCurrentPoint:()}}
+{\footnotesize\ttfamily -\/ (void P\+V\+Navigation\+Delegate) pv\+\_\+navigation\+: \begin{DoxyParamCaption}\item[{(\hyperlink{interface_p_v_navigation}{P\+V\+Navigation} $\ast$)}]{navigation }\item[{UpdateWayPointCurrentPoint:(int)}]{current\+Point }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+\mbox{[}P\+V\+Navigation\+Delegate\mbox{]} Current waypoint delegate
+
+
+\begin{DoxyParams}{Parameters}
+{\em navigation} & \hyperlink{interface_p_v_navigation}{P\+V\+Navigation} \\
+\hline
+{\em current\+Point} & current\+Point \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{protocol_p_v_navigation_delegate_01-p_a683e523acf5f6b15c8915e7b84be7429}\label{protocol_p_v_navigation_delegate_01-p_a683e523acf5f6b15c8915e7b84be7429}} 
+\index{P\+V\+Navigation\+Delegate -\/p@{P\+V\+Navigation\+Delegate -\/p}!pv\+\_\+navigation\+:\+Update\+Way\+Point\+Reached\+Point\+:@{pv\+\_\+navigation\+:\+Update\+Way\+Point\+Reached\+Point\+:}}
+\index{pv\+\_\+navigation\+:\+Update\+Way\+Point\+Reached\+Point\+:@{pv\+\_\+navigation\+:\+Update\+Way\+Point\+Reached\+Point\+:}!P\+V\+Navigation\+Delegate -\/p@{P\+V\+Navigation\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{pv\+\_\+navigation\+:\+Update\+Way\+Point\+Reached\+Point\+:()}{pv\_navigation:UpdateWayPointReachedPoint:()}}
+{\footnotesize\ttfamily -\/ (void P\+V\+Navigation\+Delegate) pv\+\_\+navigation\+: \begin{DoxyParamCaption}\item[{(\hyperlink{interface_p_v_navigation}{P\+V\+Navigation} $\ast$)}]{navigation }\item[{UpdateWayPointReachedPoint:(int)}]{reached\+Point }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+\mbox{[}P\+V\+Navigation\+Delegate\mbox{]} Arrive at the waypoint delegate
+
+
+\begin{DoxyParams}{Parameters}
+{\em navigation} & \hyperlink{interface_p_v_navigation}{P\+V\+Navigation} \\
+\hline
+{\em reached\+Point} & reached\+Point \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{protocol_p_v_navigation_delegate_01-p_af1bd3b2e116b675579e725590ba3f5bf}\label{protocol_p_v_navigation_delegate_01-p_af1bd3b2e116b675579e725590ba3f5bf}} 
+\index{P\+V\+Navigation\+Delegate -\/p@{P\+V\+Navigation\+Delegate -\/p}!pv\+\_\+navigation\+Update\+Way\+Point\+Time\+Out@{pv\+\_\+navigation\+Update\+Way\+Point\+Time\+Out}}
+\index{pv\+\_\+navigation\+Update\+Way\+Point\+Time\+Out@{pv\+\_\+navigation\+Update\+Way\+Point\+Time\+Out}!P\+V\+Navigation\+Delegate -\/p@{P\+V\+Navigation\+Delegate -\/p}}
+\subsubsection{\texorpdfstring{pv\+\_\+navigation\+Update\+Way\+Point\+Time\+Out()}{pv\_navigationUpdateWayPointTimeOut()}}
+{\footnotesize\ttfamily -\/ (void P\+V\+Navigation\+Delegate) pv\+\_\+navigation\+Update\+Way\+Point\+Time\+Out \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}\hspace{0.3cm}{\ttfamily [optional]}}
+
+\mbox{[}P\+V\+Navigation\+Delegate\mbox{]} Execution timeout 
+
+The documentation for this protocol was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+P\+V\+Navigation.\+h\end{DoxyCompactItemize}

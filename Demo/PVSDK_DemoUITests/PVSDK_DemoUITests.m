@@ -2,7 +2,6 @@
 //  PVSDK_DemoUITests.m
 //  PVSDK_DemoUITests
 //
-//  Created by Layne on 2017/10/12.
 //  Copyright © 2017 Layne. All rights reserved.
 //
 

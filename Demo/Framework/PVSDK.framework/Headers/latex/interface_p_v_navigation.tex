@@ -1,0 +1,80 @@
+\hypertarget{interface_p_v_navigation}{}\section{P\+V\+Navigation Class Reference}
+\label{interface_p_v_navigation}\index{P\+V\+Navigation@{P\+V\+Navigation}}
+Inheritance diagram for P\+V\+Navigation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interface_p_v_navigation}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_p_v_navigation_abc96a899a090af309b1a9cfa529068f7}{start\+To\+Auto\+Mission}
+\item 
+(void) -\/ \hyperlink{interface_p_v_navigation_a3b5f235a3e682bee46acdf3e5ff8c1cc}{add\+Location\+Way\+Points\+:}
+\item 
+(void) -\/ \hyperlink{interface_p_v_navigation_a4b32f3fa3ac406334f043450ee2b04d1}{set\+Last\+Mode}
+\item 
+(void) -\/ \hyperlink{interface_p_v_navigation_a4229fe550a53b929e5ec054f99b14415}{auto\+Return\+To\+Land}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+(instancetype) + \hyperlink{interface_p_v_navigation_ab01dfd18c85bc6060b38dde4803f6728}{product}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{interface_p_v_navigation_ac756d987a2c344d2f2bd4951a375cef2}\label{interface_p_v_navigation_ac756d987a2c344d2f2bd4951a375cef2}} 
+id$<$ P\+V\+Navigation\+Delegate $>$ {\bfseries delegate}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\mbox{\Hypertarget{interface_p_v_navigation_a3b5f235a3e682bee46acdf3e5ff8c1cc}\label{interface_p_v_navigation_a3b5f235a3e682bee46acdf3e5ff8c1cc}} 
+\index{P\+V\+Navigation@{P\+V\+Navigation}!add\+Location\+Way\+Points\+:@{add\+Location\+Way\+Points\+:}}
+\index{add\+Location\+Way\+Points\+:@{add\+Location\+Way\+Points\+:}!P\+V\+Navigation@{P\+V\+Navigation}}
+\subsubsection{\texorpdfstring{add\+Location\+Way\+Points\+:()}{addLocationWayPoints:()}}
+{\footnotesize\ttfamily -\/ (void) add\+Location\+Way\+Points\+: \begin{DoxyParamCaption}\item[{(N\+S\+Array $\ast$)}]{way\+Points }\end{DoxyParamCaption}}
+
+Add way points\mbox{[}Please confirm the height is between 3 and 100 meters.\+！！！\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em way\+Points} & Way points Array. Class\+: \hyperlink{interface_p_v_way_point_model}{P\+V\+Way\+Point\+Model} Array. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_p_v_navigation_a4229fe550a53b929e5ec054f99b14415}\label{interface_p_v_navigation_a4229fe550a53b929e5ec054f99b14415}} 
+\index{P\+V\+Navigation@{P\+V\+Navigation}!auto\+Return\+To\+Land@{auto\+Return\+To\+Land}}
+\index{auto\+Return\+To\+Land@{auto\+Return\+To\+Land}!P\+V\+Navigation@{P\+V\+Navigation}}
+\subsubsection{\texorpdfstring{auto\+Return\+To\+Land()}{autoReturnToLand()}}
+{\footnotesize\ttfamily -\/ (void) auto\+Return\+To\+Land \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+Automatic return \mbox{\Hypertarget{interface_p_v_navigation_ab01dfd18c85bc6060b38dde4803f6728}\label{interface_p_v_navigation_ab01dfd18c85bc6060b38dde4803f6728}} 
+\index{P\+V\+Navigation@{P\+V\+Navigation}!product@{product}}
+\index{product@{product}!P\+V\+Navigation@{P\+V\+Navigation}}
+\subsubsection{\texorpdfstring{product()}{product()}}
+{\footnotesize\ttfamily + (instancetype) product \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+Instantiation \hyperlink{interface_p_v_navigation}{P\+V\+Navigation}
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{interface_p_v_navigation}{P\+V\+Navigation} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interface_p_v_navigation_a4b32f3fa3ac406334f043450ee2b04d1}\label{interface_p_v_navigation_a4b32f3fa3ac406334f043450ee2b04d1}} 
+\index{P\+V\+Navigation@{P\+V\+Navigation}!set\+Last\+Mode@{set\+Last\+Mode}}
+\index{set\+Last\+Mode@{set\+Last\+Mode}!P\+V\+Navigation@{P\+V\+Navigation}}
+\subsubsection{\texorpdfstring{set\+Last\+Mode()}{setLastMode()}}
+{\footnotesize\ttfamily -\/ (void) set\+Last\+Mode \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+Switch to the last mode \mbox{\Hypertarget{interface_p_v_navigation_abc96a899a090af309b1a9cfa529068f7}\label{interface_p_v_navigation_abc96a899a090af309b1a9cfa529068f7}} 
+\index{P\+V\+Navigation@{P\+V\+Navigation}!start\+To\+Auto\+Mission@{start\+To\+Auto\+Mission}}
+\index{start\+To\+Auto\+Mission@{start\+To\+Auto\+Mission}!P\+V\+Navigation@{P\+V\+Navigation}}
+\subsubsection{\texorpdfstring{start\+To\+Auto\+Mission()}{startToAutoMission()}}
+{\footnotesize\ttfamily -\/ (void) start\+To\+Auto\+Mission \begin{DoxyParamCaption}{ }\end{DoxyParamCaption}}
+
+Start to fly 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+P\+V\+Navigation.\+h\end{DoxyCompactItemize}

@@ -2,15 +2,15 @@
 //  FlightViewController.m
 //  PVSDK_Demo
 //
-//  Created by Gavin.Guo on 2017/11/22.
 //  Copyright © 2017 PowerVision. All rights reserved.
 //
 
 #import "FlightViewController.h"
+#import "ComponentHelper.h"
 #import <PVSDK/PVSDK.h>
 
 #import "CameraSettingVC.h"
-#import "PVSDK_VideoStreamView.h"
+#import "PVVideoStreamView.h"
 
 #define GimabalCommandTime 0.2f
 
@@ -29,8 +29,7 @@ typedef enum : NSUInteger {
 
 @interface FlightViewController ()
 <
-PVCameraDelegate,
-PVRemoteControllerDelegate
+PVEyeCameraDelegate
 >
 {
     PVCameraShootState shootState;
@@ -42,15 +41,15 @@ PVRemoteControllerDelegate
 @property (weak, nonatomic) IBOutlet UIButton *shootButton;
 @property (weak, nonatomic) IBOutlet UIView *gimabalControlView;
 
-@property (nonatomic, strong) PVCamera *cameraManager;
-@property (nonatomic, strong) PVFlightController *flightController;
+@property (nonatomic, strong) PVEyeCamera *eyeCameraManager;
+@property (nonatomic, strong) PVSDKManager *sdkManager;
 @property (nonatomic, strong) PVBattery *batteryManager;
-@property (nonatomic, strong) PVRemoteController *remoteController;
+@property (nonatomic, strong) PVFlightRemote *flightRemoteManager;
 @property (nonatomic, strong) PVGimabal *gimabalManager;
 
-@property (nonatomic, assign) PVCameraHandleType handleType;
+@property (nonatomic, strong) PVVideoStreamView *streamView;
 
-@property (nonatomic, strong) PVSDK_VideoStreamView *streamView;
+@property (nonatomic, assign) PVCameraHandleType handleType;
 
 @end
 
@@ -63,17 +62,24 @@ PVRemoteControllerDelegate
     
     [self configManager];
     
-    [self.cameraManager configCameraManager];
+    self.eyeCameraManager = [ComponentHelper fetchEyeCamera];
     
+    //  Disconnect notifications from the aircraft.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationToPopViewController:) name:@"NotificationToPopRootViewController" object:nil];
+    //  The App will lose the notification of active status.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:@"ApplicationWillResignActive" object:nil];
+    //  App gets notification of active status.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:) name:@"ApplicationDidBecomeActive" object:nil];
 }
 
+#pragma mark - Notification-Selector
+- (void)notificationToPopViewController:(NSNotification *)notifi{
+    ShowResult(@"Notification：PowerEye is disconnect!");
+}
 - (void)applicationWillResignActive:(NSNotification *)notifi
 {
     [self.streamView.vfVideo Pause];
 }
-
 - (void)applicationDidBecomeActive:(NSNotification *)notifi
 {
     [self.streamView.vfVideo Play];
@@ -92,17 +98,16 @@ PVRemoteControllerDelegate
 #pragma mark - Configure manager
 - (void)configManager
 {
-    self.flightController = [PVFlightController new];
+    self.sdkManager = [ComponentHelper fetchSDKManager];
     
-    self.cameraManager = [PVCamera new];
-    self.cameraManager.delegate = self;
+    self.eyeCameraManager = [ComponentHelper fetchEyeCamera];
+    self.eyeCameraManager.delegate = self;
     
-    self.gimabalManager = [PVGimabal new];
+    self.gimabalManager = [ComponentHelper fetchGimabal];
     
-    self.batteryManager = [PVBattery new];
+    self.batteryManager = [ComponentHelper fetchBattery];
     
-    self.remoteController = [PVRemoteController new];
-    self.remoteController.delegate = self;
+    self.flightRemoteManager = [ComponentHelper fetchFlightRemote];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         //  Get camera state
@@ -137,32 +142,32 @@ PVRemoteControllerDelegate
 //TODO: [Command] Get camera state
 - (void)getCameraState
 {
-    if (self.flightController.flightConnectState == PVFlightConnectStateConnected || self.flightController.flightConnectState == PVFlightConnectStateHeartTimeoutReply) {
+    if ([ComponentHelper fetchProductHelper].connectState == PVConnectState_Connection_Connected || [ComponentHelper fetchProductHelper].connectState == PVConnectState_Connection_Timeout_Replay) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self.cameraManager getCameraCurrentState:^(PVCameraState camerastate, NSError * _Nullable error) {
+            [self.eyeCameraManager getEyeCameraCurrentState:^(PVEyeCameraState camerastate, NSError * _Nullable error) {
                 switch (camerastate) {
-                    case PVCameraStateRecing:
+                    case PVEyeCameraState_Recing:
                     {
                         NSLog(@"Current Camera State--> PVCameraStateRecing");
                         shootState = PVCameraShootStateRecording;
                         [self updateCameraShootButoonState:shootState];
                     }
                         break;
-                    case PVCameraStateShootSuccess:
+                    case PVEyeCameraState_ShootSuccess:
                     {
                         NSLog(@"Current Camera State--> PVCameraStateShootSuccess");
                         shootState = PVCameraShootStateTakePhoto;
                         [self updateCameraShootButoonState:shootState];
                     }
                         break;
-                    case PVCameraStateRecModeSuccess:
+                    case PVEyeCameraState_RecModeSuccess:
                     {
                         NSLog(@"Current Camera State--> PVCameraStateRecModeSuccess");
                         shootState = PVCameraShootStateRecord;
                         [self updateCameraShootButoonState:shootState];
                     }
                         break;
-                    case PVCameraStateShootModeSuccess:
+                    case PVEyeCameraState_ShootModeSuccess:
                     {
                         NSLog(@"Current Camera State--> PVCameraStateShootModeSuccess");
                         shootState = PVCameraShootStateTakePhoto;
@@ -251,20 +256,25 @@ PVRemoteControllerDelegate
 - (IBAction)didClickToChangeCameraMode:(UIButton *)sender
 {
     if (shootState == PVCameraShootStateTakePhoto) {
-        [self.cameraManager setCameraMode:PVCameraModeRecordVideo];
+        self.handleType = PVCameraHandleTypeSwitchRec;
+        [self.eyeCameraManager setEyeCameraMode:PVEyeCameraShootModeRecord];
     }else if (shootState == PVCameraShootStateRecord) {
-        [self.cameraManager setCameraMode:PVCameraModeShootPhoto];
+        self.handleType = PVCameraHandleTypeSwitchShootPhoto;
+        [self.eyeCameraManager setEyeCameraMode:PVEyeCameraShootModeTakePhoto];
     }
 }
 //TODO: [Button Method] Shoot
 - (IBAction)didClickToShoot:(UIButton *)sender
 {
     if (shootState == PVCameraShootStateTakePhoto) {
-        [self.cameraManager takePhoto];
+        self.handleType = PVCameraHandleTypeShootPhoto;
+        [self.eyeCameraManager takePhoto];
     }else if (shootState == PVCameraShootStateRecord){
-        [self.cameraManager startRecordVideo];
+        self.handleType = PVCameraHandleTypeStartRec;
+        [self.eyeCameraManager startRecordVideo];
     }else if (shootState == PVCameraShootStateRecording){
-        [self.cameraManager stopRecordVideo];
+        self.handleType = PVCameraHandleTypeStopRec;
+        [self.eyeCameraManager stopRecordVideo];
     }
 }
 //TODO: [Button Method] Show camera parameter
@@ -332,11 +342,11 @@ PVRemoteControllerDelegate
     });
 }
 
-#pragma mark - PVCameraDelegate
-- (void)camera:(PVCamera *_Nonnull)camera didUpdateCameraState:(PVCameraState)cameraState
+#pragma mark - PVEyeCameraDelegate
+- (void)pv_camera:(PVEyeCamera *_Nullable)camera didUpdateCameraState:(PVEyeCameraState)cameraState
 {
     switch (cameraState) {
-        case PVCameraStateRecing:
+        case PVEyeCameraState_Recing:
         {
             NSLog(@"Camera State Receive--> PVCameraStateRecing");
             shootState = PVCameraShootStateRecording;
@@ -344,23 +354,23 @@ PVRemoteControllerDelegate
         }
             break;
             
-        case PVCameraStateRecStartError:
+        case PVEyeCameraState_RecStartError:
             NSLog(@"Camera State Receive--> PVCameraStateRecStartError");
             break;
             
-        case PVCameraStateShooting:
+        case PVEyeCameraState_Shooting:
             NSLog(@"Camera State Receive--> PVCameraStateShooting");
             break;
             
-        case PVCameraStateShootSuccess:
+        case PVEyeCameraState_ShootSuccess:
             NSLog(@"Camera State Receive--> PVCameraStateShootSuccess");
             break;
             
-        case PVCameraStateShootError:
+        case PVEyeCameraState_ShootError:
             NSLog(@"Camera State Receive--> PVCameraStateShootError");
             break;
             
-        case PVCameraStateTimeout:
+        case PVEyeCameraState_Timeout:
             switch (self.handleType) {
                 case PVCameraHandleTypeSwitchRec:
                     NSLog(@"Camera State Receive--> PVCameraHandleTypeSwitchRec");
@@ -383,7 +393,7 @@ PVRemoteControllerDelegate
             }
             break;
             
-        case PVCameraStateRecStop:
+        case PVEyeCameraState_RecStop:
         {
             NSLog(@"Camera State Receive--> PVCameraStateRecStop");
             shootState = PVCameraShootStateRecord;
@@ -391,11 +401,11 @@ PVRemoteControllerDelegate
         }
             break;
             
-        case PVCameraStateRecStopError:
+        case PVEyeCameraState_RecStopError:
             NSLog(@"Camera State Receive--> PVCameraStateRecStopError");
             break;
             
-        case PVCameraStateShootModeSuccess:
+        case PVEyeCameraState_ShootModeSuccess:
         {
             NSLog(@"Camera State Receive--> PVCameraStateShootModeSuccess");
             shootState = PVCameraShootStateTakePhoto;
@@ -403,25 +413,27 @@ PVRemoteControllerDelegate
         }
             break;
             
-        case PVCameraStateShootModeError:
+        case PVEyeCameraState_ShootModeError:
             NSLog(@"Camera State Receive--> PVCameraStateShootModeError");
             break;
             
-        case PVCameraStateRecModeSuccess:
+        case PVEyeCameraState_RecModeSuccess:
+        {
             NSLog(@"Camera State Receive--> PVCameraStateRecModeSuccess");
             shootState = PVCameraShootStateRecord;
             [self updateCameraShootButoonState:shootState];
-
+        }
             break;
-        case PVCameraStateRecModeError:
+        case PVEyeCameraState_RecModeError:
             NSLog(@"Camera State Receive--> PVCameraStateRecModeError");
             break;
             
-        case PVCameraStateShootErrorSDFull:
+        case PVEyeCameraState_ShootErrorSDFull:
             NSLog(@"Camera State Receive--> PVCameraStateShootErrorSDFull");
             break;
             
-        case PVCameraStateRecErrorSDFull:
+        case PVEyeCameraState_RecErrorSDFull:
+        {
             switch (self.handleType) {
                 case PVCameraHandleTypeStartRec:
                     NSLog(@"Camera State Receive--> PVCameraHandleTypeStartRec");
@@ -434,13 +446,15 @@ PVRemoteControllerDelegate
                 default:
                     break;
             }
+        }
             break;
             
-        case PVCameraStateShootErrorSDError:
+        case PVEyeCameraState_ShootErrorSDError:
             NSLog(@"Camera State Receive--> PVCameraStateShootErrorSDError");
             break;
             
-        case PVCameraStateRecErrorSDError:
+        case PVEyeCameraState_RecErrorSDError:
+        {
             switch (self.handleType) {
                 case PVCameraHandleTypeStartRec:
                     NSLog(@"Camera State Receive--> PVCameraHandleTypeStartRec");
@@ -453,15 +467,19 @@ PVRemoteControllerDelegate
                 default:
                     break;
             }
+        }
             break;
             
-        case PVCameraStateShootErrorSDNull:
-            if (self.handleType == PVCameraHandleTypeShootPhoto) {
+        case PVEyeCameraState_ShootErrorSDNull:
+        {
+            if (shootState == PVCameraShootStateTakePhoto) {
                 NSLog(@"Camera State Receive--> PVCameraStateShootErrorSDNull");
             }
+        }
             break;
             
-        case PVCameraStateRecErrorSDNull:
+        case PVEyeCameraState_RecErrorSDNull:
+        {
             NSLog(@"Camera State Receive--> PVCameraStateRecErrorSDNull");
             switch (self.handleType) {
                 case PVCameraHandleTypeStartRec:
@@ -475,34 +493,26 @@ PVRemoteControllerDelegate
                 default:
                     break;
             }
+        }
             break;
             
         default:
             break;
     }
 }
-- (void)camera:(PVCamera *_Nonnull)camera didUpdateSDCardState:(PVCameraSDCardState *_Nonnull)sdCardState
-{
-    NSLog(@"SDCard State Receive--> PVCameraHandleTypeStopRec");
-}
-
-#pragma mark - PVRemoteControllerDelegate
-- (void)remoteController:(PVRemoteController *_Nonnull)rc didUpdateRemotePosition:(CLLocationCoordinate2D)remotePosition
-{
-    NSLog(@"Remote Connect State Receive--> %lu",(unsigned long)rc.remoteConnectState);
-}
 
 #pragma mark - Lazying...
--(PVSDK_VideoStreamView *)streamView
+-(PVVideoStreamView *)streamView
 {
     if (_streamView == nil) {
         CGRect frame = CGRectMake(0, 32, self.view.bounds.size.width, self.view.bounds.size.height - 32);
-        _streamView = [[PVSDK_VideoStreamView alloc] initWithFrame:frame];
+        _streamView = [[PVVideoStreamView alloc] initWithFrame:frame];
     }
     return _streamView;
 }
 
 -(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"NotificationToPopRootViewController" object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"ApplicationWillResignActive" object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"ApplicationDidBecomeActive" object:nil];
 }
