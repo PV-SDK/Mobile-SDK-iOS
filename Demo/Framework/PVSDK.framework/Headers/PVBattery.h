@@ -22,7 +22,12 @@ typedef struct
 
 @interface PVBattery : PVBaseComponent
 
-+ (PVBattery *)product;
+/**
+ Instantiation PVBattery
+ 
+ @return PVBattery
+ */
++ (instancetype)product;
 
 /**
  *  Acquire the information about smart battery status
@@ -32,3 +37,4 @@ typedef struct
 - (void)getSmartBatteryStatusWithCompletion:(void (^)(PVBatteryStatus batteryStatus,NSError *error))block;
 
 @end
+

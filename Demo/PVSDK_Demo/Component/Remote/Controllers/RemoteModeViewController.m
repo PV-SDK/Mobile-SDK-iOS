@@ -27,13 +27,13 @@ UITableViewDelegate,UITableViewDataSource
 }
 
 - (void)initData{
-    self.items = @[@"美国手",@"日本手"];
+    self.items = @[@"The American hand",@"The Japanese hand"];
 }
 - (void)configManager{
     self.flightRemote = [ComponentHelper fetchFlightRemote];
 }
 
-//  TODO: [Command] 设置遥控器模式
+//  TODO: [Command] Set up the remote control mode
 - (void)setEyeRemoteModeWithRemoteMode:(PVFlightRemoteMode)mode
 {
     WEAKSELF;
@@ -61,7 +61,7 @@ UITableViewDelegate,UITableViewDataSource
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //  设置遥控器模式
+    //  Set up the remote control mode
     if (indexPath.row == 0) {
         [self setEyeRemoteModeWithRemoteMode:PVFlightRemoteModeUSA];
     }else{

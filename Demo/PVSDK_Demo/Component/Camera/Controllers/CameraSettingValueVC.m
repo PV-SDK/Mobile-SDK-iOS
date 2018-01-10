@@ -255,7 +255,7 @@ UITableViewDelegate,UITableViewDataSource
 - (void)sendCameraCommandWithIndex:(NSInteger)index{
     WEAKSELF;
     switch (_parameterType) {
-            //MARK: 光圈设置【ISO】
+            //MARK: Aperture setting [ISO]
         case CameraSettingParameterType_ISO:
         {
             [self.eyeCameraManager setEyeCameraISO:index + 51 withCompletion:^(NSError * _Nullable error) {
@@ -265,7 +265,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 光圈设置【光圈大小】
+            //MARK: Aperture setting [aperture size]
         case CameraSettingParameterType_ApertureSize:
         {
             [self.eyeCameraManager setEyeCameraAperture:index + 51 withCompletion:^(NSError * _Nullable error) {
@@ -275,7 +275,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 光圈设置【EV】
+            //MARK: Aperture setting [EV]
         case CameraSettingParameterType_EV:
         {
             float evValue = [[self.values objectAtIndex:index] floatValue];
@@ -287,7 +287,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 光圈设置【拍照快门速度】
+            //MARK: Aperture setting [photo shutter speed]
         case CameraSettingParameterType_PZShutterSpeed:
         {
             [self.eyeCameraManager setEyeCameraPhotoShutterSpeed:index + 51 withCompletion:^(NSError * _Nullable error) {
@@ -297,7 +297,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 光圈设置【摄像快门速度】
+            //MARK: Aperture setting [camera shutter speed]
         case CameraSettingParameterType_SXShutterSpeed:
         {
             [self.eyeCameraManager setEyeCameraVideoShutterSpeed:index + 51 withCompletion:^(NSError * _Nullable error) {
@@ -307,7 +307,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 图像设置【相机模式】当index=3设置为单拍  否则是连拍
+            //MARK: Image setting [camera mode] when index=3 is set to a single beat or even a beat
         case CameraSettingParameterType_CameraMode:
         {
             [self.eyeCameraManager setEyeCameraMode:index + 51 withCompletion:^(NSError * _Nullable error) {
@@ -317,7 +317,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 图像设置【连拍速度】
+            //MARK: Image setting [connect speed]
         case CameraSettingParameterType_ContinuousShootSpeed:
         {
             [self.eyeCameraManager setEyeCameraContinuousShootSpeed:index + 51 withCompletion:^(NSError * _Nullable error) {
@@ -327,7 +327,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 图像设置【定时连拍】
+            //MARK: Image setting [timed beat]
         case CameraSettingParameterType_LapseTime:
         {
             [self.eyeCameraManager setEyeCameraTakePhotoDelyTime:[self.values[index] integerValue] withCompletion:^(NSError * _Nullable error) {
@@ -337,7 +337,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 图像设置【照片大小】
+            //MARK: Image setting [photo size]
         case CameraSettingParameterType_PhotoSize:
         {
             [self.eyeCameraManager setEyeCameraPhotoSize:index + 51 withCompletion:^(NSError * _Nullable error) {
@@ -347,7 +347,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 图像设置【照片质量】
+            //MARK: Image setting [photo quality]
         case CameraSettingParameterType_PictureQuality:
         {
             [self.eyeCameraManager setEyeCameraPhotoQuality:index + 51 withCompletion:^(NSError * _Nullable error) {
@@ -357,7 +357,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 图像设置【视频分辨率】
+            //MARK: Image setting [video resolution]
         case CameraSettingParameterType_VideoResolution:
         {
             [self.eyeCameraManager setEyeCameraVideoSize:index + 51 withCompletion:^(NSError * _Nullable error) {
@@ -367,7 +367,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 通用设置【白平衡模式】
+            //MARK: General setting [white balance mode]
         case CameraSettingParameterType_WhiteBalanceMode:
         {
             [self.eyeCameraManager setEyeCameraWhiteBalanceMode:index + 51 withCompletion:^(NSError * _Nullable error) {
@@ -377,7 +377,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 通用设置【白平衡】
+            //MARK: General setting [white balance]
         case CameraSettingParameterType_WhiteBalanceValue:
         {
             [self.eyeCameraManager setEyeCameraWhiteBalance:[self.values[index] integerValue] withCompletion:^(NSError * _Nullable error) {
@@ -387,7 +387,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 通用设置【图像亮度】
+            //MARK: General setting [image brightness]
         case CameraSettingParameterType_ImageBrightness:
         {
             [self.eyeCameraManager setEyeCameraImageBrightness:[self.values[index] integerValue] withCompletion:^(NSError * _Nullable error) {
@@ -397,7 +397,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 通用设置【图像饱和度】
+            //MARK: General setting [image saturation]
         case CameraSettingParameterType_ImageSaturation:
         {
             [self.eyeCameraManager setEyeCameraImageSaturation:[self.values[index] integerValue] withCompletion:^(NSError * _Nullable error) {
@@ -407,7 +407,7 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 通用设置【图像对比度】
+            //MARK: General setting [image contrast]
         case CameraSettingParameterType_ImageContrast:
         {
             [self.eyeCameraManager setEyeCameraImageContrast:[self.values[index] integerValue] withCompletion:^(NSError * _Nullable error) {
@@ -417,10 +417,10 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 通用设置【测光模式】
+            //MARK: General setting [photometric mode]
         case CameraSettingParameterType_MeteringMode:
         {
-            //测光模式
+            //  Photometric mode
             [self.eyeCameraManager setEyeCameraMeteringMode:index + 51 withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
@@ -428,10 +428,10 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 通用设置【AF模式】
+            //MARK: General setting [AF mode]
         case CameraSettingParameterType_AFMode:
         {
-            //AF模式
+            //  AF Mode
             [self.eyeCameraManager setEyeCameraVideoAF:index + 51 withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
@@ -439,10 +439,10 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 通用设置【OSD开关】
+            //MARK: General Settings [OSD switch]
         case CameraSettingParameterType_OSDSwitch:
         {
-            //OSD开关
+            //  OSD Switch
             [self.eyeCameraManager setEyeCameraOSDSwitchOpenState:index + 51 WithCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
@@ -451,10 +451,10 @@ UITableViewDelegate,UITableViewDataSource
             
         }
             break;
-            //MARK: 通用设置【图像锐度】
+            //MARK: General setting [image sharpness]
         case CameraSettingParameterType_ImageSharpness:
         {
-            //图像锐度
+            //image sharpness
             [self.eyeCameraManager setEyeCameraImageSharpness:index withCompletion:^(NSError * _Nullable error) {
                 if (error == nil) {
                     [weakSelf.navigationController popViewControllerAnimated:YES];
@@ -462,15 +462,15 @@ UITableViewDelegate,UITableViewDataSource
             }];
         }
             break;
-            //MARK: 通用设置【剩余拍照张数】
+            //MARK: General setting [residual photo number]
         case CameraSettingParameterType_PhotoRemainNum:
             self.values = @[];
             break;
-            //MARK: 通用设置【格式化内存卡】
+            //MARK: Common Settings [formatted memory card]
         case CameraSettingParameterType_FormatMemoryCard:
             self.values = @[];
             break;
-            //MARK: 通用设置【恢复出厂设置】
+            //MARK: General setting [restore factory setting]
         case CameraSettingParameterType_Reset:
             self.values = @[];
             break;

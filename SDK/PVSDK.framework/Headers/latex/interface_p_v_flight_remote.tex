@@ -1,0 +1,81 @@
+\hypertarget{interface_p_v_flight_remote}{}\section{P\+V\+Flight\+Remote Class Reference}
+\label{interface_p_v_flight_remote}\index{P\+V\+Flight\+Remote@{P\+V\+Flight\+Remote}}
+Inheritance diagram for P\+V\+Flight\+Remote\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{interface_p_v_flight_remote}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{interface_p_v_flight_remote_ab89720a2eb5c454cae9b9089d265ba1b}{start\+Connect\+Remote\+Block\+With\+Success\+Call\+Back\+:\+Failure\+Call\+Back\+:}
+\item 
+(void) -\/ \hyperlink{interface_p_v_flight_remote_a149edf47f82fa3d0ad707c81ca114cdf}{set\+Remote\+Mode\+:with\+Completion\+:}
+\item 
+(void) -\/ \hyperlink{interface_p_v_flight_remote_a2c02b505033ffbb16e10a8f0d1a10923}{get\+Remote\+Mode\+With\+Complection\+:}
+\end{DoxyCompactItemize}
+\subsection*{Class Methods}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{interface_p_v_flight_remote_a126c854fe43f0b44dbaaea18adfa4b5c}\label{interface_p_v_flight_remote_a126c854fe43f0b44dbaaea18adfa4b5c}} 
+(instancetype \+\_\+\+Nullable) + {\bfseries product}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{interface_p_v_flight_remote_a603ca84ea7e83754be0aa355683d949a}\label{interface_p_v_flight_remote_a603ca84ea7e83754be0aa355683d949a}} 
+P\+V\+Flight\+Remote\+Connect\+State {\bfseries remote\+Connect\+State}
+\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\mbox{\Hypertarget{interface_p_v_flight_remote_a2c02b505033ffbb16e10a8f0d1a10923}\label{interface_p_v_flight_remote_a2c02b505033ffbb16e10a8f0d1a10923}} 
+\index{P\+V\+Flight\+Remote@{P\+V\+Flight\+Remote}!get\+Remote\+Mode\+With\+Complection\+:@{get\+Remote\+Mode\+With\+Complection\+:}}
+\index{get\+Remote\+Mode\+With\+Complection\+:@{get\+Remote\+Mode\+With\+Complection\+:}!P\+V\+Flight\+Remote@{P\+V\+Flight\+Remote}}
+\subsubsection{\texorpdfstring{get\+Remote\+Mode\+With\+Complection\+:()}{getRemoteModeWithComplection:()}}
+{\footnotesize\ttfamily -\/ (void) get\+Remote\+Mode\+With\+Complection\+: \begin{DoxyParamCaption}\item[{(void($^\wedge$)(P\+V\+Flight\+Remote\+Mode remote\+Mode, N\+S\+Error $\ast$\+\_\+\+Nullable error))}]{block }\end{DoxyParamCaption}}
+
+obtain remote control mode
+
+
+\begin{DoxyParams}{Parameters}
+{\em block} & results \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_p_v_flight_remote_a149edf47f82fa3d0ad707c81ca114cdf}\label{interface_p_v_flight_remote_a149edf47f82fa3d0ad707c81ca114cdf}} 
+\index{P\+V\+Flight\+Remote@{P\+V\+Flight\+Remote}!set\+Remote\+Mode\+:with\+Completion\+:@{set\+Remote\+Mode\+:with\+Completion\+:}}
+\index{set\+Remote\+Mode\+:with\+Completion\+:@{set\+Remote\+Mode\+:with\+Completion\+:}!P\+V\+Flight\+Remote@{P\+V\+Flight\+Remote}}
+\subsubsection{\texorpdfstring{set\+Remote\+Mode\+:with\+Completion\+:()}{setRemoteMode:withCompletion:()}}
+{\footnotesize\ttfamily -\/ (void) set\+Remote\+Mode\+: \begin{DoxyParamCaption}\item[{(P\+V\+Flight\+Remote\+Mode)}]{remote\+Mode }\item[{withCompletion:(P\+V\+Completion\+Block)}]{block }\end{DoxyParamCaption}}
+
+set remote control mode
+
+
+\begin{DoxyParams}{Parameters}
+{\em remote\+Mode} & remote control mode \\
+\hline
+{\em block} & setting results \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_p_v_flight_remote_ab89720a2eb5c454cae9b9089d265ba1b}\label{interface_p_v_flight_remote_ab89720a2eb5c454cae9b9089d265ba1b}} 
+\index{P\+V\+Flight\+Remote@{P\+V\+Flight\+Remote}!start\+Connect\+Remote\+Block\+With\+Success\+Call\+Back\+:\+Failure\+Call\+Back\+:@{start\+Connect\+Remote\+Block\+With\+Success\+Call\+Back\+:\+Failure\+Call\+Back\+:}}
+\index{start\+Connect\+Remote\+Block\+With\+Success\+Call\+Back\+:\+Failure\+Call\+Back\+:@{start\+Connect\+Remote\+Block\+With\+Success\+Call\+Back\+:\+Failure\+Call\+Back\+:}!P\+V\+Flight\+Remote@{P\+V\+Flight\+Remote}}
+\subsubsection{\texorpdfstring{start\+Connect\+Remote\+Block\+With\+Success\+Call\+Back\+:\+Failure\+Call\+Back\+:()}{startConnectRemoteBlockWithSuccessCallBack:FailureCallBack:()}}
+{\footnotesize\ttfamily -\/ (void) start\+Connect\+Remote\+Block\+With\+Success\+Call\+Back\+: \begin{DoxyParamCaption}\item[{(P\+V\+Completion\+Block)}]{success\+Block }\item[{FailureCallBack:(P\+V\+Completion\+Block)}]{failure\+Block }\end{DoxyParamCaption}}
+
+\begin{DoxyReturn}{Returns}
+callback successfully or failure Start to connect the remote control
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em success\+Block} & Success Call\+Back \\
+\hline
+{\em failure\+Block} & Failure Call\+Back \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+P\+V\+Flight\+Remote.\+h\end{DoxyCompactItemize}

@@ -43,13 +43,18 @@ FOUNDATION_EXPORT double PVSDKVersionNumber;
 //! Project version string for PVSDK.
 FOUNDATION_EXPORT const unsigned char PVSDKVersionString[];
 
+#define PVSDKLog(__str__) NSLog(@"%@", [NSString stringWithFormat:@"[PVSDK]>>>>>%@",__str__]);
+
+#import <PVSDK/PVEyeCamera.h>
+
 #import "PVSDKManager.h"
 
 #import "PVProductHelper.h"
 #import "PVFlightHelper.h"
 #import "PVFlightRemote.h"
 
-#import "PVEyeCamera.h"
+#import "PVCameraState.h"
+//#import "PVEyeCamera.h"
 #import "PVEyeCameraSettingsDef.h"
 
 #import "PVCameraSDCardState.h"

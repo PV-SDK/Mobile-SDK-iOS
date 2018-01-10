@@ -9,6 +9,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define PVSDKLog(__str__) NSLog(@"%@", [NSString stringWithFormat:@"[PVSDK]>>>>>%@",__str__]);
+
 ////////////////////////////////////////
 /// @brief state of activation
 ///

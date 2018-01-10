@@ -2,7 +2,7 @@
 //  WayPointControlViewController.m
 //  PVSDK_Demo
 //
-//  Copyright © 2017年 PowerVision. All rights reserved.
+//  Copyright © 2017 PowerVision. All rights reserved.
 //
 
 #import "WayPointControlViewController.h"
@@ -12,31 +12,22 @@
 #import "UIViewController+BackButtonHandler.h"
 
 ////////////////////////////////////////////////////////////////////////
-/// 地球半径：6371000M
-///
-/// 地球周长：2 * 6371000M  * π = 40030173
-///
-/// 纬度38°地球周长：40030173 * cos38 = 31544206M
-///
-/// 任意地球经度周长：40030173M
-///
-/// 经度（东西方向）1M实际度：360°/31544206M=1.141255544679108e-5=0.00001141
-/// 纬度（南北方向）1M实际度：360°/40030173M=8.993216192195822e-6=0.00000899
-///
-/// 经度（东西方向）100M实际度：0.00001141°* 100=0.001141
-/// 纬度（南北方向）100M实际度：0.00000899°* 100=0.000899
+/// Longitude（east west orientation）1m：360°/31544206M=1.141255544679108e-5=0.00001141
+/// Latitude（north and south orientation）1m：360°/40030173M=8.993216192195822e-6=0.00000899
 ////////////////////////////////////////////////////////////////////////
 #define PerMeter_Longitude 0.00001141
 #define PerMeter_Latitude 0.00000899
 
-#define PointDistanceMeter 20
+#define PointDistanceMeter 20   //  The straight line distance between two destinations is not recommended for more than 900m.
 
-#define WayPointStayTime 5.0f   //  单位 s
-#define WayPointHeight 50.0f    //  单位 m
+#define WayPointStayTime 5.0f       //  Unit s
+#define WayPointHeight 20.0f        //  Unit m
 
 #import <PVSDK/PVSDK.h>
 
 @interface WayPointControlViewController ()
+
+@property (nonatomic, strong) PVNavigation *navigationManager;
 
 @property (nonatomic, assign) CLLocationCoordinate2D currentLocation;
 
@@ -85,18 +76,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //  更新位置通知
+    [self configManager];
+    //  Notification about location updating
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLocation:) name:@"NOTIFICATION_WayPointViewController_UpdateLocation" object:nil];
-    //  更新航点飞行状态通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWayPointNavigationState:) name:@"NOTIFICATION_WayPointViewController_UpdateWayPointNavigationState" object:nil];
-    //  更新航点状态通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateWayPointState:) name:@"NOTIFICATION_WayPointViewController_UpdateWayPointState" object:nil];
-    //  发送航点结果通知
+    //  Notifications of sending waypoint results
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sendWayPointResult:) name:@"NOTIFICATION_WayPointViewController_SendWayPointResult" object:nil];
-    //  切换为上一个模式通知
+    //  Notification about switching to the last mode
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeToLastMode:) name:@"NOTIFICATION_WayPointViewController_ChangeLastMode" object:nil];
 }
-//TODO: 更新位置通知
+
+- (void)configManager{
+    self.isNavigationStart = NO;
+    self.navigationManager = [ComponentHelper fetchNavigation];
+}
+//TODO: Notification about location updating
 - (void)updateLocation:(NSNotification *)notifi{
     CLLocationCoordinate2D location;
     location.longitude = [[notifi userInfo][@"longitude"] doubleValue];
@@ -107,89 +100,27 @@
     self.eyeCurrentLongitudeLabel.text = [NSString stringWithFormat:@"%f",location.longitude];
     self.eyeCurrentLatitudeLabel.text = [NSString stringWithFormat:@"%f",location.latitude];
 }
-//TODO: 更新航点飞行状态通知
-- (void)updateWayPointNavigationState:(NSNotification *)notifi{
-    NSString *result = [notifi userInfo][@"result"];
-    if ([result isEqualToString:@"Running"]) {
-        if (self.isNavigationStart) {
-            [self.navigatingControlButton setTitle:@"Start navigating" forState:UIControlStateNormal];
-            self.isNavigationStart = NO;
-        }else{
-            [self.navigatingControlButton setTitle:@"Stop navigating" forState:UIControlStateNormal];
-            self.isNavigationStart = YES;
-        }
-        
-        self.navigationalStateView.hidden = NO;
-    }else if ([result isEqualToString:@"Finish"]) {
-        self.isNavigationStart = NO;
-    }else if ([result isEqualToString:@"NoDo"]) {
-        
-    }
-}
-//TODO: 更新航点状态通知
-- (void)updateWayPointState:(NSNotification *)notifi{
-    NSString *currentPointStr = [notifi userInfo][@"currentPoint"];
-    NSString *reachedPointStr = [notifi userInfo][@"reachedPoint"];
-    if (currentPointStr.length != 0) {
-        self.currentPoint = [[notifi userInfo][@"currentPoint"] intValue];
-        NSLog(@"CurrentPoint:%d",_currentPoint);
-    }
-    if (reachedPointStr.length != 0) {
-        self.reachedPoint = [[notifi userInfo][@"reachedPoint"] intValue];
-        NSLog(@"ReachedPoint:%d",_reachedPoint);
-    }
-    [self updateWayPointView];
-}
-//TODO: 切换为上一个模式通知
-- (void)updateWayPointView{
-    
-    if (_currentPoint == 1 && _reachedPoint == 0) {         //  -> 1
-        self.navigationPointStartLabel.hidden = NO;
-    }else if (_currentPoint == 1 && _reachedPoint == 1) {   //  1
-        self.navigationPointOneLabel.hidden = NO;
-    }else if (_currentPoint == 2 && _reachedPoint == 1) {   //  1 -> 2
-        self.navigationPointOneToTwoLabel.hidden = NO;
-    }else if (_currentPoint == 2 && _reachedPoint == 2) {   //  2
-        self.navigationPointTwoLabel.hidden = NO;
-    }else if (_currentPoint == 3 && _reachedPoint == 2) {   //  2 -> 3
-        self.navigationPointTwoToThreeLabel.hidden = NO;
-    }else if (_currentPoint == 3 && _reachedPoint == 3) {   //  3
-        self.navigationPointThreeLabel.hidden = NO;
-    }else if (_currentPoint == 4 && _reachedPoint == 3) {   //  3 -> 4
-        self.navigationPointThreeToFourLabel.hidden = NO;
-    }else if (_currentPoint == 4 && _reachedPoint == 4) {   //  4
-        self.navigationPointFourLabel.hidden = NO;
-        //  这里需要注意与航点结束状态做判定
-    }
-}
-//TODO: 发送航点结果通知
+//TODO: Notifications of sending waypoint results
 - (void)sendWayPointResult:(NSNotification *)notifi{
     self.generateWaypoint = [[notifi userInfo][@"result"] isEqualToString:@"Success"] ? YES : NO;
 }
-//TODO: 切换为上一个模式通知
+//TODO: Notification about switching to the last mode
 - (void)changeToLastMode:(NSNotification *)notifi{
-    if ([[notifi userInfo][@"result"] isEqualToString:@"Success"]) {
-        if (_isNavigationStart) {
-            [self.navigationController popViewControllerAnimated:YES];
-            return;
-        }
-        if ([PVFlightHelper helper].flightMode == PVSDK_Mode_Changed_Manual || [PVFlightHelper helper].flightMode == PVSDK_Mode_Changed_Altctl || [PVFlightHelper helper].flightMode == PVSDK_Mode_Changed_Posctl) {
-            [self generateWaypointWithLocation:_currentLocation];
-        }
-    }
+    
 }
 
 #pragma mark - Generate Way Point Method
 - (IBAction)didClickToGenerateWaypoint:(UIButton *)sender {
-    if ([PVFlightHelper helper].flightMode == PVSDK_Mode_Changed_Manual || [PVFlightHelper helper].flightMode == PVSDK_Mode_Changed_Altctl || [PVFlightHelper helper].flightMode == PVSDK_Mode_Changed_Posctl) {
-        [self generateWaypointWithLocation:_currentLocation];
-    }else{
-        [[PVNavigation product] setLastMode];
-    }
+    [self generateWaypointWithLocation:_currentLocation];
 }
 #pragma mark - Generate Way Point Location
 - (void)generateWaypointWithLocation:(CLLocationCoordinate2D)location{
-    PVWayPointModel *onePoint,*twoPoint,*threePoint,*fourPoint;
+    PVWayPointModel *onePoint = [PVWayPointModel new];
+    PVWayPointModel *twoPoint = [PVWayPointModel new];
+    PVWayPointModel *threePoint = [PVWayPointModel new];
+    PVWayPointModel *fourPoint = [PVWayPointModel new];
+    
+    //  [Warning!!!]The straight line distance between two destinations is not recommended for more than 900m.!!!
     
     CLLocationCoordinate2D locationOne,locationTwo,locationThree,locationFour;
     locationOne.longitude = location.longitude + (PerMeter_Longitude * PointDistanceMeter);
@@ -199,13 +130,13 @@
     self.pointOneLatitudeLabel.text = [NSString stringWithFormat:@"%f",locationOne.latitude];
     
     locationTwo.longitude = location.longitude + (PerMeter_Longitude * PointDistanceMeter);
-    locationTwo.latitude = location.longitude + (PerMeter_Longitude * PointDistanceMeter);
+    locationTwo.latitude = location.latitude + (PerMeter_Latitude * PointDistanceMeter);
     
     self.pointTwoLongitudeLabel.text = [NSString stringWithFormat:@"%f",locationTwo.longitude];
     self.pointTwoLatitudeLabel.text = [NSString stringWithFormat:@"%f",locationTwo.latitude];
     
     locationThree.longitude = location.longitude;
-    locationThree.latitude = location.longitude + (PerMeter_Longitude * PointDistanceMeter);
+    locationThree.latitude = location.latitude + (PerMeter_Latitude * PointDistanceMeter);
     
     self.pointThreeLongitudeLabel.text = [NSString stringWithFormat:@"%f",locationThree.longitude];
     self.pointThreeLatitudeLabel.text = [NSString stringWithFormat:@"%f",locationThree.latitude];
@@ -236,47 +167,45 @@
     self.locationThree = threePoint;
     self.locationFour = fourPoint;
     
-    [[PVNavigation product] addLocationWayPoints:@[_locationOne,_locationTwo,_locationThree,_locationFour]];
+    [self.navigationManager addLocationWayPoints:@[_locationOne,_locationTwo,_locationThree,_locationFour]];
 }
 
 - (IBAction)didClickToControlNavigating:(UIButton *)sender {
-    if ([ComponentHelper fetchFlightHelper].flightMode == PVSDK_Mode_Changed_Manual || [ComponentHelper fetchFlightHelper].flightMode == PVSDK_Mode_Changed_Altctl || [ComponentHelper fetchFlightHelper].flightMode == PVSDK_Mode_Changed_Posctl) {
-        if (_generateWaypoint) {
-            if ([ComponentHelper fetchProductHelper].connectState == PVConnectState_Connection_Connected) {
-                
-                [self wayPointControlWithToStart:!self.isNavigationStart];
-                
-                if (self.isNavigationStart) {
-                    [sender setTitle:@"Start navigating" forState:UIControlStateNormal];
-                    self.isNavigationStart = NO;
-                }else{
-                    [sender setTitle:@"Stop navigating" forState:UIControlStateNormal];
-                    self.isNavigationStart = YES;
-                }
-
-            }else{
-                ShowResult(@"飞机未连接！");
-            }
-        }else{
-            ShowResult(@"请生成航点！");
+    if (self.isNavigationStart) {
+        if ([sender.titleLabel.text isEqualToString:@"Stop navigating"]) {
+            [self wayPointControlWithToStart:!self.isNavigationStart];
+            [sender setTitle:@"Start navigating" forState:UIControlStateNormal];
         }
     }else{
-        self.generateWaypoint = NO;
-        ShowResult(@"飞机当前模式不满足航点飞行要求，请重新生成航点！");
+        if (_generateWaypoint) {
+            if ([ComponentHelper fetchFlightHelper].flightMode == PVSDK_Mode_Changed_Manual || [ComponentHelper fetchFlightHelper].flightMode == PVSDK_Mode_Changed_Altctl || [ComponentHelper fetchFlightHelper].flightMode == PVSDK_Mode_Changed_Posctl) {
+                if ([sender.titleLabel.text isEqualToString:@"Start navigating"]) {
+                    [self wayPointControlWithToStart:!self.isNavigationStart];
+                    [sender setTitle:@"Stop navigating" forState:UIControlStateNormal];
+                }
+            }else{
+                [self.navigationManager setLastMode];
+                ShowResult(@"Not three modes of remote control!");
+            }
+        }else{
+            ShowResult(@"Please set the waypoint!");
+        }
     }
 }
 
 - (void)wayPointControlWithToStart:(BOOL)toStart{
     if (toStart) {
-        [[ComponentHelper fetchNavigation] startToAutoMission];
+        [self.navigationManager startToAutoMission];
+        _isNavigationStart = YES;
     }else{
-        [[ComponentHelper fetchNavigation] setLastMode];
+        [self.navigationManager setLastMode];
+        _isNavigationStart = NO;
     }
 }
 
 -(BOOL)navigationShouldPopOnBackButton{
     if (_isNavigationStart) {
-        [[ComponentHelper fetchNavigation] setLastMode];
+        ShowResult(@"Please finish the flight first!");
         return NO;
     }else{
         return YES;
@@ -285,8 +214,6 @@
 
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"NOTIFICATION_WayPointViewController_UpdateLocation" object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"NOTIFICATION_WayPointViewController_UpdateWayPointNavigationState" object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"NOTIFICATION_WayPointViewController_UpdateWayPointState" object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"NOTIFICATION_WayPointViewController_SendWayPointResult" object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"NOTIFICATION_WayPointViewController_ChangeLastMode" object:nil];
 }

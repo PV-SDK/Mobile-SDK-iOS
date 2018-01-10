@@ -27,27 +27,27 @@ typedef void(^PVSendCommandBlock)(PVCameraCommandReceive result, NSInteger error
 @property (nonatomic, strong) VFVideo *vfVideo;
 
 /**
- 初始化视图
+ Initialization view
  */
 - (instancetype)initWithFrame:(CGRect)frame;
 
 /**
- 拍照录像状态
+ The shoot state
  */
 @property (nonatomic, assign) PVCameraShootState shootState;
 
 /**
- 打开视频流
+ Open video stream
  
- @param block 打开视频流指令的回调
+ @param block Open video stream call back
  */
 - (void)openVideoStreamCallBack:(PVSendCommandBlock)block;
 
 /**
- 关闭图传
+ Close video stream
 
- @param isExit 是否是退出页面
- @param block 关闭图传指令的回调
+ @param isExit Is it an exit page
+ @param block close video call back
  */
 - (void)closeVideo:(BOOL)isExit CallBack:(PVSendCommandBlock)block;
 

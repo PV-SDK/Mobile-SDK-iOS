@@ -2,7 +2,7 @@
 //  NavigationViewController.m
 //  PVSDK_Demo
 //
-//  Copyright © 2017年 PowerVision. All rights reserved.
+//  Copyright © 2017 PowerVision. All rights reserved.
 //
 
 #import "NavigationViewController.h"
@@ -39,18 +39,9 @@ PVLocationDelegate
 }
 
 - (void)initData{
-    self.info_items = @[@"经度",@"纬度",@"卫星颗数",@"俯仰角度",@"横滚角度",@"航向角度",@"大地坐标X轴速度",@"大地坐标Y轴速度",@"大地坐标Z轴速度",@"海拔",@"对地高度"];
+    self.info_items = @[@"Longitude",@"Latitude",@"Satellites number",@"Pitch angle",@"Roll angle",@"Yaw angle",@" Velocity of X axis",@"Velocity of Y axis",@"Velocity of Z axis",@"Altitude",@"Height above ground level"];
     self.control_items = @[@"Way point of control",@"Automatic return"];
     self.info_values = [@[@"",@"",@"",@"",@"",@"",@"",@"",@"",@"",@""] mutableCopy];
-//    self.info_values = [@[@"114.234513000",
-//                          @"40.2312351200",
-//                          @"15 moons",
-//                          @"+3°",
-//                          @"-5°",
-//                          @"+23°",
-//                          @"+2 m/s",@"+1 m/s",@"-3 m/s",
-//                          @"327 m",@"298 m"
-//                          ] mutableCopy];
 }
 
 - (void)configManager{
@@ -68,9 +59,9 @@ PVLocationDelegate
     NSLog(@"Roll:%f",flightHelper.attitude.roll);
     NSLog(@"Yaw:%f",flightHelper.attitude.yaw);
     
-    [_info_values replaceObjectAtIndex:3 withObject:[NSString stringWithFormat:@"%f°",flightHelper.attitude.pitch]];
-    [_info_values replaceObjectAtIndex:4 withObject:[NSString stringWithFormat:@"%f°",flightHelper.attitude.roll]];
-    [_info_values replaceObjectAtIndex:5 withObject:[NSString stringWithFormat:@"%f°",flightHelper.attitude.yaw]];
+    [_info_values replaceObjectAtIndex:3 withObject:[NSString stringWithFormat:@"%f°",flightHelper.attitude.pitch/M_PI*180]];
+    [_info_values replaceObjectAtIndex:4 withObject:[NSString stringWithFormat:@"%f°",flightHelper.attitude.roll/M_PI*180]];
+    [_info_values replaceObjectAtIndex:5 withObject:[NSString stringWithFormat:@"%f°",flightHelper.attitude.yaw/M_PI*180]];
     
     [_infoListView reloadData];
 }
@@ -90,21 +81,18 @@ PVLocationDelegate
         case PVFlightAutoMissionStateRunning:
         {
             if ([[self.navigationController.viewControllers lastObject] isKindOfClass:[WayPointControlViewController class]]) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"NOTIFICATION_WayPointViewController_UpdateWayPointNavigationState" object:nil userInfo:@{@"result":@"Running"}];
             }
         }
             break;
         case PVFlightAutoMissionStateFinish:
         {
             if ([[self.navigationController.viewControllers lastObject] isKindOfClass:[WayPointControlViewController class]]) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"NOTIFICATION_WayPointViewController_UpdateWayPointNavigationState" object:nil userInfo:@{@"result":@"Finish"}];
             }
         }
             break;
         case PVFlightAutoMissionStateNoDo:
         {
             if ([[self.navigationController.viewControllers lastObject] isKindOfClass:[WayPointControlViewController class]]) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"NOTIFICATION_WayPointViewController_UpdateWayPointNavigationState" object:nil userInfo:@{@"result":@"NoDo"}];
             }
         }
             break;
@@ -164,12 +152,12 @@ PVLocationDelegate
     
     [_info_values replaceObjectAtIndex:2 withObject:[NSString stringWithFormat:@"%d moons",flightHelper.satelliteCount]];
     
-    [_info_values replaceObjectAtIndex:6 withObject:[NSString stringWithFormat:@"%f m/s",flightHelper.xSpeed]];
-    [_info_values replaceObjectAtIndex:7 withObject:[NSString stringWithFormat:@"%f m/s",flightHelper.ySpeed]];
-    [_info_values replaceObjectAtIndex:8 withObject:[NSString stringWithFormat:@"%f m/s",flightHelper.zSpeed]];
+    [_info_values replaceObjectAtIndex:6 withObject:[NSString stringWithFormat:@"%.1f m/s",flightHelper.xSpeed/100.0f]];
+    [_info_values replaceObjectAtIndex:7 withObject:[NSString stringWithFormat:@"%.1f m/s",flightHelper.ySpeed/100.0f]];
+    [_info_values replaceObjectAtIndex:8 withObject:[NSString stringWithFormat:@"%.1f m/s",flightHelper.zSpeed/100.0f]];
     
-    [_info_values replaceObjectAtIndex:9 withObject:[NSString stringWithFormat:@"%f m",flightHelper.altitude]];
-    [_info_values replaceObjectAtIndex:10 withObject:[NSString stringWithFormat:@"%f m",flightHelper.groundHeight]];
+    [_info_values replaceObjectAtIndex:9 withObject:[NSString stringWithFormat:@"%f m",flightHelper.altitude / 1000.0f]];
+    [_info_values replaceObjectAtIndex:10 withObject:[NSString stringWithFormat:@"%f m",flightHelper.groundHeight / 1000.0f]];
     
     [_infoListView reloadData];
 }
@@ -209,14 +197,15 @@ PVLocationDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView.tag == 1002) {
         switch (indexPath.row) {
-            case 0: //  航点控制
+            case 0: //  Waypoint control
             {
                 [self performSegueWithIdentifier:@"PushToWayPointControlViewController" sender:self];
             }
                 break;
-            case 1: //  自动返航
+            case 1: //  Automatic return
             {
                 [self.navigationManager autoReturnToLand];
+                ShowResult(@"Automatic return");
             }
                 break;
             default:

@@ -7,6 +7,7 @@
 
 #import "FlightViewController.h"
 #import "ComponentHelper.h"
+#import <PVSDK/PVSDK.h>
 
 #import "CameraSettingVC.h"
 #import "PVVideoStreamView.h"
@@ -46,9 +47,9 @@ PVEyeCameraDelegate
 @property (nonatomic, strong) PVFlightRemote *flightRemoteManager;
 @property (nonatomic, strong) PVGimabal *gimabalManager;
 
-//@property (nonatomic, assign) PVCameraHandleType handleType;
-
 @property (nonatomic, strong) PVVideoStreamView *streamView;
+
+@property (nonatomic, assign) PVCameraHandleType handleType;
 
 @end
 
@@ -63,11 +64,11 @@ PVEyeCameraDelegate
     
     self.eyeCameraManager = [ComponentHelper fetchEyeCamera];
     
-    //  断开与飞机的连接的通知
+    //  Disconnect notifications from the aircraft.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationToPopViewController:) name:@"NotificationToPopRootViewController" object:nil];
-    //  App 将要失去活跃状态的通知
+    //  The App will lose the notification of active status.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:@"ApplicationWillResignActive" object:nil];
-    //  App 获得活跃状态的通知
+    //  App gets notification of active status.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:) name:@"ApplicationDidBecomeActive" object:nil];
 }
 
@@ -255,8 +256,10 @@ PVEyeCameraDelegate
 - (IBAction)didClickToChangeCameraMode:(UIButton *)sender
 {
     if (shootState == PVCameraShootStateTakePhoto) {
+        self.handleType = PVCameraHandleTypeSwitchRec;
         [self.eyeCameraManager setEyeCameraMode:PVEyeCameraShootModeRecord];
     }else if (shootState == PVCameraShootStateRecord) {
+        self.handleType = PVCameraHandleTypeSwitchShootPhoto;
         [self.eyeCameraManager setEyeCameraMode:PVEyeCameraShootModeTakePhoto];
     }
 }
@@ -264,10 +267,13 @@ PVEyeCameraDelegate
 - (IBAction)didClickToShoot:(UIButton *)sender
 {
     if (shootState == PVCameraShootStateTakePhoto) {
+        self.handleType = PVCameraHandleTypeShootPhoto;
         [self.eyeCameraManager takePhoto];
     }else if (shootState == PVCameraShootStateRecord){
+        self.handleType = PVCameraHandleTypeStartRec;
         [self.eyeCameraManager startRecordVideo];
     }else if (shootState == PVCameraShootStateRecording){
+        self.handleType = PVCameraHandleTypeStopRec;
         [self.eyeCameraManager stopRecordVideo];
     }
 }
@@ -365,26 +371,26 @@ PVEyeCameraDelegate
             break;
             
         case PVEyeCameraState_Timeout:
-//            switch (self.handleType) {
-//                case PVCameraHandleTypeSwitchRec:
-//                    NSLog(@"Camera State Receive--> PVCameraHandleTypeSwitchRec");
-//                    break;
-//                case PVCameraHandleTypeSwitchShootPhoto:
-//                    NSLog(@"Camera State Receive--> PVCameraHandleTypeSwitchShootPhoto");
-//                    break;
-//                case PVCameraHandleTypeStartRec:
-//                    NSLog(@"Camera State Receive--> PVCameraHandleTypeStartRec");
-//                    break;
-//                case PVCameraHandleTypeStopRec:
-//                    NSLog(@"Camera State Receive--> PVCameraHandleTypeStopRec");
-//                    break;
-//                case PVCameraHandleTypeShootPhoto:
-//                    NSLog(@"Camera State Receive--> PVCameraHandleTypeShootPhoto");
-//                    break;
-//                    
-//                default:
-//                    break;
-//            }
+            switch (self.handleType) {
+                case PVCameraHandleTypeSwitchRec:
+                    NSLog(@"Camera State Receive--> PVCameraHandleTypeSwitchRec");
+                    break;
+                case PVCameraHandleTypeSwitchShootPhoto:
+                    NSLog(@"Camera State Receive--> PVCameraHandleTypeSwitchShootPhoto");
+                    break;
+                case PVCameraHandleTypeStartRec:
+                    NSLog(@"Camera State Receive--> PVCameraHandleTypeStartRec");
+                    break;
+                case PVCameraHandleTypeStopRec:
+                    NSLog(@"Camera State Receive--> PVCameraHandleTypeStopRec");
+                    break;
+                case PVCameraHandleTypeShootPhoto:
+                    NSLog(@"Camera State Receive--> PVCameraHandleTypeShootPhoto");
+                    break;
+                    
+                default:
+                    break;
+            }
             break;
             
         case PVEyeCameraState_RecStop:
@@ -412,10 +418,11 @@ PVEyeCameraDelegate
             break;
             
         case PVEyeCameraState_RecModeSuccess:
+        {
             NSLog(@"Camera State Receive--> PVCameraStateRecModeSuccess");
             shootState = PVCameraShootStateRecord;
             [self updateCameraShootButoonState:shootState];
-
+        }
             break;
         case PVEyeCameraState_RecModeError:
             NSLog(@"Camera State Receive--> PVCameraStateRecModeError");
@@ -426,18 +433,20 @@ PVEyeCameraDelegate
             break;
             
         case PVEyeCameraState_RecErrorSDFull:
-//            switch (self.handleType) {
-//                case PVCameraHandleTypeStartRec:
-//                    NSLog(@"Camera State Receive--> PVCameraHandleTypeStartRec");
-//                    break;
-//                    
-//                case PVCameraHandleTypeStopRec:
-//                    NSLog(@"Camera State Receive--> PVCameraHandleTypeStopRec");
-//                    break;
-//                    
-//                default:
-//                    break;
-//            }
+        {
+            switch (self.handleType) {
+                case PVCameraHandleTypeStartRec:
+                    NSLog(@"Camera State Receive--> PVCameraHandleTypeStartRec");
+                    break;
+                    
+                case PVCameraHandleTypeStopRec:
+                    NSLog(@"Camera State Receive--> PVCameraHandleTypeStopRec");
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
             break;
             
         case PVEyeCameraState_ShootErrorSDError:
@@ -445,40 +454,46 @@ PVEyeCameraDelegate
             break;
             
         case PVEyeCameraState_RecErrorSDError:
-//            switch (self.handleType) {
-//                case PVCameraHandleTypeStartRec:
-//                    NSLog(@"Camera State Receive--> PVCameraHandleTypeStartRec");
-//                    break;
-//                    
-//                case PVCameraHandleTypeStopRec:
-//                    NSLog(@"Camera State Receive--> PVCameraHandleTypeStopRec");
-//                    break;
-//                    
-//                default:
-//                    break;
-//            }
+        {
+            switch (self.handleType) {
+                case PVCameraHandleTypeStartRec:
+                    NSLog(@"Camera State Receive--> PVCameraHandleTypeStartRec");
+                    break;
+                    
+                case PVCameraHandleTypeStopRec:
+                    NSLog(@"Camera State Receive--> PVCameraHandleTypeStopRec");
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
             break;
             
         case PVEyeCameraState_ShootErrorSDNull:
-//            if (self.handleType == PVCameraHandleTypeShootPhoto) {
-//                NSLog(@"Camera State Receive--> PVCameraStateShootErrorSDNull");
-//            }
+        {
+            if (shootState == PVCameraShootStateTakePhoto) {
+                NSLog(@"Camera State Receive--> PVCameraStateShootErrorSDNull");
+            }
+        }
             break;
             
         case PVEyeCameraState_RecErrorSDNull:
+        {
             NSLog(@"Camera State Receive--> PVCameraStateRecErrorSDNull");
-//            switch (self.handleType) {
-//                case PVCameraHandleTypeStartRec:
-//                    NSLog(@"Camera State Receive--> PVCameraHandleTypeStartRec");
-//                    break;
-//                    
-//                case PVCameraHandleTypeStopRec:
-//                    NSLog(@"Camera State Receive--> PVCameraHandleTypeStopRec");
-//                    break;
-//                    
-//                default:
-//                    break;
-//            }
+            switch (self.handleType) {
+                case PVCameraHandleTypeStartRec:
+                    NSLog(@"Camera State Receive--> PVCameraHandleTypeStartRec");
+                    break;
+                    
+                case PVCameraHandleTypeStopRec:
+                    NSLog(@"Camera State Receive--> PVCameraHandleTypeStopRec");
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
             break;
             
         default:

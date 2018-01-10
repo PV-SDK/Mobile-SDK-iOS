@@ -132,7 +132,7 @@ UITableViewDelegate,UITableViewDataSource
                         return;
                     }
                     if (shootSpeed >= 54) {
-                        [strongSelf.currentValues replaceObjectAtIndex:1 withObject:@"高速"];
+                        [strongSelf.currentValues replaceObjectAtIndex:1 withObject:@"Height speed"];
                     } else {
                         [strongSelf.currentValues replaceObjectAtIndex:1 withObject:[self getCurrentValueWithType:type Row:1 Index:shootSpeed - 51]];
                     }
@@ -197,7 +197,7 @@ UITableViewDelegate,UITableViewDataSource
                 if (whiteBalanceMode == 51) {
                     [strongSelf.currentValues replaceObjectAtIndex:1 withObject:@""];
                 }else{
-                    if (whiteBalanceValue != 200) {
+                    if (whiteBalanceValue != -200) {
                         [strongSelf.currentValues replaceObjectAtIndex:1 withObject:[NSString stringWithFormat:@"%ld",(long)whiteBalanceValue]];
                     }
                 }
@@ -221,8 +221,10 @@ UITableViewDelegate,UITableViewDataSource
                 if ([strongSelf.currentValues[0] isEqualToString:@"Auto"]) {
                     return;
                 }
-                [strongSelf.currentValues replaceObjectAtIndex:1 withObject:[NSString stringWithFormat:@"%ld",(long)whiteBalance]];
-                [strongSelf.listView reloadData];
+                if (whiteBalanceValue != -200) {
+                    [strongSelf.currentValues replaceObjectAtIndex:1 withObject:[NSString stringWithFormat:@"%ld",(long)whiteBalanceValue]];
+                    [strongSelf.listView reloadData];
+                }
             }
         }];
         

@@ -44,20 +44,21 @@ VFVideoDelegate
     self.vfView = [[VFOpenGLView alloc] initWithFrame:self.bounds];
     [self addSubview:self.vfView];
     
-    //  初始化 Video
+    //  Initialize the Video
     [self initVideoStreamVideo:YES];
     
 }
 
-#pragma mark - 初始化 Video
+#pragma mark - Initialize the video
 -(void)initVideoStreamVideo:(BOOL)usesHwDecoder
 {
     self.vfVideo = [[VFVideo alloc] initWithVideoView:(VFVideoView *)self.vfView];
-    [self.vfVideo setCloseAfterLostFrame:60];   //设置丢帧60s关闭视频
+    [self.vfVideo setCloseAfterLostFrame:60];   //  Close the video stream automatically if 60 frames are lost continuously
+
     self.vfVideo.delegate = self;
 }
 
-#pragma mark - 开启图传
+#pragma mark - Open the video stream
 - (void)openVideoStreamCallBack:(PVSendCommandBlock)block
 {
     self.openVideoStreamBlock = block;
@@ -66,7 +67,7 @@ VFVideoDelegate
     }
 }
 
-#pragma mark - 关闭图传
+#pragma mark - Close the video stream
 - (void)closeVideo:(BOOL)isExit CallBack:(PVSendCommandBlock)block
 {
     self.closeVideoStreamBlock = block;
@@ -83,13 +84,13 @@ VFVideoDelegate
 }
 
 #pragma mark - Video Stream Video Delegate
-//TODO: 正在打开视频流
+//TODO: Opening video streams
 -(void)willVFVideoOpen
 {
-    NSLog(@"正在打开视频流");
+    NSLog(@"Opening video streams");
 }
 
-//TODO: 已打开视频流
+//TODO: The video stream has been turned on
 -(void)didVFVideoOpenWithResult:(int)result
 {
     if (self.openVideoStreamBlock) {
@@ -113,25 +114,23 @@ VFVideoDelegate
     }
 }
 
-//TODO: 正在调用DrawFrame
 - (void)willVFVideoDrawFrame
 {
     
 }
 
-//TODO: DrawFrame调用完成
 - (void)didVFVideoDrawFrameWithResult:(int)result
 {
     
 }
 
-//TODO: 正在关闭已打开的视频流
+//TODO: Closing the open video stream
 - (void)willVFVideoClose
 {
-    NSLog(@"正在关闭已打开的视频流");
+    NSLog(@"Closing the open video stream");
 }
 
-//TODO: 已关闭视频流
+//TODO: Video streaming has been turned off
 - (void)didVFVideoCloseWithResult:(int)result
 {
     if (self.closeVideoStreamBlock) {

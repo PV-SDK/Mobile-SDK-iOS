@@ -668,7 +668,7 @@
 				TargetAttributes = {
 					ADC257841F8F3EBE00418881 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 9PRAC8XV5J;
+						DevelopmentTeam = 23CNQ6K9TW;
 						ProvisioningStyle = Automatic;
 					};
 					ADC2579D1F8F3EBF00418881 = {
@@ -988,7 +988,7 @@
 			baseConfigurationReference = 62FBD8C81F5949C340CB6738 /* Pods-PVSDK_Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9PRAC8XV5J;
+				DEVELOPMENT_TEAM = 23CNQ6K9TW;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1000,12 +1000,12 @@
 					"$(PROJECT_DIR)/PVSDK_Demo/PVSDK",
 					"$(PROJECT_DIR)/PVSDK_Demo/PVSDK/PVSDK_VideoStream",
 					"$(PROJECT_DIR)/Framework",
-					"$(PROJECT_DIR)/PVSDKFramework",
 				);
 				GCC_PREFIX_HEADER = PVSDK_Demo/PrefixHeader.pch;
 				INFOPLIST_FILE = PVSDK_Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gsnice.debug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PowerVision.GCS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1015,7 +1015,7 @@
 			baseConfigurationReference = AFC0D37D64375F3BAB129B63 /* Pods-PVSDK_Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9PRAC8XV5J;
+				DEVELOPMENT_TEAM = 23CNQ6K9TW;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1027,12 +1027,12 @@
 					"$(PROJECT_DIR)/PVSDK_Demo/PVSDK",
 					"$(PROJECT_DIR)/PVSDK_Demo/PVSDK/PVSDK_VideoStream",
 					"$(PROJECT_DIR)/Framework",
-					"$(PROJECT_DIR)/PVSDKFramework",
 				);
 				GCC_PREFIX_HEADER = PVSDK_Demo/PrefixHeader.pch;
 				INFOPLIST_FILE = PVSDK_Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gsnice.debug;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PowerVision.GCS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
